@@ -1,0 +1,138 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+	<class-a>com.eduboss.domain.Product</class-a>
+	<class-b>com.eduboss.domainVo.ProductVo</class-b>
+	<!-- <field>
+		<a>category</a>
+		<b>categoryName</b>
+	</field> -->
+	<field>
+		<a>gradeDict.id</a>
+		<b>gradeId</b>
+	</field>
+	<field>
+		<a>gradeDict.name</a>
+		<b>gradeName</b>
+	</field>
+	<field>
+		<a>gradeSegmentDict.id</a>
+		<b>gradeSegmentId</b>
+	</field>
+	<field>
+		<a>gradeSegmentDict.name</a>
+		<b>gradeSegmentName</b>
+	</field>
+	<field>
+		<a>category.name</a>
+		<b>categoryName</b>
+	</field>
+	<field>
+		<a>singleSubject.name</a>
+		<b>singleSubjectName</b>
+	</field>
+	
+	
+	<field>
+		<a>organization.id</a>
+		<b>organizationId</b>
+	</field>
+	<field>
+		<a>organization.name</a>
+		<b>organizationName</b>
+	</field>
+	
+	<field>
+		<a>productCategoryId.id</a>
+		<b>productCategoryId</b>
+	</field>
+	<field>
+		<a>productCategoryId.name</a>
+		<b>productCategoryName</b>
+	</field>
+    <field>
+        <a>productGroup.id</a>
+        <b>productGroupId</b>
+    </field>
+    <field>
+        <a>productGroup.name</a>
+        <b>productGroupName</b>
+    </field>
+    <field>
+		<a>courseSeries.id</a>
+		<b>courseSeriesId</b>
+	</field>
+	<field>
+		<a>productVersion.id</a>
+		<b>productVersionId</b>
+	</field>
+	<field>
+		<a>productQuarter.id</a>
+		<b>productQuarterId</b>
+	</field>
+	<field>
+		<a>subject.id</a>
+		<b>subjectId</b>
+	</field>
+	<field>
+		<a>classType.id</a>
+		<b>classTypeId</b>
+	</field>
+
+	<field>
+		<a>other_type.id</a>
+		<b>other_type_id</b>
+	</field>
+
+	<field>
+		<a>other_of_type.id</a>
+		<b>other_of_type_id</b>
+	</field>
+	
+	<field>
+		<a>courseSeries.Name</a>
+		<b>courseSeriesName</b>
+	</field>
+	<field>
+		<a>productVersion.name</a>
+		<b>productVersionName</b>
+	</field>
+	<field>
+		<a>productQuarter.name</a>
+		<b>productQuarterName</b>
+	</field>
+	<field>
+		<a>subject.name</a>
+		<b>subjectName</b>
+	</field>
+	<field>
+		<a>classType.name</a>
+		<b>classTypeName</b>
+	</field>
+		<field>
+		<a>phase.id</a>
+		<b>phaseId</b>
+	</field>
+	<field>
+		<a>phase.name</a>
+		<b>phaseName</b>
+	</field>
+	<field>
+		<a>teacher.userId</a>
+		<b>teacherId</b>
+	</field>
+	<field>
+		<a>teacher.name</a>
+		<b>teacherName</b>
+	</field>
+	<!-- <field>
+		<a>promotion.id</a>
+		<b>promotionId</b>
+	</field>
+	<field>
+		<a>promotion.name</a>
+		<b>promotionName</b>
+	</field> -->
+</mapping>
+</mappings>

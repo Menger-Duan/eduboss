@@ -1,0 +1,42 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+	<class-a>com.eduboss.domain.MobilePushMsgRecord</class-a>
+	<class-b map-null="false">com.eduboss.domainVo.MobilePushMsgRecordVo</class-b>
+	<field>
+		<a>session.id</a>
+		<b>sessionId</b>
+	</field>
+	<field>
+		<a>session.sessionType.value</a>
+		<b>sessionTypeValue</b>
+	</field>
+	<field>
+		<a>session.sessionType</a>
+		<b>sessionType</b>
+	</field>
+	<field>
+		<a>session.sessionType.name</a>
+		<b>sessionTypeName</b>
+	</field>
+	<field>
+		<a>sender.id</a>
+		<b>senderId</b>
+	</field>
+	<field>
+		<a>sender.userType</a>
+		<b>senderType</b>
+	</field>
+	<field>
+		<a>dataType.value</a>
+		<b>dataTypeValue</b>
+	</field>
+	<field>
+		<a>dataType.name</a>
+		<b>dataTypeName</b>
+	</field>
+	
+	
+</mapping>
+</mappings>

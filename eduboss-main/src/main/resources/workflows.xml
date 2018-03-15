@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflows>
+    <workflow name="leave" type="resource" location="oswf/leave.xml"/>
+    <workflow name="account_transfer" type="resource" location="oswf/xinghuo_account_transfer.xml"/>
+    <workflow name="money_refund" type="resource" location="oswf/xinghuo_money_refund.xml"/>
+    <workflow name="money_acc_refund" type="resource" location="oswf/xinghuo_money_acc_refund.xml"/>
+    <workflow name="advance_account_transfer" type="resource" location="oswf/advance_account_transfer.xml"/>
+    <workflow name="advance_money_refund" type="resource" location="oswf/advance_money_refund.xml"/>
+    <workflow name="advance_money_acc_refund" type="resource" location="oswf/advance_money_acc_refund.xml"/>
+</workflows>

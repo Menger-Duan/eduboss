@@ -1,0 +1,278 @@
+<!-- 这一行不要删，作为iframeTemplate页面标识 -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!--<span style="display:none;">-->
+	<!--<script src="https://s95.cnzz.com/z_stat.php?id=1258742083&web_id=1258742083" language="JavaScript"></script>-->
+	<!--</span>-->
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="framework/css/bootstrap.min.css?_auto_version_">
+    <link rel="stylesheet" type="text/css" media="screen" href="framework/css/font-awesome.min.css?_auto_version_">
+
+    <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+    <link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-production.min.css?_auto_version_">
+    <link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-skins.min.css?_auto_version_">
+
+    <!-- SmartAdmin RTL Support is under construction
+         This RTL CSS will be released in version 1.5
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css?_auto_version_"> -->
+
+    <!-- We recommend you use "your_style.css" to override SmartAdmin
+         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+    <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css?_auto_version_"> -->
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="framework/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="framework/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- #GOOGLE FONT -->
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"> -->
+
+    <!-- #APP SCREEN / ICONS -->
+    <!-- Specifying a Webpage Icon for Web Clip
+         Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+    <link rel="apple-touch-icon" href="framework/img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="framework/img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="framework/img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="framework/img/splash/touch-icon-ipad-retina.png">
+
+    <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Startup image for web apps -->
+    <link rel="apple-touch-startup-image" href="framework/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="framework/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="framework/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+    <link rel="stylesheet" type="text/css" href="css/bossicon/iconfont.css?_auto_version_">
+    <link rel="stylesheet" type="text/css" href="js/libs/ztree/zTreeStyle/zTreeStyle_new.css?_auto_version_">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css?_auto_version_">
+    <link rel="stylesheet" type="text/css" media="all" href="css/print.css?_auto_version_">
+    <!-- Add IntroJs styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="framework/css/introjs.css?_auto_version_">
+</head>
+<body>
+<div class="mainTabsLoadmask" style="width:100%;height:100%;z-index: 10000;background-color: #fff; opacity: 1;position: absolute;/* top: 0; */"><div style="position: fixed;left: 50%;top: 50%;list-style: none;color: #000;"><li style="padding:10px;"><i class="fa fa-gear fa-lg fa-spin"></i> 加载中...</li></div></div>
+<div id="content" class="container-fluid" style="overflow-y:auto;">
+</div>
+
+
+<script src="framework/js/libs/jquery-2.0.2.min.js?_auto_version_"></script>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js?_auto_version_"></script> -->
+<!-- <script>
+    if (!window.jQuery.ui) {
+        document.write('<script src="js/libs/jquery-ui-1.10.3.min.js?_auto_version_"><\/script>');
+    }
+</script> -->
+<script src="framework/js/libs/jquery-ui-1.10.3.min.js?_auto_version_"></script>
+
+<script src="components/jquery-easyui-1.4.1/plugins/jquery.parser.js?_auto_version_"></script>
+<script src="components/jquery-easyui-1.4.1/plugins/jquery.panel.js?_auto_version_"></script>
+<script src="components/jquery-easyui-1.4.1/plugins/jquery.tabs.js?_auto_version_"></script>
+
+<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+<script src="framework/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js?_auto_version_"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="framework/js/bootstrap/bootstrap.min.js?_auto_version_"></script>
+
+<!-- CUSTOM NOTIFICATION -->
+<script src="framework/js/notification/SmartNotification.min.js?_auto_version_"></script>
+
+<!-- JARVIS WIDGETS -->
+<script src="framework/js/smartwidgets/jarvis.widget.min.js?_auto_version_"></script>
+
+<!-- EASY PIE CHARTS -->
+<script src="framework/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js?_auto_version_"></script>
+
+<!-- SPARKLINES -->
+<script src="framework/js/plugin/sparkline/jquery.sparkline.min.js?_auto_version_"></script>
+
+<!-- JQUERY VALIDATE -->
+<script src="framework/js/plugin/jquery-validate/jquery.validate.min.js?_auto_version_"></script>
+
+<!-- JQUERY MASKED INPUT -->
+<script src="framework/js/plugin/masked-input/jquery.maskedinput.min.js?_auto_version_"></script>
+
+<!-- JQUERY SELECT2 INPUT -->
+<script src="framework/js/plugin/select2/select2.min.js?_auto_version_"></script>
+
+<!-- JQUERY UI + Bootstrap Slider -->
+<script src="framework/js/plugin/bootstrap-slider/bootstrap-slider.min.js?_auto_version_"></script>
+
+<!-- browser msie issue fix -->
+<script src="framework/js/plugin/msie-fix/jquery.mb.browser.min.js?_auto_version_"></script>
+
+<!-- FastClick: For mobile devices: you can disable this in app.js -->
+<script src="framework/js/plugin/fastclick/fastclick.min.js?_auto_version_"></script>
+
+<!--[if IE 8]>
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+<![endif]-->
+
+<!-- <script src="js/plugin/bootstraptree/bootstrap-tree.min.js?_auto_version_"></script> -->
+
+<!-- MAIN APP JS FILE -->
+<script src="framework/js/app.js?_auto_version_"></script>
+
+<script src="framework/js/plugin/jquery-form/jquery-form.min.js?_auto_version_"></script>
+
+<script src="framework/js/intro/intro.js" type="text/javascript"></script>
+
+<!-- <script>
+var pathToDwrServlet = "http://directwebremoting.org/dwr-demo/dwr"; // Path to dwr on foreign domain
+</script> -->
+<!--<script type='text/javascript' src='dwr/engine.js'></script>-->
+<!--<script type='text/javascript' src='dwr/util.js'></script>-->
+<!--<script type='text/javascript' src='dwr/interface/dwrMessageManager.js'></script>-->
+
+<!-- dwr push message -->
+<!-- <script src='components/dwr/engine.js'></script>
+<script src='components/dwr/util.js'></script>
+<script src='dwr/interface/dwrMessageManager.js'></script> -->
+<script src="js/zeroclipboard/ZeroClipboard.min.js?_auto_version_"></script>
+<!-- project commen function js, for earch sub function page, link its js in the page -->
+<script src="js/common.js?_auto_version_"></script>
+<!--<script src="js/index.js?_auto_version_"></script>-->
+<script src="js/jquery.PrintArea.js?_auto_version_"></script>
+
+<script>
+    // 	$.get(EduBoss.serviceApi.getLoginUserInfo, function(responseText) {
+    // 		if(responseText.userId!=window.top.Index.getLoginUser().userId){
+    // 			 window.top.location.href="/eduboss/index.html";
+    // 		}
+    // 	});
+    var Index = window.top.Index;
+    var loadURL = window.top.loadURL;
+    var closeActivedTab = window.top.closeActivedTab;
+
+    var href = window.location.href;
+    var loadUrl = href.substring(href.indexOf("?") + 1);
+    var container = $("body #content");
+    $.ajax({
+        type : "GET",
+        url : loadUrl,
+        dataType : 'html',
+        cache : true, // (warning: this will cause a timestamp and will call the request twice)
+        success : function(data) {
+            // cog replaced here...
+            // alert("success")
+            //如果返回的是登录页面，说明session已过期，直接把整个页面跳出到登录页面
+            if (data.indexOf("j_spring_security_check") > 0) {
+                window.location.href="/eduboss/login.jsp";
+            } else if ("8619" === data) {
+                EduBoss.commonUtils.handleSessionExpired();
+            } else {
+                container.css({
+                    opacity : '0.0'
+                }).html(data).delay(50).animate({
+                    opacity : '1.0'
+                }, 300);
+
+                setTimeout(function() {
+                    introJS();
+                }, 400);
+
+            }
+            //$('#mainTabs .tabs-panels .panel iframe[src="' + decodeURI(window.location.href.substring(window.location.href.indexOf('iframeTemplate.html'))) + '"]',window.top.document).prev().remove();
+            $("div.mainTabsLoadmask").remove();
+        },
+        error : function(xhr, ajaxOptions, thrownError) {
+            $(".loading,div.mainTabsLoadmask").remove();
+            container.html('<h4 style="margin-top:10px; display:block; text-align:left"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>');
+        },
+        async : false
+    });
+
+    $(document).ajaxError(function(e, xhr, options, exception) {
+        debugger;
+        if (xhr.responseText.indexOf("j_spring_security_check") > 0) {//如果返回的是登录界面，说明session已过期，直接把整个页面跳出到登录页面
+            window.top.location.href="/eduboss/login.jsp";
+        } else {
+            var message="";
+            //var message = xhr.responseJSON ? xhr.responseJSON.resultMessage : "未知错误";
+            if(xhr.responseJSON){
+                message=xhr.responseJSON.resultMessage;
+            }else if(xhr.responseText){
+                var vJson = eval("(" + xhr.responseText + ")");
+                message=vJson.resultMessage;
+            }else{
+                message="未知错误";
+            }
+            $.SmartMessageBox({
+                title : "请求出错啦!",
+                content : message,
+                buttons : '[确定]'
+            }, function(ButtonPressed) {
+                if (ButtonPressed === "确定") {
+                    EduBoss.commonUtils.removeLoadMask();
+                    EduBoss.loadMask.hide();
+                }
+            });
+        }
+        $(".loading,div.mainTabsLoadmask").remove();
+    });
+
+    $(document).ajaxComplete(function(e, xhr, options) {
+        if(xhr.status == 200){
+            if (xhr.responseText.indexOf("j_spring_security_check") > 0 && xhr.responseText.indexOf("iframeTemplate页面标识") == -1) {//如果返回的是登录界面，说明session已过期，直接把整个页面跳出到登录页面
+                window.top.location.href="/eduboss/login.jsp";
+            }
+        }else if(xhr.status == 400){
+            EduBoss.commonUtils.removeLoadMask();
+            EduBoss.loadMask.hide();
+        }
+    });
+
+    /**
+     *  单个搜素框清空
+     */
+    $(document).on('click','.form-search-clear',function(){
+        $(this).siblings('.form-search-input').val('');
+        $(this).hide();
+    });
+    $(document).on('keyup','.form-search-input',function(){
+        if($(this).val()){
+            $(this).siblings('.form-search-clear').show();
+        }else{
+            $(this).siblings('.form-search-clear').hide();
+        }
+    });
+
+    function introJS(){
+
+        var id = EduBoss.commonUtils.getUrlParameters("faqId");
+        if (!id) return;
+        $.get(EduBoss.serviceApi.findIntroJSByFaqId,{
+            "id":id
+        },function(res){
+            console.log(res);debugger;
+            var dbSteps=[];
+            for(var i=0;i<res.length;i++){
+                dbSteps.push({
+                    element: res[i].elementSelector,
+                    intro: res[i].dataIntro
+                });
+            }
+
+            var intro = introJs();
+            intro.setOptions({
+                steps: dbSteps,
+                skipLabel:"关闭",doneLabel:"完成",nextLabel:"下一步",prevLabel:"上一步"
+            });
+
+            intro.start();
+
+        });
+
+
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.eduboss</groupId>
+    <artifactId>eduboss</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!-- <relativePath>eduboss-parent</relativePath> -->
+  </parent>
+  
+  <artifactId>eduboss-base</artifactId>
+  <packaging>jar</packaging>
+  <name>eduboss-base</name>
+  <description>eduboss base for spark</description>
+  
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+    
+        <!-- junit支持 仅测试时使用 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- servlet-api 仅编译时使用 
+           <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>servlet-api</artifactId>
+              <version>2.5</version>
+              <scope>provided</scope>
+          </dependency>-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+<!--         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency> -->
+        <!-- jdbc 仅打包运行时使用 -->
+      <!--  <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.java.connector.version}</version>
+            <classifier>bin</classifier> 3.1.8需要
+            <scope>runtime</scope>
+        </dependency> -->
+        
+        <!-- springframework -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+         <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-test</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency> 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <!-- hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId><!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-annotations -->
+            <version>${hibernate.version}</version><!-- 3.3.1.GA -->
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.3.1.Final</version>
+        </dependency>
+        <!-- struts -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts.xwork</groupId>
+            <artifactId>xwork-core</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <!-- apache -->
+        <!-- <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.5-FINAL</version>
+        </dependency> -->
+        <dependency> 
+          <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+              <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <!-- field mapping -->
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-lgpl</artifactId>
+            <version>${codehaus.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-lgpl</artifactId>
+            <version>${codehaus.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <!-- dwr -->
+        <dependency>
+            <groupId>org.directwebremoting</groupId>
+            <artifactId>dwr</artifactId>
+            <version>3.0.RC2</version>
+        </dependency>
+        <!-- other -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.6</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency> -->
+         <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nutz</groupId>
+            <artifactId>nutz</artifactId>
+            <version>1.b.34</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.6.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>1.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <!-- Aliyun oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <!-- javamelody-core
+        <dependency>
+            <groupId>net.bull.javamelody</groupId>
+            <artifactId>javamelody-core</artifactId>
+            <version>1.53.0</version>
+        </dependency> -->
+        <!-- JavaMelody 监控 依赖 -->
+        <!--JavaMelody 核心jar包-->
+       <dependency>
+           <groupId>net.bull.javamelody</groupId>
+           <artifactId>javamelody-core</artifactId>
+           <version>1.53.0</version>
+       </dependency>
+   
+       <!-- itext, 用于支持 PDF 导出 -->
+       <dependency>
+          <groupId>com.lowagie</groupId>
+          <artifactId>itext</artifactId>
+          <version>2.1.7</version>
+          <exclusions>
+              <exclusion>
+                 <artifactId>bcmail-jdk14</artifactId>
+                 <groupId>bouncycastle</groupId>
+              </exclusion>
+              <exclusion>
+                 <artifactId>bcprov-jdk14</artifactId>
+                 <groupId>bouncycastle</groupId>
+              </exclusion>
+              <exclusion>
+                 <artifactId>bctsp-jdk14</artifactId>
+                 <groupId>bouncycastle</groupId>
+              </exclusion>
+         </exclusions>
+       </dependency>
+       <!-- 用于支持xml，json导出 -->
+       <dependency>
+             <groupId>com.thoughtworks.xstream</groupId>
+             <artifactId>xstream</artifactId>
+             <version>1.4.7</version>
+       </dependency>
+        <!-- 监控核心类，包含在JavaMelody 核心jar包，不用单独添加 -->
+       <dependency>
+            <groupId>org.jrobin</groupId>
+            <artifactId>jrobin</artifactId>
+            <version>1.5.9</version>
+       </dependency>
+       <!-- httpclient  xiaojinwang-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        <!-- JSON解析器  xiaojinwang -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+          <groupId>com.baidu.push</groupId>
+          <artifactId>baiduPush</artifactId>
+          <version>1.0</version>
+        </dependency>
+
+       <dependency>
+         <groupId>tebie.applib.api</groupId>
+         <artifactId>apiclient</artifactId>
+         <version>5.0</version>
+       </dependency>
+       
+       <dependency>
+         <groupId>commons-pool</groupId>
+         <artifactId>commons-pool</artifactId>
+         <version>1.6</version>
+       </dependency>
+        <!--CCP SMS SDK  荣联-->
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>CCP_REST_SDK_JAVA</artifactId>
+            <version>V2.7r</version>
+        </dependency>
+        
+        <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20140107</version>
+        </dependency>
+       
+        <!--CCP SMS SDK  荣联-->
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>CCP_REST_SDK_JAVA</artifactId>
+            <version>V2.7r</version>
+        </dependency>
+
+        <!--银联加密证书 -->
+        <dependency>
+            <groupId>com.gente</groupId>
+            <artifactId>merchant-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.xfire</groupId>
+            <artifactId>bcprov-jdk15</artifactId>
+            <version>133</version>
+        </dependency>
+
+        <!-- osworkflow -->
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>osworkflow</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>oscore</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>propertyset</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>2.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
+        
+        
+        <!-- aliyun sts -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-sts</artifactId>
+            <version>2.1.6</version>
+        </dependency>
+        
+        <!-- aliyun sms -->
+       <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!-- 不用这个了 -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-sms</artifactId>
+            <version>3.0.0-rc1</version>
+        </dependency>
+        
+        <!-- 新的短信sdk -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.boss</groupId>
+            <artifactId>boss-rpc-eduboss</artifactId>
+            <version>0.5.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.boss</groupId>
+            <artifactId>boss-rpc-mobile</artifactId>
+            <version>0.5.9</version>
+        </dependency>
+
+        <!-- rpc dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+
+        <!-- aliyun mq -->
+        <dependency>
+            <groupId>com.aliyun.openservices</groupId>
+            <artifactId>ons-client</artifactId>
+            <version>1.2.7.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-api -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-api</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-core -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-runtime -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-collectionschema -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-collectionschema</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-json -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-json</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.javacsv/javacsv -->
+        <dependency>
+            <groupId>net.sourceforge.javacsv</groupId>
+            <artifactId>javacsv</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        
+    </dependencies>
+    
+</project>

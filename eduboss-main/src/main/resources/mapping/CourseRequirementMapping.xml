@@ -1,0 +1,110 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.CourseRequirement</class-a>
+		<class-b>com.eduboss.domainVo.CourseRequirementSearchResultVo</class-b>
+	
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>student.gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>courseArranger.name</a>
+			<b>courseArrangerName</b>
+		</field>
+		<field>
+			<a>studyManager.name</a>
+			<b>studyManagerName</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>courseTime.name</a>
+			<b>courseTime</b>
+		</field>
+		<field>
+			<a>requirementCetegory.name</a>
+			<b>requirementCetegoryName</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.CourseRequirement</class-a>
+		<class-b>com.eduboss.dto.CourseRequirementEditVo</class-b>
+	
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+<!-- 		<field> -->
+<!-- 			<a>teacher.name</a> -->
+<!-- 			<b>teacherName</b> -->
+<!-- 		</field> -->
+		<field>
+			<a>courseArranger.userId</a>
+			<b>courseArrangerId</b>
+		</field>
+<!-- 		<field> -->
+<!-- 			<a>courseArranger.name</a> -->
+<!-- 			<b>courseArrangerName</b> -->
+<!-- 		</field> -->
+		<field>
+			<a>studyManager.userId</a>
+			<b>studyManagerId</b>
+		</field>
+<!-- 		<field> -->
+<!-- 			<a>studyManager.name</a> -->
+<!-- 			<b>studyManagerName</b> -->
+<!-- 		</field> -->
+		<field>
+			<a>grade.value</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>subject.value</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>courseTime.value</a>
+			<b>courseTime</b>
+		</field>
+        <field>
+            <a>createUser.name</a>
+            <b>createUserName</b>
+        </field>
+
+    </mapping>
+</mappings>

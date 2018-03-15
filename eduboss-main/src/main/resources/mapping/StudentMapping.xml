@@ -1,0 +1,299 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.Student</class-a>
+		<class-b>com.eduboss.domainVo.StudentVo</class-b>
+		<field>
+			<a>gradeDict.name</a>
+			<b>gradeName</b>
+		</field>
+		<field>
+			<a>gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+		
+		<field>
+			<a>school.name</a>
+			<b>schoolName</b>
+		</field>
+		<field>
+			<a>school.id</a>
+			<b>schoolId</b>
+		</field>
+
+		<field>
+			<a>schoolTemp.id</a>
+			<b>schoolTempId</b>
+		</field>
+
+		<field>
+			<a>schoolTemp.name</a>
+			<b>schoolTempName</b>
+		</field>
+
+		<field>
+			<a>studyManeger.name</a>
+			<b>studyManegerName</b>
+		</field>
+		
+		<field>
+			<a>status.value</a>
+			<b>status</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		
+		<field>
+            <a>oneOnOneStatus.value</a>
+            <b>oneOnOneStatus</b>
+        </field>
+        <field>
+            <a>oneOnOneStatus.name</a>
+            <b>oneOnOneStatusName</b>
+        </field>
+        
+        <field>
+            <a>smallClassStatus.value</a>
+            <b>smallClassStatus</b>
+        </field>
+        <field>
+            <a>smallClassStatus.name</a>
+            <b>smallClassStatusName</b>
+        </field>
+         <field>
+            <a>oneOnManyStatus.value</a>
+            <b>oneOnManyStatus</b>
+        </field>
+        <field>
+            <a>oneOnManyStatus.name</a>
+            <b>oneOnManyStatusName</b>
+        </field>
+	</mapping>
+	
+	 <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domainVo.StudentVo</class-a>
+		<class-b>com.eduboss.domainVo.CurtailStudentVo</class-b>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="studentJdbc">
+		<class-a>com.eduboss.domainJdbc.StudentJdbc</class-a>
+		<class-b>com.eduboss.domainVo.StudentVo</class-b>
+		<field>
+			<a>studyManagerName</a>
+			<b>studyManegerName</b>
+		</field>
+		
+		<field>
+			<a>status.value</a>
+			<b>status</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+		<field>
+            <a>oneOnOneStatus.value</a>
+            <b>oneOnOneStatus</b>
+        </field>
+        <field>
+            <a>oneOnOneStatus.name</a>
+            <b>oneOnOneStatusName</b>
+        </field>
+        
+        <field>
+            <a>smallClassStatus.value</a>
+            <b>smallClassStatus</b>
+        </field>
+        <field>
+            <a>smallClassStatus.name</a>
+            <b>smallClassStatusName</b>
+        </field>
+         <field>
+            <a>oneOnManyStatus.value</a>
+            <b>oneOnManyStatus</b>
+        </field>
+        <field>
+            <a>oneOnManyStatus.name</a>
+            <b>oneOnManyStatusName</b>
+        </field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="smallClassStudentJdbc">
+		<class-a>com.eduboss.domainJdbc.SmallClassStudentJdbc</class-a>
+		<class-b>com.eduboss.domainVo.SmallClassStudentVo</class-b>
+		<field>
+			<a>contact</a>
+			<b>studentcontact</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>studentStatus</b>
+		</field>
+		<field>
+            <a>smallClassStatus.name</a>
+            <b>miniClassStudentStatus</b>
+        </field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="promiseClassStudentJdbc">
+		<class-a>com.eduboss.domainJdbc.PromiseClassStudentJdbc</class-a>
+		<class-b>com.eduboss.domainVo.PromiseClassStudentVo</class-b>
+		<field>
+			<a>contact</a>
+			<b>studentcontact</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>studentStatus</b>
+		</field>
+		<field>
+            <a>primiseClassStatus.name</a>
+            <b>primiseClassStatus</b>
+        </field>
+        <field>
+            <a>quantityInProduct</a>
+            <b>productHours</b>
+        </field>
+         <field>
+            <a>contractProductStatus.name</a>
+            <b>contractProductStatus</b>
+        </field>
+        <field>
+            <a>planAmount</a>
+            <b>amount</b>
+        </field>
+	</mapping>
+
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="rpcStudentInnerVo">
+		<class-a>com.eduboss.domain.Student</class-a>
+		<class-b>com.eduboss.rpc.dto.Student</class-b>
+		<field>
+			<a>id</a>
+			<b>studentID</b>
+		</field>
+		<field>
+			<a>sex</a>
+			<b>gender</b>
+		</field>
+		<field>
+			<a>provice</a>
+			<b>province.id</b>
+		</field>
+		<field>
+			<a>city</a>
+			<b>city.id</b>
+		</field>
+		<field>
+			<a>school.id</a>
+			<b>school.id</b>
+		</field>
+		<field>
+			<a>school.name</a>
+			<b>school.text</b>
+		</field>
+		<field>
+			<a>gradeDict.id</a>
+			<b>grade.id</b>
+		</field>
+		<field>
+			<a>gradeDict.name</a>
+			<b>grade.text</b>
+		</field>
+	</mapping>
+
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="rpcStudentVo">
+		<class-a>com.eduboss.domain.Student</class-a>
+		<class-b>org.boss.rpc.eduboss.service.dto.StudentRpcVo</class-b>
+		<field>
+			<a>id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>provice</a>
+			<b>provinceNo</b>
+		</field>
+		<field>
+			<a>city</a>
+			<b>cityNo</b>
+		</field>
+		<field>
+			<a>school.id</a>
+			<b>schoolNo</b>
+		</field>
+		<field>
+			<a>school.name</a>
+			<b>schoolName</b>
+		</field>
+		<field>
+			<a>gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>gradeDict.name</a>
+			<b>gradeName</b>
+		</field>
+		<field>
+		  <a>bothday</a>
+		  <b>birthday</b>
+		</field>
+	</mapping>
+
+
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="saveStudent">
+		<class-a>org.boss.rpc.eduboss.service.dto.StudentRpcVo</class-a>
+		<class-b>com.eduboss.rpc.dto.Student</class-b>
+		<field>
+			<a>studentID</a>
+			<b>studentID</b>
+		</field>
+		<field>
+			<a>provinceNo</a>
+			<b>province.id</b>
+		</field>
+		<field>
+			<a>cityNo</a>
+			<b>city.id</b>
+		</field>
+		<field>
+			<a>schoolNo</a>
+			<b>school.id</b>
+		</field>
+		<field>
+			<a>gradeId</a>
+			<b>grade.id</b>
+		</field>
+	</mapping>
+
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="saveStudentInner">
+		<class-a>com.eduboss.rpc.dto.StudentVo</class-a>
+		<class-b>com.eduboss.rpc.dto.Student</class-b>
+		<field>
+			<a>studentID</a>
+			<b>studentID</b>
+		</field>
+		<field>
+			<a>provinceID</a>
+			<b>province.id</b>
+		</field>
+		<field>
+			<a>cityID</a>
+			<b>city.id</b>
+		</field>
+		<field>
+			<a>schoolID</a>
+			<b>school.id</b>
+		</field>
+		<field>
+			<a>gradeID</a>
+			<b>grade.id</b>
+		</field>
+	</mapping>
+
+</mappings>

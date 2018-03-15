@@ -1,0 +1,22 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.Resource</class-a>
+		<class-b>com.eduboss.domainVo.ResourceVo</class-b>
+		
+		<field>
+			<a>stateType.id</a>
+			<b>stateType</b>
+		</field>
+		<field>
+			<a>stateType.name</a>
+			<b>stateTypeName</b>
+		</field>
+		<field>
+			<a>rtype.value</a>
+			<b>rtype</b>
+		</field>
+	</mapping>
+	
+</mappings>

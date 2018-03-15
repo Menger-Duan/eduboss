@@ -1,0 +1,74 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+	<class-a>com.eduboss.domain.StudentAchievement</class-a>
+	<class-b>com.eduboss.domainVo.StudentAchievementVo</class-b>
+	
+	   <field>
+            <a>student.id</a>
+            <b>studentId</b>
+        </field>
+        
+        <field>
+            <a>achievementTemplate.id</a>
+            <b>achievementTemplateId</b>
+        </field>
+        
+        <field>
+            <a>schoolYear.id</a>
+            <b>schoolYearId</b>
+        </field>
+        <field>
+            <a>schoolYear.name</a>
+            <b>schoolYearName</b>
+        </field>
+        
+        <field>
+            <a>grade.id</a>
+            <b>gradeId</b>
+        </field>
+        <field>
+            <a>grade.name</a>
+            <b>gradeName</b>
+        </field>
+        
+        <field>
+            <a>semester.name</a>
+            <b>semesterName</b>
+        </field>
+        <field>
+            <a>semester.value</a>
+            <b>semesterValue</b>
+        </field>
+        
+        <field>
+            <a>examinationType.id</a>
+            <b>examinationTypeId</b>
+        </field>
+        <field>
+            <a>examinationType.name</a>
+            <b>examinationTypeName</b>
+        </field>
+        
+         <field>
+            <a>city.id</a>
+            <b>cityId</b>
+        </field>
+        <field>
+            <a>city.name</a>
+            <b>cityName</b>
+        </field>
+        
+        <field>
+            <a>achievementType.name</a>
+            <b>achievementTypeName</b>
+        </field>
+        <field>
+            <a>achievementType.value</a>
+            <b>achievementTypeValue</b>
+        </field>
+        
+	</mapping>
+
+</mappings>

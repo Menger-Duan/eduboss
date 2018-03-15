@@ -1,0 +1,35 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.PromiseClass</class-a>
+	<class-b>com.eduboss.domainVo.PromiseClassVo</class-b>
+
+	<field>
+		<a>pSchool.id</a>
+		<b>pSchoolId</b>
+	</field>
+	
+	<field>
+		<a>pSchool.name</a>
+		<b>pSchoolName</b>
+	</field>
+	<field>
+	    <a>head_teacher.userId</a>
+	    <b>head_teacherId</b>
+	</field>
+	<field>
+	    <a>head_teacher.name</a>
+	    <b>head_teacherName</b>
+	</field>
+	<field>
+		<a>year.id</a>
+		<b>yearId</b>
+	</field>
+	<field>
+		<a>year.name</a>
+		<b>yearName</b>
+	</field>
+	
+</mapping>
+</mappings>

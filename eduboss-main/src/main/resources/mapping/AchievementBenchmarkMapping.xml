@@ -1,0 +1,86 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd hh:mm:ss" map-null="false">
+	<class-a>com.eduboss.domain.AchievementBenchmark</class-a>
+	<class-b>com.eduboss.domainVo.AchievementBenchmarkVo</class-b>
+	
+	   <field>
+            <a>studentAchievement.id</a>
+            <b>studentAchievementId</b>
+        </field>
+	
+	   <field>
+            <a>benchmarkSubject.subject.id</a>
+            <b>subjectId</b>
+        </field>
+	   <field>
+            <a>benchmarkSubject.subject.name</a>
+            <b>subjectName</b>
+        </field>
+	
+	   <field>
+            <a>benchmarkAchievementType.value</a>
+            <b>achievementTypeValue</b>
+        </field>
+	   <field>
+            <a>benchmarkAchievementType.name</a>
+            <b>achievementTypeName</b>
+        </field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false" map-id="detailBenchmarkVo">
+        <class-a>com.eduboss.domain.AchievementBenchmark</class-a>
+        <class-b>com.eduboss.domainVo.AchievementBenchmarkDetailVo</class-b>
+        <field>
+	        <a>benchmarkAchievementType.name</a>
+	        <b>benchmarkAchievementTypeName</b>
+	    </field>
+	     <field>
+            <a>benchmarkAchievementType.value</a>
+            <b>benchmarkAchievementTypeValue</b>
+        </field>
+	    
+	    <field>
+	        <a>benchmarkCategory.name</a>
+	        <b>benchmarkCategoryName</b>
+	    </field>
+	    
+	     <field>
+            <a>studentAchievement.examinationDate</a>
+            <b>benckmarkExaminationDate</b>
+        </field>
+        
+	    <field>
+	        <a>compareAchievementType.name</a>
+	        <b>compareAchievementTypeName</b>
+	    </field>
+	    <field>
+	        <a>compareCategory.name</a>
+	        <b>compareCategoryName</b>
+	    </field>
+	    <field>
+            <a>standardCategory.value</a>
+            <b>standardCategoryValue</b>
+        </field>
+	    <field>
+	        <a>standardCategory.name</a>
+	        <b>standardCategoryName</b>
+	    </field>
+	    <field>
+	        <a>benchmarkType.name</a>
+	        <b>benchmarkTypeName</b>
+	    </field>
+	    
+	    <field>
+            <a>benchmarkSubject.subject.id</a>
+            <b>subjectId</b>
+        </field>
+       <field>
+            <a>benchmarkSubject.subject.name</a>
+            <b>subjectName</b>
+        </field>
+    </mapping>
+
+</mappings>
+

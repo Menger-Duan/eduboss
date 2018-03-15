@@ -1,0 +1,107 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a  map-null="false"  map-empty-string="false">com.eduboss.domain.CustomerFolowup</class-a>
+		<class-b>com.eduboss.domainVo.CustomerFolowupVo</class-b>
+		<field>
+			<a>customer.id</a>
+			<b>customerId</b>
+		</field>
+		<field>
+			<a>customer.name</a>
+			<b>customerName</b>
+		</field>
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		<field>
+			<a>satisficing.id</a>
+			<b>satisficing</b>
+		</field>
+		<field>
+			<a>satisficing.name</a>
+			<b>satisficingName</b>
+		</field>
+		<field>
+			<a>intentionOfTheCustomer.id</a>
+			<b>intentionOfTheCustomerId</b>
+		</field>
+		<field>
+			<a>intentionOfTheCustomer.name</a>
+			<b>intentionOfTheCustomerName</b>
+		</field>
+		<field>
+			<a>intentionSubject.id</a>
+			<b>intentionSubjectId</b>
+		</field>
+		<field>
+			<a>intentionSubject.name</a>
+			<b>intentionSubjectName</b>
+		</field>
+		<field>
+			<a>purchasingPower.id</a>
+			<b>purchasingPowerId</b>
+		</field>
+		<field>
+			<a>purchasingPower.name</a>
+			<b>purchasingPowerName</b>
+		</field>
+		
+		<field>
+			<a>meetingConfirmUser.name</a>
+			<b>meetingConfirmUserName</b>
+		</field>
+		<field>
+			<a>customer.contact</a>
+			<b>cusMobile</b>
+		</field>
+		<field>
+			<a>appointCampus.id</a>
+			<b>appointCampusId</b>
+		</field>
+		<field>
+			<a>appointCampus.name</a>
+			<b>appointCampusName</b>
+		</field>
+		<field>
+			<a>followStudent.id</a>
+			<b>followStuId</b>
+		</field>
+		<field>
+			<a>followStudent.name</a>
+			<b>followStuName</b>
+		</field>		
+
+		<field>
+			<a>agencyUser.userId</a>
+			<b>agencyUserId</b>
+		</field>
+		<field>
+			<a>agencyUser.name</a>
+			<b>agencyUserName</b>
+		</field>		 
+		
+	</mapping>
+	
+	<!-- 前台客户登记记录 start  -->
+	<mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a  map-null="false"  map-empty-string="false">com.eduboss.domain.CustomerFolowup</class-a>
+		<class-b>com.eduboss.domainVo.ReceptionistCustomerVo</class-b>
+		<field>
+			<a>meetingConfirmUser.name</a>
+			<b>meetingConfirmUserName</b>
+		</field>
+		<field>
+			<a>meetingConfirmUser.userId</a>
+			<b>meetingConfirmUserId</b>
+		</field>
+	</mapping>
+		
+	<!-- 前台客户登记记录 end  -->
+</mappings>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title id="systemName"></title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/bootstrap.min.css?_auto_version_">
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/font-awesome.min.css?_auto_version_">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-production.min.css?_auto_version_">
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-skins.min.css?_auto_version_">
+
+		<!-- SmartAdmin RTL Support is under construction
+			 This RTL CSS will be released in version 1.5
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css?_auto_version_"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css?_auto_version_"> -->
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="framework/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="framework/img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"> -->
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="framework/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="framework/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="framework/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="framework/img/splash/touch-icon-ipad-retina.png">
+
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="framework/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="framework/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="framework/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		
+        <link rel="stylesheet" type="text/css" media="all" href="components/jquery-easyui-1.4.1/themes/default/easyui.css?_auto_version_">
+        <link rel="stylesheet" type="text/css" href="components/jquery-easyui-1.4.1/themes/icon.css?_auto_version_">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css?_auto_version_">
+        <link rel="stylesheet" type="text/css" media="all" href="css/print.css?_auto_version_">
+        <link rel="stylesheet" type="text/css" href="css/bossicon/iconfont.css?_auto_version_">
+        
+        <style>
+            /*多tab css覆盖start*/
+            .tabs{
+                border-top: 1px solid!important;
+                background-color: #494846;
+                border-color: #494846;
+                border: 0px!important;
+                padding-left: 15px;
+            }
+            .tabs-header{
+                background-color: #494846;
+            }
+            .tabs li.tabs-selected a.tabs-inner,.tabs li a.tabs-inner:hover{
+                background: url(framework/img/mybg.png) #EDEDED!important;
+            }
+            .tabs li.tabs-selected a.tabs-inner,.tabs li a.tabs-inner:hover{
+                border-bottom: 1px solid #EDEDED!important;
+            }
+            .tabs li a.tabs-inner{
+                color: #ccc;
+                background: none!important;
+                border-color: #888;
+                border-bottom: 1px solid #494846!important;
+            }
+            .tabs-container .panel-body{
+                background: url(framework/img/mybg.png) #EDEDED;
+            }
+            .tabs-p-tool:hover,.tabs-close:hover{
+                border-radius: 7px;
+            }
+            .tabs-scroller-left{
+                border: none;
+                background: url('images/tab-left.png') no-repeat 1px center;;
+            }
+            .tabs-scroller-right{
+                border: none;
+                background: url('images/tab-right.png') no-repeat 1px center;;
+            }
+            #mainTabs .icon-mini-refresh{
+                background: url('images/mini_refresh_index.png') no-repeat center center;
+            }
+            #mainTabs .tabs-close:hover,#mainTabs .icon-mini-refresh:hover{
+                background-color: #ededed;
+            }
+            #mainTabs .tabs-close{
+                background: url('images/tabs_icons_index.png') no-repeat -34px center;
+                /*top: 0px;*/
+                right: 2px;
+            }
+            /*多tab css覆盖end*/
+        </style>
+	</head>
+
+	<!--
+
+	TABLE OF CONTENTS.
+
+	Use search to find needed section.
+
+	===================================================================
+
+	|  01. #CSS Links                |  all CSS links and file paths  |
+	|  02. #FAVICONS                 |  Favicon links and file paths  |
+	|  03. #GOOGLE FONT              |  Google font link              |
+	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+	|  05. #BODY                     |  body tag                      |
+	|  06. #HEADER                   |  header tag                    |
+	|  07. #PROJECTS                 |  project lists                 |
+	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+	|  09. #MOBILE                   |  mobile view dropdown          |
+	|  10. #SEARCH                   |  search field                  |
+	|  11. #NAVIGATION               |  left panel & navigation       |
+	|  12. #MAIN PANEL               |  main panel                    |
+	|  13. #MAIN CONTENT             |  content holder                |
+	|  14. #PAGE FOOTER              |  page footer                   |
+	|  15. #SHORTCUT AREA            |  dropdown shortcuts area       |
+	|  16. #PLUGINS                  |  all scripts and plugins       |
+
+	===================================================================
+
+	-->
+
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-skin-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL (will be avilable from version SmartAdmin 1.5)
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-footer'      - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body id="bodyId" class=" fixed-navigation" style="background-color: #EDEDED;">
+
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo" style="margin-top:3px;"> <img id="logoPic" src="framework/img/logo.png" alt="EDUBOSS"  style="height: 40px;width: 162px;"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+					 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown" style="border: 0px;background: transparent;"> <i style="color:#3A3633;font-size: 26px;" class="fa fa-comments"></i> <b id="totalNofityCount" class="badge"> 0 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown" style="width:520px;">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default" id="task-label">
+							<input type="radio" name="activity" id="function/notify/task.html">
+							预约信息 </label>
+						<!-- <label class="btn btn-default">
+							<input type="radio" name="activity" id="function/notify/mailList.html">
+						我的邮件 </label>  -->
+						<!-- <label class="btn btn-default">
+							<input type="radio" name="activity" id="function/notify/notification.html">
+							我的消息 </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="function/notify/systemNotice.html">
+							通知公告 </label> 
+						-->
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll" style="overflow-x: hidden;overflow-y: hidden;">
+
+						<div class="alert alert-transparent">
+							<h4>点击分类查看消息</h4>
+							暂无消息
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> 最后刷新时间: <span id="last-reflush-time">12/12/2013 9:43AM</span>
+						<button type="button" id="reflush"  class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- #PROJECTS: projects dropdown -->
+			<!-- <div class="project-context hidden-xs">
+
+				<span class="label"> 实时滚动消息 </span>
+				<span class="project-selector dropdown-toggle" data-toggle="dropdown"> 最新消息 <i class="fa fa-angle-down"></i></span>
+
+				Suggestion: populate this list with fetch and push technique
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript:void(0);">无</a>
+					</li>
+
+					<li class="divider"></li>
+					<li>
+						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> 清除 </a>
+					</li>
+				</ul>
+				end dropdown-menu
+
+			</div> -->
+			<!-- end projects dropdown -->
+			<!-- <input id="messageUserId" value="112233"/><input id="messageDetail" value="测试消息"/>
+			<button onclick="sendTextMessage()"> 发送消息</button> -->
+
+			<!-- <button id="testsendmessage">send</button>-->
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="j_spring_security_logout" title="Sign Out" data-action="userLogout" data-logout-msg="" style="font-size:1em;padding:5px;"><i class="fa fa-sign-out"></i>安全退出</a>  </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="framework/img/avatars/sunny.png" alt="John Doe" class="online" />
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#ajax/profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<div id="search-mobile" class=" transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search" ><i class="fa fa-search"></i></a> </span>
+				</div>
+				<!-- end search mobile button -->
+
+				<!-- modifyPwd button -->
+				<!-- <div id="modifyPwd" class="btn-header transparent pull-right">
+					<span> <a id="updatePwdByTop" title="Modify Password" data-action="modifyPwd" data-logout-msg="" style="font-size:1em;padding:5px;"><i class="fa fa-lock"></i>修改密码</a>  </span>
+				</div> -->
+				<!-- end modifyPwd button -->
+
+				<!-- #SEARCH -->
+				<!-- input: search field -->
+                <form class="header-search pull-right" onsubmit="javascript:return false;">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="search-fld" type="text" name="param" placeholder="检索常见问题" class="" autocomplete="off">
+                    <button type="submit" id="search-fld-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+                </form>
+				<!-- end input: search field -->
+				<!-- 邮件 begin -->
+				<div class="activity-popover-ext transparent pull-right">
+				  <!-- 1、图标展示 -->
+				  <!--  <span class="activity-dropdown-ext" style="border: 0px;background: transparent;" src="function/notify/mailList.html"> 
+				        <i style="color:#3A3633;font-size: 26px;" class="fa fa-envelope" title="我的邮件"></i> 
+				        <b id="newMailCount-icon" class="badge" style="display: none"></b> 
+				  </span> -->
+				  <!-- 2、文字展示 -->
+				  <!-- <span class="activity-dropdown-ext" style="border: 0px;background: transparent; width: 60px; margin-top: 7px" src="function/notify/mailList.html"> 
+				        <a style="color:#3276b1;font-size: 13px; font-weight:500">登陆邮箱</a>
+				        <b id="newMailCount-icon" class="badge" style="display: none; right: -7px;"></b> 
+				  </span> -->
+				  <div class="ajax-dropdown-ext" style="width:545px;">				
+				      <div class="ajax-dropdown-ext-close"><i style="font-size: 26px; color:#0080ff;" class="fa fa-times-circle" title="关闭"></i> </div>	  
+	                  <div class="ajax-dropdown-ext-content" style="overflow-x: hidden;overflow-y: hidden;"></div>                  
+				  </div>                  
+               </div>
+                <!-- 邮件 end -->
+				<div class="btn-header transparent pull-right">
+                    <ul class="nav navbar-nav ">
+                        <li id="myCollection" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="myCollectionDropdownMenu" >
+                                                                  我的收藏 
+                                 <b class="caret"></b>
+                            </a>           
+                        </li>
+                        <ul id="myCollectionList" class="dropdown-menu" role="menu" aria-labelledby="myCollectionDropdownMenu" style="width: 360px"></ul>
+                   </ul>
+               </div>
+               
+               <!--<div class="pull-right" style="padding-top: 16px;" id="showIM">
+               </div>  -->
+               
+               <!--前台模式切换 start-->
+			   <div class="btn-header transparent pull-right hide" id="receptionMode" style="margin-right: 10px">
+				<div class="btn-header transparent">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" style="position: relative;">
+                        	<a class="dropdown-toggle headNav"  data-toggle="dropdown"  href="#"  style="font-weight:500;">
+                        		<span id="receptionModeText" data-mode="1" style="line-height:0;height:0;">普通模式</span>
+               					<b class="caret"></b>
+               				</a>
+		                    <ul id="receptionModeList" class="dropdown-menu"  role="menu">
+		                    	<li><a href="javascript:;" data-mode="0">前台模式</a></li>
+		                    	<li><a href="javascript:;" data-mode="1">普通模式</a></li>
+		                    </ul>
+                        </li>
+                   </ul>
+                </div>
+              </div>
+               <!--前台模式切换 end-->
+				<!-- 新版 end -->
+				<div id="newFront"  class="activity-popover-ext transparent pull-right" style="    padding-top: 15px;">
+				       <a style="color:#3276b1;font-size: 13px; font-weight:500">新版</a>
+				</div>
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel" style="/*overflow-y:auto;*/ ">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as is -->
+
+					<a href="javascript:void(0);" ><!-- id="show-shortcut"  -->
+						<img src="framework/img/avatars/male.png" alt="me" class="online" style="border-left:0px;"/>
+						<span id="loginUserRoleName">
+
+						</span>
+						<span id="loginUserName">
+
+						</span>
+						<!-- <i class="fa fa-angle-down"></i> -->
+					</a>
+
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+			<nav>
+				<!--
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li class="">
+						<a href="function/welcome.html" title="欢迎使用"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">欢迎使用</span></a>
+					</li>
+					<li style='padding:10px;color:white;'><i class='fa fa-gear fa-lg fa-spin'></i> 加载中...</li>
+				</ul>
+			</nav>
+
+			<span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+
+			<div class="copyright txt-color-white" id="copyRight"></div>
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- #MAIN PANEL -->
+		<div id="main" role="main" style="padding:0px;min-height:0px;">
+            <div style="background-color: #494846;height: 10px"></div>
+            <div id="mainTabs" style="overflow-y:auto;margin-top: -2px;">
+
+            </div>
+            <ul id="mainTabsMenu" style="display: none;">
+                <li><i class="pull-left icon-reload" style="height: 20px;width: 20px;;"></i><a data-options="iconCls:'icon-reload'">刷新</a></li>
+                <li><i class="pull-left icon-no" style="height: 20px;width: 20px;;"></i><a data-options="iconCls:'icon-no'">关闭其他</a></li>
+                <li><i class="pull-left icon-no" style="height: 20px;width: 20px;;"></i><a data-options="iconCls:'icon-no'">关闭所有</a></li>
+            </ul>
+            
+            
+            <div class="modal fade" data-backdrop="static" id="guideLineDetail"
+	           tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	        <div class="modal-dialog" style="width: 1000px">
+		    <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myGuideLineModalLabel">当前页面说明</h4>
+				
+			</div>
+			<div class="modal-body" style="padding:10px;">
+				<form class="form-horizontal" novalidate="novalidate">
+					<fieldset>
+						<div class="row"
+							style="width:100%;padding-top:20px;padding-left:25px;">
+							<p style="word-wrap: break-word;"
+								id="guideLineContent"></p>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="closeButton" class="btn btn-default pull-right"
+					data-dismiss="modal">关闭</button>
+			</div>
+		  </div>
+	     </div>
+        </div>
+            
+            
+		</div>
+		<!-- END #MAIN PANEL -->
+
+		<!-- #PAGE FOOTER -->
+		<!-- <div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">EDU BOSS, Copyright © 2013-2014, All Rights Reserved</span>
+				</div>
+				end col
+			</div>
+			end row
+		</div> -->
+		<!-- END FOOTER -->
+
+		<!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+			 Note: These tiles are completely responsive, you can add as many as you like -->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#function/workbrenh/consultor.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>咨询师工作台 <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#function/workbrenh/receptionist.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>前台工作台</span> </span> </a>
+				</li>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>新客户录入</span> </span> </a>
+				</li>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>合同录入 </span> </span> </a>
+				</li>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>新学生录入 </span> </span> </a>
+				</li>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>业绩报表 </span> </span> </a>
+				</li>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>备忘录 </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js?_auto_version_"></script>-->
+
+		<!-- #PLUGINS -->
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js?_auto_version_"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.0.2.min.js?_auto_version_"><\/script>');
+			}
+		</script> -->
+		
+		<!-- 切换前台模式弹框  -->
+		
+		<div class="modal fade" data-backdrop="static"  tabindex="-1" role="dialog" id="receptionModeModal" >
+			<div class="modal-dialog" style="width:480px;">
+				<form class="form-horizontal" id="receptionModeForm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">密码验证</h4>
+						</div>
+						<div class="modal-body" style="padding: 40px 70px 30px">
+							<div style="color: #999;">
+								<span class="bossicon bossicon-info" style="vertical-align: middle; font-size: 15px;"></span>
+							 	<span>为了保障你的账号安全，操作前需要验证你的账号密码</span>
+							</div>
+							<div style="margin-top:15px;">
+								<input type="password" name="password" class="form-control required" placeHolder="请输入当前账号的密码">
+							</div>
+							<div class="tips-text" style="color: #d44950; font-style: italic; margin-top: 5px;">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								取消
+							</button>
+							<button type="submit" class="btn btn-primary btn-save">
+								确定
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<!-- 切换前台模式弹框  END -->		
+		
+		
+		
+		<script src="framework/js/libs/jquery-2.0.2.min.js?_auto_version_"></script>
+
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js?_auto_version_"></script> -->
+		<!-- <script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js?_auto_version_"><\/script>');
+			}
+		</script> -->
+		<script src="framework/js/libs/jquery-ui-1.10.3.min.js?_auto_version_"></script>
+
+        <script src="components/jquery-easyui-1.4.1/plugins/jquery.parser.js?_auto_version_"></script>
+        <script src="components/jquery-easyui-1.4.1/plugins/jquery.panel.js?_auto_version_"></script>
+        <script src="components/jquery-easyui-1.4.1/plugins/jquery.tabs.js?_auto_version_"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="framework/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js?_auto_version_"></script>
+
+		<!-- BOOTSTRAP JS -->
+		<script src="framework/js/bootstrap/bootstrap.min.js?_auto_version_"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="framework/js/notification/SmartNotification.min.js?_auto_version_"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="framework/js/smartwidgets/jarvis.widget.min.js?_auto_version_"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="framework/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js?_auto_version_"></script>
+
+		<!-- SPARKLINES -->
+		<script src="framework/js/plugin/sparkline/jquery.sparkline.min.js?_auto_version_"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="framework/js/plugin/jquery-validate/jquery.validate.min.js?_auto_version_"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="framework/js/plugin/masked-input/jquery.maskedinput.min.js?_auto_version_"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="framework/js/plugin/select2/select2.min.js?_auto_version_"></script>
+		<script src="framework/js/plugin/select2/select2_locale_zh-CN.js?_auto_version_"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="framework/js/plugin/bootstrap-slider/bootstrap-slider.min.js?_auto_version_"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="framework/js/plugin/msie-fix/jquery.mb.browser.min.js?_auto_version_"></script>
+
+		<!-- FastClick: For mobile devices: you can disable this in app.js -->
+		<script src="framework/js/plugin/fastclick/fastclick.min.js?_auto_version_"></script>
+
+		<!--[if IE 8]>
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+		<![endif]-->
+
+		<!-- <script src="js/plugin/bootstraptree/bootstrap-tree.min.js?_auto_version_"></script> -->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="framework/js/app.js?_auto_version_"></script>
+
+		<script src="framework/js/plugin/jquery-form/jquery-form.min.js?_auto_version_"></script>
+
+		<!-- <script>
+	    var pathToDwrServlet = "http://directwebremoting.org/dwr-demo/dwr"; // Path to dwr on foreign domain
+	  </script> -->
+		<!-- <script type='text/javascript' src='dwr/engine.js'></script>
+		<script type='text/javascript' src='dwr/util.js'></script>
+		<script type='text/javascript' src='dwr/interface/dwrMessageManager.js'></script> -->
+
+		<!-- dwr push message -->
+		<!-- <script src='components/dwr/engine.js'></script>
+		<script src='components/dwr/util.js'></script>
+		<script src='dwr/interface/dwrMessageManager.js'></script> -->
+
+		<!-- project commen function js, for earch sub function page, link its js in the page -->
+		<script src="js/common.js?_auto_version_"></script>
+
+		<script src="js/index.js?_auto_version_"></script>
+		
+		<script src="js/commontoolbar.js?_auto_version_"></script>
+
+		<script src="js/jquery.PrintArea.js?_auto_version_"></script>
+
+		<script src="js/system/userpersonalmanage.js?_auto_version_"></script>
+		
+		<!-- 读取LOGO-->
+		<!-- <script type="text/javascript">
+			$(document).ready(function(){
+				$.get(EduBoss.serviceApi.getSystemConfigList,{"tag":"systemInfo","group.id":Index.getLoginUser().grounpId},function(data){
+				//alert(data.tag);
+				if(data.length>0){
+					$.each(data,function(i,item){
+						if("systemInfo" == item.tag){
+						var val = item.remark.substring(1);
+							$("#logoPic").attr("src",val.substring(val.indexOf("/")));
+							//alert(item.remark);
+						}
+					});
+				}
+				});
+			});
+		</script> --> 
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$.get(EduBoss.serviceApi.getSystemConfigList,{"tag":"systemInfo","group.id":Index.getLoginUser().grounpId},function(data){
+				if(data.length>0){
+					$.each(data,function(i,item){
+						if("systemInfo" == item.tag){
+							var val = item.remark;
+							$("#logoPic").attr("src",val);
+						}
+					});
+				}
+				});
+			});
+			$(document).resize(function(){
+				$("iframe").height("100%");
+			});
+		</script> 
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<!-- <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script> -->
+
+	<!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253266024'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D1253266024%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script> -->
+
+	<div id="modify-pwd-content"></div>
+
+	</body>
+
+
+
+
+</html>

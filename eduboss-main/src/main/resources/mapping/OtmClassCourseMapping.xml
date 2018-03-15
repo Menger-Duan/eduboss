@@ -1,0 +1,160 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.OtmClassCourse</class-a>
+		<class-b>com.eduboss.domainVo.OtmClassCourseVo</class-b>
+		
+		<field>
+			<a>otmClass.otmClassId</a>
+			<b>otmClassId</b>
+		</field>
+		
+		<field>
+			<a>otmClass.name</a>
+			<b>otmClassName</b>
+		</field>		
+		<field>
+			<a>otmClass.blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>otmClass.blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		
+		<field>
+			<a>courseStatus.value</a>
+			<b>courseStatus</b>
+		</field>
+		<field>
+			<a>courseStatus.name</a>
+			<b>courseStatusName</b>
+		</field>
+		
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subjectName</b>
+		</field>
+		
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>gradeName</b>
+		</field>
+		
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		<field>
+            <a>teacher.contact</a>
+            <b>teacherMobile</b>
+        </field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false" map-id="commonClassCourseVo_3">
+		<class-a>com.eduboss.domainVo.OtmClassCourseVo</class-a>
+		<class-b>com.eduboss.domainVo.CommonClassCourseVo</class-b>		
+			<field>
+			<a>otmClassCourseId</a>
+			<b>courseId</b>
+		</field>
+		<field>
+			<a>otmClassId</a>
+			<b>classId</b>
+		</field>
+		
+		<field>
+			<a>otmClassName</a>
+			<b>className</b>
+		</field>
+		
+		<field>
+			<a>blCampusId</a>
+			<b>campusId</b>
+		</field>
+		
+		<field>
+			<a>blCampusName</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>subjectName</a>
+			<b>subject</b>
+		</field>
+		
+		<field>
+			<a>gradeName</a>
+			<b>grade</b>
+		</field>
+		
+		<field>
+			<a>subjectId</a>
+			<b>subjectId</b>
+		</field>
+		
+		<field>
+			<a>gradeId</a>
+			<b>gradeId</b>
+		</field>
+		
+		<field>
+			<a>teacherId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teacherName</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>teacherMobile</a>
+			<b>teacherMobile</b>
+		</field>
+		
+		<field>
+			<a>studyManagerName</a>
+			<b>studyManagerName</b>
+		</field>
+		
+		<field>
+			<a>courseStatus</a>
+			<b>courseStatus</b>
+		</field>
+
+		<field>
+			<a>courseStatusName</a>
+			<b>courseStatusName</b>
+		</field>
+		
+	   <field>
+            <a>courseTime</a>
+            <b>courseBeginTime</b>
+        </field>
+         <field>
+            <a>courseEndTime</a>
+            <b>courseEndTime</b>
+        </field>
+         <field>
+            <a>crashInd</a>
+            <b>crashInd</b>
+        </field>       
+
+	</mapping>
+	
+</mappings>

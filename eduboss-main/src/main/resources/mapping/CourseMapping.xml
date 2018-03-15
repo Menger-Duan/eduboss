@@ -1,0 +1,133 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.Course</class-a>
+		<class-b>com.eduboss.domainVo.CourseSearchResultVo</class-b>
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>arranger.name</a>
+			<b>arrangerName</b>
+		</field>
+		<field>
+			<a>studyManager.name</a>
+			<b>studyManagerName</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>courseSummary.startDate</a>
+			<b>startDate</b>
+		</field>
+		<field>
+			<a>courseSummary.endDate</a>
+			<b>endDate</b>
+		</field>
+		
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.Course</class-a>
+		<class-b>com.eduboss.domainVo.CourseChangesSearchResultVo</class-b>
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>studyManager.name</a>
+			<b>studyManagerName</b>
+		</field>
+		<field>
+			<a>studyManager.userId</a>
+			<b>studyManagerId</b>
+		</field>
+		<field>
+			<a>courseStatus.Name</a>
+			<b>courseStatusName</b>
+		</field>
+		
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.Course</class-a>
+		<class-b>com.eduboss.domainVo.CourseVo</class-b>
+		
+		<field>
+			<a>blCampusId.id</a>
+			<b>campusId</b>
+		</field>
+		<field>
+			<a>blCampusId.name</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>studyManager.name</a>
+			<b>studyManagerName</b>
+		</field>
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		
+		
+		
+	</mapping>
+	
+</mappings>

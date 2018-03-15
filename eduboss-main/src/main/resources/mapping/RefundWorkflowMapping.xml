@@ -1,0 +1,198 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domain.RefundWorkflow</class-a>
+		<class-b>com.eduboss.domainVo.RefundWorkflowVo</class-b>
+		<field>
+			<a>refundCampus.id</a>
+			<b>refundCampusId</b>
+		</field>
+		<field>
+			<a>refundCampus.name</a>
+			<b>refundCampusName</b>
+		</field>
+		
+		<field>
+			<a>applicant.userId</a>
+			<b>applicantId</b>
+		</field>
+		<field>
+			<a>applicant.name</a>
+			<b>applicantName</b>
+		</field>
+		<field>
+			<a>applicant.enableFlg</a>
+			<b>applicantEnableFlg</b>
+		</field>
+		
+		<field>
+			<a>applicantCampus.id</a>
+			<b>applicantCampusId</b>
+		</field>
+		<field>
+			<a>applicantCampus.name</a>
+			<b>applicantCampusName</b>
+		</field>
+		
+		<field>
+			<a>refundCause.id</a>
+			<b>refundCauseId</b>
+		</field>
+		<field>
+			<a>refundCause.name</a>
+			<b>refundCauseName</b>
+		</field>
+		
+		<field>
+			<a>refundStudent.id</a>
+			<b>refundStudentId</b>
+		</field>
+		<field>
+			<a>refundStudent.name</a>
+			<b>refundStudentName</b>
+		</field>
+		
+		<field>
+			<a>refundContractProduct.id</a>
+			<b>refundContractProductId</b>
+		</field>
+		
+		<field>
+			<a>intoCampus.id</a>
+			<b>intoCampusId</b>
+		</field>
+		<field>
+			<a>intoCampus.name</a>
+			<b>intoCampusName</b>
+		</field>
+		
+		<field>
+            <a>intoStudent.id</a>
+            <b>intoStudentId</b>
+        </field>
+        <field>
+            <a>intoStudent.name</a>
+            <b>intoStudentName</b>
+        </field>
+        
+        <field>
+            <a>firstRefundDutyCampus.id</a>
+            <b>firstRefundDutyCampusId</b>
+        </field>
+        <field>
+            <a>firstRefundDutyCampus.name</a>
+            <b>firstRefundDutyCampusName</b>
+        </field>
+        
+         <field>
+            <a>secondRefundDutyCampus.id</a>
+            <b>secondRefundDutyCampusId</b>
+         </field>
+         <field>
+            <a>secondRefundDutyCampus.name</a>
+            <b>secondRefundDutyCampusName</b>
+         </field>
+         
+         <field>
+            <a>thirdRefundDutyCampus.id</a>
+            <b>thirdRefundDutyCampusId</b>
+         </field>
+         <field>
+            <a>thirdRefundDutyCampus.name</a>
+            <b>thirdRefundDutyCampusName</b>
+         </field>
+		
+		<field>
+			<a>fourthRefundDutyCampus.id</a>
+			<b>fourthRefundDutyCampusId</b>
+		</field>
+
+		<field>
+			<a>fourthRefundDutyCampus.name</a>
+			<b>fourthRefundDutyCampusName</b>
+		</field>
+
+		<field>
+			<a>fifthRefundDutyCampus.id</a>
+			<b>fifthRefundDutyCampusId</b>
+		</field>
+
+		<field>
+			<a>fifthRefundDutyCampus.name</a>
+			<b>fifthRefundDutyCampusName</b>
+		</field>
+		
+		<field>
+			<a>firstRefundDutyPerson</a>
+			<b>firstRefundDutyPersonId</b>
+		</field>
+
+		<field>
+			<a>secondRefundDutyPerson</a>
+			<b>secondRefundDutyPersonId</b>
+		</field>
+
+		<field>
+			<a>thirdRefundDutyPerson</a>
+			<b>thirdRefundDutyPersonId</b>
+		</field>
+
+		<field>
+			<a>fourthRefundDutyPerson</a>
+			<b>fourthRefundDutyPersonId</b>
+		</field>
+
+		<field>
+			<a>fifthRefundDutyPerson</a>
+			<b>fifthRefundDutyPersonId</b>
+		</field>
+         
+        <!-- <field>
+            <a>firstRefundDutyPerson.userId</a>
+            <b>firstRefundDutyPersonId</b>
+         </field>
+         <field>
+            <a>firstRefundDutyPerson.name</a>
+            <b>firstRefundDutyPersonName</b>
+         </field>
+         
+         <field>
+            <a>secondRefundDutyPerson.userId</a>
+            <b>secondRefundDutyPersonId</b>
+         </field>
+         <field>
+            <a>secondRefundDutyPerson.name</a>
+            <b>secondRefundDutyPersonName</b>
+         </field>
+         
+         <field>
+            <a>thirdRefundDutyPerson.userId</a>
+            <b>thirdRefundDutyPersonId</b>
+         </field>
+         <field>
+            <a>thirdRefundDutyPerson.name</a>
+            <b>thirdRefundDutyPersonName</b>
+         </field>-->
+         
+          <field>
+            <a>auditUser.userId</a>
+            <b>auditUserId</b>
+         </field>
+         <field>
+            <a>auditUser.name</a>
+            <b>auditUserName</b>
+         </field>
+         
+         <field>
+            <a>auditCampus.id</a>
+            <b>auditCampusId</b>
+         </field>
+         <field>
+            <a>auditCampus.name</a>
+            <b>auditCampusName</b>
+         </field>
+        
+	</mapping>
+	
+</mappings>

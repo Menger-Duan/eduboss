@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.eduboss</groupId>
+    <artifactId>eduboss</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <name>eduboss</name>
+    <description>eduboss parent for spark</description>
+    
+    <modules>
+        <module>eduboss-main</module>
+        <module>eduboss-course</module>
+        <module>eduboss-base</module>
+    </modules>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <fasterxml.jackson.version>2.2.0</fasterxml.jackson.version>
+        <codehaus.jackson.version>1.9.13</codehaus.jackson.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.version>3.2.9.RELEASE</spring.version>
+        <spring.security.version>3.0.5.RELEASE</spring.security.version>
+        <hibernate.version>3.3.1.GA</hibernate.version><!-- 3.3.1.GA -> 3.3.2GA -> 3.4.0.GA实时报表出错 -> 3.5.6-Final所有criterion都要改 -->
+        <struts.version>2.3.4</struts.version>
+        <fasterxml.jackson.version>2.2.0</fasterxml.jackson.version>
+        <codehaus.jackson.version>1.9.13</codehaus.jackson.version>
+        <jetty.version>8.2.0.v20160908</jetty.version>
+        <es.version>1.1.0</es.version>
+        <jdk.version>1.7</jdk.version>
+        <mysql.java.connector.version>5.1.30</mysql.java.connector.version><!-- 3.1.8 -> 3.1.14 -> 5.0.8 -> 5.1.6 -> 5.1.30 ->5.1.35 -->
+        <liquibase.version>3.5.1</liquibase.version>
+    </properties>
+    
+    <!-- maven仓库定义 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://121.201.35.8:9081/nexus/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://121.201.35.8:9081/nexus/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- dubbox需要jdk1.8 -->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            
+            <!-- module 版本号管理插件： mvn -N versions:update-child-modules , mvn versions:commit -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+
+</project>

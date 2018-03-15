@@ -1,0 +1,13 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false" >
+		<class-a map-null="false"  map-empty-string="false">com.eduboss.domainVo.RegionVo</class-a>
+		<class-b>org.boss.rpc.base.dto.Label</class-b>
+		<field>
+			<a>name</a>
+			<b>text</b>
+		</field>
+ 
+	</mapping>
+</mappings>

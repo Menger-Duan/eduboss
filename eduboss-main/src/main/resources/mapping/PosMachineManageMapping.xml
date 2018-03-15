@@ -1,0 +1,129 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.PosMachineManage</class-a>
+		<class-b>com.eduboss.domainVo.PosMachineManageVo</class-b>
+		
+		<field>
+            <a>type.id</a>
+            <b>typeId</b>
+        </field>
+        <field>
+            <a>type.name</a>
+            <b>typeName</b>
+        </field>
+		
+		<field>
+			<a>brench.id</a>
+			<b>brenchId</b>
+		</field>
+		<field>
+			<a>brench.name</a>
+			<b>brenchName</b>
+		</field>
+		
+		<field>
+			<a>campus.id</a>
+			<b>campusId</b>
+		</field>
+		<field>
+			<a>campus.name</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		
+		<field>
+			<a>modifyUser.userId</a>
+			<b>modifyUserId</b>
+		</field>
+		<field>
+			<a>modifyUser.name</a>
+			<b>modifyUserName</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+
+		<field>
+			<a>posType.id</a>
+			<b>posTypeId</b>
+		</field>
+
+		<field>
+			<a>posType.name</a>
+			<b>posTypeName</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.PosMachineManage</class-a>
+		<class-b>com.eduboss.domainVo.PosMachineVo</class-b>
+		<field>
+            <a>type.id</a>
+            <b>typeId</b>
+        </field>
+        <field>
+            <a>type.name</a>
+            <b>typeName</b>
+        </field>
+        
+		<field>
+			<a>brench.id</a>
+			<b>brenchId</b>
+		</field>
+		<field>
+			<a>brench.name</a>
+			<b>brenchName</b>
+		</field>
+		
+		<field>
+			<a>campus.id</a>
+			<b>campusId</b>
+		</field>
+		<field>
+			<a>campus.name</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		
+		<field>
+			<a>modifyUser.userId</a>
+			<b>modifyUserId</b>
+		</field>
+		<field>
+			<a>modifyUser.name</a>
+			<b>modifyUserName</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+		<field>
+			<a>posType.id</a>
+			<b>posTypeId</b>
+		</field>
+
+		<field>
+			<a>posType.name</a>
+			<b>posTypeName</b>
+		</field>
+	</mapping>
+</mappings>

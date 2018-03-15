@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       default-autowire="byName">
+	
+	<bean id="repeatSubmitControllerAopHandler" class="com.eduboss.aop.RepeatSubmitControllerAopHandler" />
+	<aop:config>  
+        <aop:aspect id="repeatAspect" ref="repeatSubmitControllerAopHandler" order="0">
+            <aop:pointcut id="repeatSubmitController" expression="(execution( * com.eduboss.controller.*.*(..)) or execution( * com.eduboss.dao.impl.*.save*(..)))"/>
+            <aop:before method="doBefore" pointcut-ref="repeatSubmitController"/>
+            <aop:after method="doAfter"  pointcut-ref="repeatSubmitController"/>
+            <aop:after-throwing method="doAfterThrowing" throwing="e" pointcut-ref="repeatSubmitController"/>
+        </aop:aspect>  
+    </aop:config>
+	
+</beans>

@@ -1,0 +1,26 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.MailUserView</class-a>
+		<class-b map-null="false">com.eduboss.domain.User</class-b>
+		<field>
+			<a>job.id</a>
+			<b>jobId</b>
+		</field>
+		<field>
+			<a>job.name</a>
+			<b>jobName</b>
+		</field>
+		
+		<field>
+			<a>dept.id</a>
+			<b>deptId</b>
+		</field>
+		<field>
+			<a>dept.name</a>
+			<b>deptName</b>
+		</field>
+	</mapping>
+
+</mappings>

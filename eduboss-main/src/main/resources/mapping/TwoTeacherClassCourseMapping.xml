@@ -1,0 +1,60 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.TwoTeacherClassCourse</class-a>
+		<class-b>com.eduboss.domainVo.TwoTeacherClassCourseVo</class-b>
+		
+		<field>
+			<a>twoTeacherClass.classId</a>
+			<b>twoTeacherClassId</b>
+		</field>
+		
+		<field>
+			<a>twoTeacherClass.name</a>
+			<b>twoTeacherClassName</b>
+		</field>
+
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+
+		<field>
+			<a>teacher.contact</a>
+			<b>teacherPhone</b>
+		</field>
+
+		<field>
+			<a>twoTeacherClass.subject.name</a>
+			<b>subjectName</b>
+		</field>
+		<field>
+			<a>twoTeacherClass.subject.id</a>
+			<b>subjectId</b>
+		</field>
+		<field>
+			<a>twoTeacherClass.product.gradeDict.name</a>
+			<b>gradeName</b>
+		</field>
+		<field>
+			<a>twoTeacherClass.product.gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+
+		<field>
+			<a>courseStatus.name</a>
+			<b>courseStatusName</b>
+		</field>
+
+
+
+
+	</mapping>
+	
+</mappings>

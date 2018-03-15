@@ -1,0 +1,32 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+        <class-a>com.eduboss.domain.StudentOrganization</class-a>
+        <class-b map-null="false">com.eduboss.domainVo.StudentOrganizationVo</class-b>
+        <field>
+            <a>student.id</a>
+            <b>student</b>
+        </field>
+        <field>
+            <a>organization.id</a>
+            <b>organization</b>
+        </field>
+        <field>
+            <a>studyManager.name</a>
+            <b>studyManagerName</b>
+        </field>
+        <field>
+            <a>student.name</a>
+            <b>studentName</b>
+        </field>
+        <field>
+            <a>organization.name</a>
+            <b>organizationName</b>
+        </field>
+        <field>
+            <a>studyManager.userId</a>
+            <b>studyManager</b>
+        </field>
+    </mapping>
+</mappings>

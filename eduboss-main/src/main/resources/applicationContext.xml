@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr/spring-dwr-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd "
+        
+	default-autowire="byName">
+	<import resource="application-hibernate.xml"/>
+	<import resource="application-security.xml" />
+	<import resource="thread-pool.xml"/>
+	<import resource="dubbo-server.xml"/>
+	<!-- <import resource="producer/producer.xml"/> -->
+
+    <mvc:annotation-driven validator="validator" conversion-service="conversion-service" />
+    
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass"  value="org.hibernate.validator.HibernateValidator"/>
+        <!--不设置则默认为classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="validatemessageSource"/>
+    </bean>
+    <bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
+    <bean id="validatemessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <property name="basename" value="classpath:validatemessages"/>  
+        <property name="fileEncodings" value="utf-8"/>  
+        <property name="cacheSeconds" value="120"/>  
+    </bean>
+
+	<context:annotation-config />
+	<context:component-scan
+		base-package="com.eduboss.controller,com.eduboss.dao,com.eduboss.service,com.pad.entity,com.eduboss.domain,com.eduboss.scheduler,com.eduboss.osworkflow.function,com.eduboss.jedis,com.eduboss.openapi,com.eduboss.config,com.pad.controller,com.pad.dao
+,com.pad.service,com.eduboss.task" />
+	<context:property-placeholder location="classpath*:/systemconfig.properties" />
+	<aop:aspectj-autoproxy />
+
+	
+	<!-- javamelody方法调用耗时统计 -->
+	<!-- <bean id="javamelodyConfigure" class="com.eduboss.utils.JavemelodyConfig"></bean> -->
+	
+	<!-- jedis -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="2" />
+        <property name="maxIdle" value="8" />
+        <property name="maxWaitMillis" value="1000" />
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+    </bean>
+
+    <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool"  scope="singleton">
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+        <constructor-arg index="1">
+            <list>
+                <bean class="redis.clients.jedis.JedisShardInfo">
+                    <constructor-arg name="host" value="${redis.host}" />
+                    <constructor-arg name="port" value="${redis.port}"  type="int"/>
+                    <property name="password" value="${redis.pass}"/>
+                    <constructor-arg name="timeout" value="${redis.timeout}"  type="int"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+	<!-- jedis end -->
+	
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="webBindingInitializer">
+			<bean
+				class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer"></bean>
+		</property>
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value="" /><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+
+
+	<!-- 提供applicationContext -->
+	<bean class="com.eduboss.utils.ApplicationContextUtil"></bean>
+
+	<!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<!-- 提供dwr -->
+	<bean id="dwrMessageManager" class="com.eduboss.service.dwr.DwrMessageManagerImpl">
+		<dwr:remote javascript="dwrMessageManager">
+			<dwr:include method="onPageLoad" />
+			<dwr:include method="sendMessageToSingle" />
+			<dwr:include method="sendMessageToAssign" />
+			<dwr:include method="sendMessageToAll" />
+		</dwr:remote>
+	</bean>
+	
+	<!--文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	
+	<!-- Dozer mapping settting -->
+	<bean id="mapper" class="org.dozer.DozerBeanMapper">
+		<property name="mappingFiles">
+			<list>
+				<value>mapping/GlobalMappingSetting.xml</value>
+				<value>mapping/ContractMapping.xml</value>
+				<value>mapping/CustomerDynamicStatusMapping.xml</value>
+				<value>mapping/StudentMapping.xml</value>
+				<value>mapping/CourseMapping.xml</value>
+				<value>mapping/CourseSummaryMapping.xml</value>
+				<value>mapping/CourseRequirementMapping.xml</value>
+				<value>mapping/CourseFullMapping.xml</value>
+				<value>mapping/CourseAttendanceMapping.xml</value>
+				<value>mapping/CustomerMapping.xml</value>
+				<value>mapping/ContractProductMapping.xml</value>
+				<value>mapping/ProductMapping.xml</value>
+				<value>mapping/MiniClassMapping.xml</value>
+				<value>mapping/FundsChangeHistoryMapping.xml</value>
+				<value>mapping/AutoCompeleteMapping.xml</value>
+				<value>mapping/ContractBonusMapping.xml</value>
+				<value>mapping/IncomeDistributionMapping.xml</value>
+				<value>mapping/IncomeDistributeStatementslMapping.xml</value>
+				<value>mapping/CustomerFollowupMapping.xml</value>
+				<value>mapping/CustomerAppointmentMapping.xml</value>
+				<value>mapping/StudentAccMvMapping.xml</value>
+				<value>mapping/CustomerStudentMapping.xml</value>
+				<value>mapping/AccountChargeRecordsMapping.xml</value>
+				<value>mapping/MiniClassCourseMapping.xml</value>
+				<value>mapping/StudentSchoolMapping.xml</value>
+				<value>mapping/StudentSchoolTempMapping.xml</value>
+				<value>mapping/StudentScoreMapping.xml</value>
+				<value>mapping/MiniClassStudentAttendentMapping.xml</value>
+				<value>mapping/MiniClassStudentMapping.xml</value>
+				<value>mapping/CourseConflictMapping.xml</value>
+				<value>mapping/RefundContractProductMapping.xml</value>
+				<value>mapping/PlanManagementMapping.xml</value>
+				<value>mapping/CustomerCallsLogMapping.xml</value>
+				<value>mapping/RefundContractMapping.xml</value>
+				<value>mapping/CountUserOperationMapping.xml</value>
+
+				<value>mapping/ContractProductSubjectMapping.xml</value>
+				<value>mapping/PromotionMapping.xml</value>
+				<value>mapping/PromiseClassMapping.xml</value>
+				<value>mapping/PromiseClassApplyMapping.xml</value>
+				<value>mapping/PromiseStudentMapping.xml</value>
+				<value>mapping/PromiseClassDetailRecord.xml</value>
+				<value>mapping/StudentMoneyChanges.xml</value>
+				<value>mapping/PromiseClassRecord.xml</value>
+				<value>mapping/StudentFollowUpMapping.xml</value>
+				<value>mapping/ElectronicAccountChangeLogMapping.xml</value>
+				<value>mapping/FAQMapping.xml</value>
+				<value>mapping/StudentOrganizationMapping.xml</value>
+				<value>mapping/SystemNoticeMapping.xml</value>
+				<value>mapping/DeleteDataLogMapping.xml</value>
+				<value>mapping/TeacherSubjectMapping.xml</value>
+				<value>mapping/SystemConfigMapping.xml</value>
+
+				<value>mapping/SystemNoticeUserMapping.xml</value>
+				<value>mapping/SalaryDetailMapping.xml</value>
+
+				<value>mapping/InventoryManagerMapping.xml</value>
+				<value>mapping/InventoryProductMapping.xml</value>
+				<value>mapping/InventoryRecordMapping.xml</value>
+
+				<value>mapping/MobilePushMsgRecordMapping.xml</value>
+				<value>mapping/UserForMobileMapping.xml</value>
+				<value>mapping/MobilePushMsgSessionMapping.xml</value>
+
+				<value>mapping/ClassroomManageMapping.xml</value>
+
+
+				<value>mapping/StudentDocumentMapping.xml</value><!-- 学生档案管理 add by yao 
+					2015-04-09 -->
+
+				<value>mapping/SystemNoticeReplyMapping.xml</value>
+				<value>mapping/MobilePushMsgUserRecordMapping.xml</value><!-- 手机端推送记录 
+					add by yao 2015-05-07 -->
+				<value>mapping/StudentCommentMapping.xml</value><!-- 学生点评 -->
+				<value>mapping/MobileUserMapping.xml</value><!-- 移动用户的对应 -->
+				<value>mapping/CourseWeekMapping.xml</value><!-- 一对一本周课表 add by guohuaming 
+					2015-04-29 -->
+				<value>mapping/StudentDynamicStatusMapping.xml</value>
+				<value>mapping/MiniClassCourseConsumeMapping.xml</value>
+				<value>mapping/StudentReturnFeeMapping.xml</value>
+				<value>mapping/StudentFileMapping.xml</value><!-- 学生档案 -->
+                <value>mapping/MoneyReadyToPayMapping.xml</value>
+				<!-- add by lixuejun 2015-07-30 -->
+				<value>mapping/OfficeSpaceManageMapping.xml</value><!-- 场地管理 -->				
+				<!-- add by lixuejun 2015-08-27 -->
+				<value>mapping/UserInfoMapping.xml</value><!-- 员工信息 -->
+				<value>mapping/PersonnelTransferMapping.xml</value><!-- 员工信息 -->
+				<!-- add by tangyuping 2015-9-2 -->
+				<value>mapping/ReceptionistEveryDayMapping.xml</value><!-- 前台信息登记 -->
+				<!-- add by lixuejun 2015-09-11 -->
+				<value>mapping/UserOperationLogMapping.xml</value><!-- 用户操作日志-->
+				<!-- add by lixuejun 2015-09-24 -->
+				<value>mapping/DataDictMapping.xml</value><!-- 数字字典-->
+				<!-- add by tangyuping 2015-10-22 -->
+				<value>mapping/FeedbackMapping.xml</value><!-- 反馈信息 -->
+				<value>mapping/FeedbackReplyMapping.xml</value><!-- 反馈信息回复 -->
+
+				<!-- add by lixuejun 2015-10-29 -->
+				<value>mapping/MiniClassProductMapping.xml</value><!-- 小班产品关联-->
+				
+				<!-- add by lixuejun 2015-10-30 -->
+				<value>mapping/MoneyRollbackRecordsMapping.xml</value><!-- 资金回滚记录-->
+				<value>mapping/RollbackBackupRecordsMapping.xml</value><!-- 资金回滚记录-->
+				
+				<value>mapping/ResourceMapping.xml</value>
+				
+                <value>mapping/MyCollectionMapping.xml</value><!-- 我的收藏  -->
+                
+                <value>mapping/ResourcePoolJobMapping.xml</value><!-- 资源池职位 -->
+               <!-- add by tangyuping 2015-11-27 --> 
+                <value>mapping/AppVersionMapping.xml</value><!-- APP版本信息-->
+                <!-- add by lixuejun 2015-12-24 -->
+                <value>mapping/OtmClassMapping.xml</value>
+                <!-- add by lixuejun 2015-12-24 -->
+                <value>mapping/MailUserViewMapping.xml</value>
+                <!-- add by lixuejun 2015-12-30 -->
+                <value>mapping/OtmClassStudentAttendentMapping.xml</value>
+                <!-- add by lixuejun 2015-12-31 -->
+                <value>mapping/OtmClassCourseMapping.xml</value>
+                <value>mapping/OtmClassStudentMapping.xml</value>
+               
+                <!--add by tangyuping 2016-01-08  -->
+                <value>mapping/CustomerBeforeDeliverMapping.xml</value>
+                 <!--add by tangyuping 2016-04-11 掌上星火新闻管理  -->
+                 <value>mapping/AppNewsManageMapping.xml</value>
+                
+                <!--add by yao 2016-02-25 合同修改痕迹 -->
+                <value>mapping/ContractRecordMapping.xml</value>
+                
+                <!--add by yao 2016-05-27 讲座 -->
+                <value>mapping/LectureClassMapping.xml</value>
+                <value>mapping/LectureClassStudentMapping.xml</value>
+                
+                <!--add by lixuejun 2016-04-15 系统信息管理 -->
+                <value>mapping/SystemMessageManageMapping.xml</value>
+                <value>mapping/SentRecordMapping.xml</value>
+                
+                <!-- add by lixuejun 2016-06-14 -->
+                <value>mapping/RefundWorkflowMapping.xml</value>
+                <value>mapping/RefundAuditDynamicMapping.xml</value>
+                
+                <!-- add by lixuejun 2016-08-11 -->
+                <value>mapping/MoneyWashRecordsMapping.xml</value>
+                
+                
+                <value>mapping/OdsMonthPaymentRecieptMapping.xml</value>
+                <value>mapping/OdsPaymentRecieptModifyMapping.xml</value>
+                <!-- add by lixuejun 2016-09-18 -->
+                <value>mapping/IncomeEvidenceAdjustSummaryMapping.xml</value>
+                <value>mapping/IncomeEvidenceAdjustItemMapping.xml</value>
+                 <!-- add by lixuejun 2016-09-27 -->
+                <value>mapping/RemainEvidenceAdjustSummaryMapping.xml</value>
+                <value>mapping/RemainEvidenceAdjustItemMapping.xml</value>
+                <!-- add by lixuejun 2016-10-11 -->
+                <value>mapping/PosMachineMapping.xml</value>
+                <value>mapping/PosMachineManageMapping.xml</value>
+                <!-- add by lixuejun 2016-10-22 -->
+                <value>mapping/PosPayDataMapping.xml</value>
+                <!-- add by lixuejun 2016-10-28 -->
+                <value>mapping/FundsAuditRecordMapping.xml</value>
+                <!-- add by lixuejun 2016-10-29 -->
+                <value>mapping/OdsMonthIncomeCampusMapping.xml</value>
+                 <!-- add by lixuejun 2016-10-30 -->
+                <value>mapping/OdsMonthRemainAmountCampusMapping.xml</value>
+                <value>mapping/OdsMonthPaymentRecieptMainMapping.xml</value>
+                <!-- add by lixuejun 2016-11-23 -->
+                <value>mapping/CourseHoursDistributeRecordMapping.xml</value>
+                <!-- add by yaoyuqi 2016-12-06 -->
+                <value>mapping/IntenetPayMapping.xml</value>
+
+                <!-- add by xiaojinwang 2016=12-07 -->
+                <value>mapping/TransferCustomerRecordMapping.xml</value>                <!-- add by lixuejun 2016=12-17 -->
+                <value>mapping/SubjectGroupMapping.xml</value>
+                <!-- add by lixuejun 2016=12-17 -->
+                <value>mapping/RefSubjectGroupMapping.xml</value>
+                <!-- add by lixuejun 2016=12-17 -->
+                <value>mapping/TeacherSubjectVersionMapping.xml</value>
+                <!-- add by lixuejun 2016=12-23-->
+                <value>mapping/PreTeacherVersionMapping.xml</value>
+                 <!-- add by lixuejun 2016=12-23-->
+                <value>mapping/TeacherVersionMapping.xml</value>
+				<!-- add by lixuejun 2017=01-11-->
+                <value>mapping/WorkScheduleFromOAMapping.xml</value>
+                <!-- add by xiaojinwang 2017-03-22 -->
+                <value>mapping/ChangeCampusApplyMapping.xml</value>
+
+				<value>mapping/TwoTeacherClassMapping.xml</value>
+				<value>mapping/TwoTeacherClassCourseMapping.xml</value>
+				<value>mapping/TwoTeacherClassStudentAttendentMapping.xml</value>
+				<value>mapping/TwoTeacherClassStudentMapping.xml</value>
+				<value>mapping/TwoTeacherClassTwoMapping.xml</value>
+				<value>mapping/YeePayInfoMapping.xml</value>
+				<!-- add by lixuejun 2017-14-12 -->
+				<value>mapping/RegionMapping.xml</value>
+				<value>mapping/UserTeacherAttributeMapping.xml</value>
+				<value>mapping/PromiseClassSubjectMapping.xml</value>
+				<value>mapping/CourseModalMapping.xml</value>
+				<!-- add by arvin 2017-11-13 成绩管理 -->
+				<!-- <value>mapping/AchievementCategoryMapping.xml</value> -->
+				<value>mapping/AchievementProStandardMapping.xml</value>
+				<value>mapping/AchievementTemplateMapping.xml</value>
+				<value>mapping/AchievementTemplateGradeMapping.xml</value>
+				<value>mapping/AchievementTemplateSubjectMapping.xml</value>
+				<value>mapping/StudentAchievementMapping.xml</value>
+				<value>mapping/StudentAchievementSubjectMapping.xml</value>
+				<value>mapping/AchievementComparisonMapping.xml</value>
+				<value>mapping/AchievementBenchmarkMapping.xml</value>
+				<!-- add by duanmenrun 2017-11-16 -->
+				<value>mapping/LivePaymentRecordMapping.xml</value>
+				<value>mapping/LiveTransferPayMapping.xml</value>
+				<!-- add by duanmenrun 2017-11-24 -->
+				<value>mapping/LiveCourseResponseMapping.xml</value>
+				<!-- add by duanmenrun 2017-12-25 -->
+                <value>mapping/OdsMonthCampusAchievementMapping.xml</value>
+                <value>mapping/OdsMonthCampusAchievementMainMapping.xml</value>
+                <value>mapping/OdsMonthCampusAchievementModifyMapping.xml</value>
+				<value>mapping/UserOrganizationRoleMapping.xml</value>
+				<!--  yao 20171207-->
+				<value>mapping/CmsSignMapping.xml</value>
+				<value>mapping/CmsContentMapping.xml</value>
+				<!--  duanmenrun 20180314-->
+				<value>mapping/ResourcePoolRoleMapping.xml</value>
+				<value>mapping/DistributableRoleMapping.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- <import resource="aop/FundDaoAop.xml"/> <import resource="aop/AccountChargeRecordsDaoAop.xml"/> 
+		<import resource="aop/ContractProductDaoAop.xml"/> -->
+	<import resource="aop/SchedulerCountServiceAop.xml"/>
+	
+	<import resource="aop/SubjectGroupServiceAop.xml"/>
+
+	<!--<import resource="aop/RepeatSubmitControllerAop.xml"/>-->
+
+</beans>

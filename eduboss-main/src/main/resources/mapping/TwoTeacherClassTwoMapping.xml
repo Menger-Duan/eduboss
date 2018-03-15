@@ -1,0 +1,106 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.TwoTeacherClassTwo</class-a>
+	<class-b>com.eduboss.domainVo.TwoTeacherClassTwoVo</class-b>
+
+	<field>
+		<a>twoTeacherClass.classId</a>
+		<b>twoTeacherClassId</b>
+	</field>
+	
+	<field>
+		<a>twoTeacherClass.name</a>
+		<b>twoTeacherClassName</b>
+	</field>
+
+	<field>
+		<a>twoTeacherClass.subject.name</a>
+		<b>subjectName</b>
+	</field>
+
+		<field>
+			<a>twoTeacherClass.subject.id</a>
+			<b>subject</b>
+		</field>
+	<field>
+		<a>twoTeacherClass.product.gradeDict.name</a>
+		<b>gradeName</b>
+	</field>
+
+		<field>
+			<a>twoTeacherClass.product.gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+	<field>
+		<a>twoTeacherClass.teacher.name</a>
+		<b>mainTeacherName</b>
+	</field>
+	<field>
+		<a>twoTeacherClass.product.name</a>
+		<b>productName</b>
+	</field>
+	
+	<field>
+		<a>blCampus.id</a>
+		<b>blCampusId</b>
+	</field>
+	<field>
+		<a>blCampus.name</a>
+		<b>blCampusName</b>
+	</field>
+
+	<field>
+		<a>classroom.id</a>
+		<b>classroomId</b>
+	</field>
+	
+	<field>
+		<a>classroom.classroom</a>
+		<b>classroomName</b>
+	</field>
+	
+	<field>
+		<a>teacher.userId</a>
+		<b>teacherId</b>
+	</field>
+	
+	<field>
+		<a>teacher.name</a>
+		<b>teacherName</b>
+	</field>
+
+	<field>
+		<a>twoTeacherClass.product.classType.name</a>
+		<b>classTypeName</b>
+	</field>
+
+	<field>
+		<a>twoTeacherClass.totalClassHours</a>
+		<b>totalHours</b>
+	</field>
+	<field>
+		<a>twoTeacherClass.startDate</a>
+		<b>startCourseDate</b>
+	</field>
+	<field>
+		<a>twoTeacherClass.classTime</a>
+		<b>courseTime</b>
+	</field>
+	<field>
+		<a>status.name</a>
+		<b>statusName</b>
+	</field>
+	<field>
+		<a>twoTeacherClass.everyCourseClassNum</a>
+		<b>everyCourseClassNum</b>
+	</field>
+	<field>
+		<a>twoTeacherClass.classTimeLength</a>
+		<b>classTimeLength</b>
+	</field>
+
+
+</mapping>
+</mappings>

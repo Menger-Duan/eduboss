@@ -1,0 +1,94 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.LectureClass</class-a>
+	<class-b>com.eduboss.domainVo.LectureClassVo</class-b>
+
+	<field>
+		<a>product.id</a>
+		<b>productId</b>
+	</field>
+	
+	<field>
+		<a>product.name</a>
+		<b>productName</b>
+	</field>
+	
+	<field>
+		<a>grade.id</a>
+		<b>gradeId</b>
+	</field>
+	<field>
+		<a>grade.name</a>
+		<b>gradeName</b>
+	</field>
+
+	<field>
+		<a>product.id</a>
+		<b>productId</b>
+	</field>
+	<field>
+		<a>product.name</a>
+		<b>productName</b>
+	</field>
+
+	<field>
+		<a>subject.id</a>
+		<b>subjectId</b>
+	</field>
+	
+	<field>
+		<a>subject.name</a>
+		<b>subjectName</b>
+	</field>
+	
+	<field>
+		<a>product.gradeDict.id</a>
+		<b>gradeId</b>
+	</field>
+	
+	<field>
+		<a>product.gradeDict.name</a>
+		<b>gradeName</b>
+	</field>
+	
+	<field>
+		<a>product.classType.id</a>
+		<b>classTypeId</b>
+	</field>
+	
+	<field>
+		<a>product.classType.name</a>
+		<b>classTypeName</b>
+	</field>
+	
+	<field>
+		<a>blBranch.id</a>
+		<b>blBranchId</b>
+	</field>
+	
+	<field>
+		<a>blBranch.name</a>
+		<b>blBranchName</b>
+	</field>
+	
+	<field>
+		<a>recruitStudentStatus.id</a>
+		<b>recruitStudentStatusId</b>
+	</field>
+	
+	<field>
+		<a>recruitStudentStatus.name</a>
+		<b>recruitStudentStatusName</b>
+	</field>
+	
+	<field>
+		<a>lectureStatus.name</a>
+		<b>lectureStatusName</b>
+	</field>
+	
+	
+	
+</mapping>
+</mappings>

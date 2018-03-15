@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.7//EN" 
+"http://www.opensymphony.com/osworkflow/workflow_2_7.dtd">
+<workflow>
+  <initial-actions>
+   <action id="0" name="開始">
+      <results>
+        <unconditional-result old-status="Finished" status="Queued" step="1" />
+      </results>
+    </action>
+  </initial-actions>
+
+  <steps>
+    <step id="1" name="填假單">
+      <actions>
+        <action id="1" name="送出">
+	  <pre-functions>
+	    <function type="class">
+	      <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+	    </function>
+	  </pre-functions>
+          <results>
+            <unconditional-result old-status="Finished" status="Queued" 
+step="2"  owner="User100" />
+          </results>
+        </action>
+      </actions>
+    </step>
+
+    <step id="2" name="批假單">
+      <actions>
+        <action id="2" name="准許">
+	  <pre-functions>
+	    <function type="class">
+	      <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+	    </function>
+	  </pre-functions>
+          <results>
+            <unconditional-result old-status="Finished" status="Queued" 
+step="3"  owner="${caller}"/>
+          </results>
+        </action>
+
+        <action id="3" name="駁回">
+	  <pre-functions>
+	    <function type="class">
+	      <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+	    </function>
+	  </pre-functions>
+          <results>
+            <unconditional-result old-status="Finished" status="Queued" 
+step="1"  owner="${caller}"/>
+          </results>
+        </action>
+      </actions>      
+    </step>
+
+    <step id="3" name="停止" />
+  </steps>
+</workflow>

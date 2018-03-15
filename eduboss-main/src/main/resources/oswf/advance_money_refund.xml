@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<workflow>
+  <meta name="generator">OSWOrkflow Designer</meta>
+  <meta name="lastModified">Wed Jun 22 10:59:52 CST 2016</meta>
+  <initial-actions>
+    <action id="0" name="开始审批流程">
+      <results>
+        <unconditional-result id="11" old-status="Finished" status="Queued" step="1"/>
+      </results>
+    </action>
+  </initial-actions>
+  <steps>
+    <step id="1" name="申请审批">
+	  <meta name="submitAuditBtn">1_fgszjlcwspr_BRENCH_2</meta>
+	  <meta name="auditRevocationBtn">2</meta>
+	  <meta name="showElement">refundCampus,refundStudentName</meta>
+      <actions>
+        <action id="1" name="提交审批">
+         	<meta name="doSubmit">1</meta>
+          <meta name="nextJob">fgszjlcwspr</meta>
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="3" old-status="Finished" status="Queued" step="2" owner="APPLICANT"/>
+          </results>
+        </action>
+        <action id="2" name="撤销审批">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="5" old-status="Finished" status="Finished" step="5" owner="APPLICANT"/>
+          </results>
+           <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditRevokeFunction</arg>
+            </function>
+          </post-functions>
+        </action>
+      </actions>
+    </step>
+    
+    <step id="2" name="分公司总经理处理审批">
+      <meta name="authority">fgszjlcwspr_BRENCH</meta>
+      <meta name="auditPassBtn">3_kj_BRENCH_3</meta>
+      <meta name="step1">4_fgszjcwspr_USER_1</meta>
+      <meta name="auditRollbackBtn">show</meta>
+      <meta name="auditRevocationBtn">5</meta>
+      <actions>
+        <action id="3" name="审批通过">
+          <meta name="doSubmit">1</meta>
+          <meta name="nextJob">kj</meta>
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="31" old-status="Finished" status="Queued" step="3" owner="CAMPUS_DIRECTOR"/>
+          </results>
+        </action>
+        <action id="4" name="分公司总经理审批回退到申请人">
+          <results>
+            <unconditional-result id="34" old-status="Finished" status="Queued" step="1"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditReturnFunctiion</arg>
+            </function>
+          </post-functions>
+        </action>
+        <action id="5" name="撤销审批">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="35" old-status="Finished" status="Finished" step="5" owner="CAMPUS_DIRECTOR, APPLICANT"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditRevokeFunction</arg>
+            </function>
+          </post-functions>
+        </action>
+      </actions>
+    </step>
+    
+    <step id="3" name="接收分公司财务处理审批">
+      <meta name="authority">kj_BRENCH</meta>
+      <meta name="financialReceiveBtn">6_cn_BRENCH_4</meta>
+      <meta name="auditRollbackBtn">show</meta>
+      <meta name="step2">7_fgszjlcwspr_BRENCH_2</meta>
+      <meta name="step1">8_xqcwspr_USER_1</meta>
+      <meta name="auditRevocationBtn">9</meta>
+      <actions>
+        <action id="6" name="财务接收">
+          <meta name="doSubmit">1</meta>
+          <meta name="nextJob">cn</meta>
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="13" old-status="Finished" status="Queued" step="4" owner="FINANCING"/>
+          </results>
+        </action>
+        <action id="7" name="接收分公司财务审批回退到分公司总经理">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="2" old-status="Finished" status="Queued" step="2" owner="FINANCING"/>
+          </results>
+        </action>
+        <action id="8" name="接收分公司财务审批回退到申请人">
+          <results>
+            <unconditional-result id="20" old-status="Finished" status="Queued" step="1"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditReturnFunctiion</arg>
+            </function>
+          </post-functions>
+        </action>
+        <action id="9" name="撤销审批">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="8" old-status="Finished" status="Finished" step="5" owner="FINANCING, APPLICANT"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditRevokeFunction</arg>
+            </function>
+          </post-functions>
+        </action>
+      </actions>
+    </step>
+    <step id="4" name="出款分公司财务处理审批">
+      <meta name="authority">cn_BRENCH</meta>
+      <meta name="financialTakeOutBtn">10</meta>
+      <meta name="auditRollbackBtn">show</meta>
+      <meta name="step3">11_kj_BRENCH_3</meta>
+      <meta name="step2">12_fgszjlcwspr_BRENCH_2</meta>
+      <meta name="step1">13_xqcwspr_USER_1</meta>
+      <meta name="auditRevocationBtn">14</meta>
+      <meta name="refundAuditDiv">show</meta>
+      <actions>
+        <action id="10" name="财务出款">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="9" old-status="Finished" status="Finished" step="5" owner="FINANCING"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditCompleteFunction</arg>
+            </function>
+          </post-functions>
+        </action>
+        <action id="11" name="出款分公司财务审批回退到接收分公司财务">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="17" old-status="Finished" status="Queued" step="3" owner="FINANCING"/>
+          </results>
+        </action>
+        <action id="12" name="出款分公司财务审批回退到分公司总经理">
+          <results>
+            <unconditional-result id="22" old-status="Finished" status="Queued" step="2"/>
+          </results>
+        </action>
+        <action id="13" name="出款分公司财务审批回退到申请人">
+          <results>
+            <unconditional-result id="26" old-status="Finished" status="Queued" step="1"/>
+          </results>
+          <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditReturnFunctiion</arg>
+            </function>
+          </post-functions>
+        </action>
+        <action id="14" name="撤销审批">
+          <pre-functions>
+            <function type="class">
+              <arg name="class.name">com.opensymphony.workflow.util.Caller</arg>
+            </function>
+          </pre-functions>
+          <results>
+            <unconditional-result id="10" old-status="Finished" status="Finished" step="5" owner="FINANCING, APPLICANT"/>
+          </results>
+	      <post-functions>
+            <function type="class">
+              <arg name="class.name">com.eduboss.osworkflow.function.AuditRevokeFunction</arg>
+            </function>
+          </post-functions>
+        </action>
+      </actions>
+    </step>
+    <step id="5" name="结束审批流程">
+    </step>
+  </steps>
+</workflow>

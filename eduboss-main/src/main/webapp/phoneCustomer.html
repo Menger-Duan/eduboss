@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var iWidth=800; //弹出窗口的宽度;
+		var iHeight=600; //弹出窗口的高度;
+		var iTop = (window.screen.availHeight-30-iHeight)/2; //获得窗口的垂直位置;
+		var iLeft = (window.screen.availWidth-10-iWidth)/2; //获得窗口的水平位置;
+		window.moveTo(iLeft,iTop);
+		window.resizeTo(iWidth,iHeight);
+	//处理电话呼入
+	/eduboss.xinghuo100.net/g.test(window.location.href) && (window.location.href = window.location.href.replace('eduboss.xinghuo100.net', '120.24.61.47'));
+        </script>
+	<meta charset="utf-8">
+	<title id="titleName">客户信息</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+	<!-- #CSS Links -->
+	<!-- Basic Styles -->
+	<link rel="stylesheet" type="text/css" media="screen" href="framework/css/bootstrap.min.css?_auto_version_">
+	<link rel="stylesheet" type="text/css" media="screen" href="framework/css/font-awesome.min.css?_auto_version_">
+
+	<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+	<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-production.min.css?_auto_version_">
+	<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-skins.min.css?_auto_version_">
+	
+	<!-- Startup image for web apps -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css?_auto_version_">
+	<!--<script src="framework/js/libs/jquery-2.0.2.min.js?_auto_version_"></script>-->
+	<!--<script src="framework/js/libs/jquery-ui-1.10.3.min.js?_auto_version_"></script>-->
+	<!--<script src="framework/js/plugin/jqgrid/jquery.jqGrid.min.js?_auto_version_"></script>-->
+	<!--<script src="framework/js/plugin/jqgrid/grid.locale-cn.js?_auto_version_"></script>-->
+	<!--<script src="js/common.js?_auto_version_"></script>-->
+	<!--<script src="js/phoneCustomer.js?_auto_version_"></script>-->
+
+</head>
+<body>
+<div id="content" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-content">
+<div class="modal-header">
+	<h4 class="modal-title" id="myModalLabel">
+		<h1 id="callingPhoneNumber">来电话号码：</h1><span class="pull-right" id="phoneNumebrLoading"><i class='fa fa-gear fa-lg fa-spin'></i> 号码信息查询中...</span>
+	</h4>
+	<p id="redP" style="color:red; margin-left:210px; display: none;" >已录入客户</p>
+</div>
+<div class="modal-body">
+	<div class="row" id="newCustomerInputLayout">
+		<form class="form-horizontal" id="customerForm" name="customerForm">
+			<div class="form-group col-md-6">
+				<label class="col-md-3 control-label"><span class="red-star">*</span>客户姓名</label>
+				<div class="col-md-9">
+					<input class="form-control" name="name" id="cusName" placeholder="客户姓名"  type="text" db-data-field-name="name"/>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-3 control-label">联系电话</label>
+				<div class="col-md-9">
+					<input class="form-control" name="contact" id="cusContact" placeholder="联系电话"  db-data-field-name="contact"  class="required"/>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+			     <label class="col-md-3 control-label"><span class="red-star">*</span>资源入口</label>
+			     <div class="col-md-9">
+	                 <select id="resEntrance" name="resEntrance" db-data-field-name="resEntranceId" class="form-control input-sm">
+                        <option value="">点击选择资源入口</option>
+                    </select>
+                 </div>
+            </div>
+			<div class="form-group col-md-6">
+				<label class="col-md-3 control-label">资源来源</label>
+				<div class="col-md-9">
+					<select id="cusType" name="cusType" db-data-field-name="cusType" class="form-control input-sm">
+			    		<option value="">点击选择资源来源</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-3 control-label">来源细分</label>
+				<div class="col-md-9">
+					<select class="form-control" id="cusOrg" name="cusOrg" db-data-field-name="cusOrg" class="input-sm input-sm-search " >
+			    		<option value="">点击选择来源细分</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+			     <label class="col-md-3 control-label"><span class="red-star">*</span>客户分配：</label>
+                    <div class="col-md-9">
+                        <select id="deliverTarget" name="deliverTarget" class="form-control required" db-data-field-name="deliverTarget">
+                        </select>
+                    </div>
+                </div>
+			<div class="form-group col-md-6">
+                <label class="col-md-3 control-label"><span class="red-star">*</span>意向校区</label>
+                <div class="col-md-9">
+	               <select  name="intentionCampus" id="intentionCampus" class="form-control required" style="width:100%;" db-data-field-name="intentionCampusId">
+	               </select>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-3 control-label">备注</label>
+                <div class="col-md-9">
+                    <input class="form-control" name="remark" id="remark" placeholder="备注"  type="text" db-data-field-name="remark"/>
+                </div>
+            </div>
+		</form>
+	</div>
+	
+	<div style="border-top:1px solid #ddd;padding:30px 0;">
+	    <div class="row" style="text-align: right;margin-right: 25px;">
+	        <button id="saveFollowingRecord" type="button" data-loading-text="提交中..." class="btn btn-primary btn-sm">
+                  <span class="glyphicon glyphicon-floppy-disk"></span> 保存本次通话信息
+              </button>
+              <button id="nullifyFollowingRecord" type="button" data-loading-text="提交中..." class="btn btn-primary btn-sm">
+                  <span class="glyphicon glyphicon-floppy-disk"></span> 无效来电
+              </button>
+              <button class="btn btn-default" id="closePageBtn" style="display: none">关闭</button>
+	    </div>
+	</div>
+</div>
+</div>
+</div>
+<script src="framework/js/libs/jquery-2.0.2.min.js?_auto_version_"></script>
+<script src="framework/js/libs/jquery-ui-1.10.3.min.js?_auto_version_"></script>
+<script src="framework/js/plugin/jqgrid/jquery.jqGrid.min.js?_auto_version_"></script>
+<script src="framework/js/plugin/jqgrid/grid.locale-cn.js?_auto_version_"></script>
+<script src="framework/js/notification/SmartNotification.min.js?_auto_version_"></script>
+<!-- JQUERY SELECT2 INPUT -->
+<script src="framework/js/plugin/select2/select2.min.js?_auto_version_"></script>
+<script src="framework/js/plugin/select2/select2_locale_zh-CN.js?_auto_version_"></script>
+<script src="js/common.js?_auto_version_"></script>
+<script src="js/index.js?_auto_version_"></script>
+<!-- BOOTSTRAP JS -->
+<script src="framework/js/bootstrap/bootstrap.min.js?_auto_version_"></script>
+
+<script src="framework/js/app.js?_auto_version_"></script>
+<script src="js/phoneCustomer.js?_auto_version_"></script>
+</body>
+</html>

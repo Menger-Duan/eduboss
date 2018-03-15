@@ -1,0 +1,124 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.MiniClassStudent</class-a>
+		<class-b>com.eduboss.domainVo.MiniClassStudentVo</class-b>
+	
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		
+		<field>
+			<a>contractProduct.id</a>
+			<b>contractProductId</b>
+		</field>
+		
+		<field>
+			<a>miniClass.miniClassId</a>
+			<b>miniClassId</b>
+		</field>
+			
+		
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" map-id="withoutStudent">
+		<class-a>com.eduboss.domain.MiniClassStudent</class-a>
+		<class-b>com.eduboss.domainVo.MiniClassStudentVo</class-b>
+	
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+
+		<field-exclude>
+			<a>student</a>
+			<b>student</b>
+		</field-exclude>
+		
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		
+		<field>
+            <a>student.contact</a>
+            <b>studentContact</b>
+        </field>
+		
+		<field>
+			<a>contractProduct.id</a>
+			<b>contractProductId</b>
+		</field>
+
+		<field>
+			<a>contractProduct.isFrozen</a>
+			<b>isFrozen</b>
+		</field>
+
+		<field>
+			<a>contractProduct.type.value</a>
+			<b>productType</b>
+		</field>
+		
+		<field>
+			<a>contractProduct.status</a>
+			<b>contractProductStatus</b>
+		</field>
+		
+		<field>
+			<a>contractProduct.remainingAmount</a>
+			<b>contractProductRemainingAmount</b>
+		</field>
+		
+		<field>
+			<a>miniClass.miniClassId</a>
+			<b>miniClassId</b>
+		</field>
+		
+		<field>
+			<a>student.status</a>
+			<b>stuStatus</b>
+		</field>
+		
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.MiniClassStudent</class-a>
+		<class-b>com.eduboss.domainVo.ContinueExtendMiniClassVo</class-b>
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+
+		
+		<field>
+			<a>miniClass.name</a>
+			<b>miniClassName</b>
+		</field>
+		
+		<field>
+			<a>miniClass.teacher.name</a>
+			<b>teacherName</b>
+		</field>
+
+		<field>
+			<a>miniClass.studyManeger.name</a>
+			<b>studyManegerName</b>
+		</field>
+		
+		<field>
+			<a>miniClass.startDate</a>
+			<b>startDate</b>
+		</field>
+	</mapping>
+	
+</mappings>

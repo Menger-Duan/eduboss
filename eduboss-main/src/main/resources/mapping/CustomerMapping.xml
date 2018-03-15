@@ -1,0 +1,196 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false" >
+		<class-a map-null="false"  map-empty-string="false">com.eduboss.domain.Customer</class-a>
+		<class-b>com.eduboss.domainVo.CustomerVo</class-b>
+		<field>
+			<a>students</a>
+			<b>studentVos</b>
+			<b-hint>com.eduboss.domainVo.StudentVo</b-hint>
+		</field>
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		
+		<field>
+			<a>RecordUserId.userId</a>
+			<b>RecordUserId</b>
+		</field>
+		<field>
+			<a>RecordUserId.name</a>
+			<b>RecordUserName</b>
+		</field>
+		
+		<field>
+			<a>confirmReceptionist.name</a>
+			<b>confirmReceptionistName</b>
+		</field>
+		<field>
+			<a>confirmReceptionist.userId</a>
+			<b>confirmReceptionistId</b>
+		</field>
+		<field>
+			<a>cusType.id</a>
+			<b>cusType</b>
+		</field>
+		<field>
+			<a>cusType.name</a>
+			<b>cusTypeName</b>
+		</field>
+		<field>
+			<a>cusOrg.id</a>
+			<b>cusOrg</b>
+		</field>
+		<field>
+			<a>cusOrg.name</a>
+			<b>cusOrgName</b>
+		</field>
+		
+		<field>
+			<a>blCampusId.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>blCampusId.name</a>
+			<b>blCampusName</b>
+		</field>
+		
+		<field>
+			<a>intentionOfTheCustomer.id</a>
+			<b>intentionOfTheCustomerId</b>
+		</field>
+		<field>
+			<a>intentionOfTheCustomer.name</a>
+			<b>intentionOfTheCustomerName</b>
+		</field>
+		
+		<field>
+			<a>purchasingPower.id</a>
+			<b>purchasingPowerId</b>
+		</field>
+		<field>
+			<a>purchasingPower.name</a>
+			<b>purchasingPowerName</b>
+		</field>
+		<field type="one-way">
+            <a>dealStatus.name</a>
+            <b>dealStatusName</b>
+        </field>
+        <field type="one-way">
+            <a>deliverType.name</a>
+            <b>deliverTypeName</b>
+        </field>
+         <field type="one-way">
+            <a>visitType.name</a>
+            <b>visitTypeName</b>
+        </field>
+		 <field>
+			<a>resEntrance.id</a>
+			<b>resEntranceId</b>
+		</field>
+		<field>
+			<a>resEntrance.name</a>
+			<b>resEntranceName</b>
+		</field> 
+		 <field>
+			<a>customerProject.id</a>
+			<b>projectId</b>
+		</field>
+		<field>
+			<a>customerProject.name</a>
+			<b>projectName</b>
+		</field>
+		<field>
+			<a>preEntrance.id</a>
+			<b>preEntranceId</b>
+		</field>
+		<field>
+			<a>preEntrance.name</a>
+			<b>preEntranceName</b>
+		</field> 
+		
+		<field>
+			<a>getCustomerTime</a>
+			<b>getCustomerTime</b>
+		</field> 
+		
+		<field>
+			<a>intentionCampus.id</a>
+			<b>intentionCampusId</b>
+		</field>
+		<field>
+			<a>intentionCampus.name</a>
+			<b>intentionCampusName</b>
+		</field>
+
+	</mapping>
+	
+	<!-- 前台客户登记记录 start  -->
+	 <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false" >
+		<class-a map-null="false"  map-empty-string="false">com.eduboss.domain.Customer</class-a>
+		<class-b>com.eduboss.domainVo.ReceptionistCustomerVo</class-b>
+
+		<field>
+			<a>RecordUserId.userId</a>
+			<b>RecordUserId</b>
+		</field>
+		<field>
+			<a>RecordUserId.name</a>
+			<b>RecordUserName</b>
+		</field>
+		
+		 <field>
+			<a>resEntrance.id</a>
+			<b>resEntranceId</b>
+		</field>
+		<field>
+			<a>resEntrance.name</a>
+			<b>resEntranceName</b>
+		</field>
+		
+		<field>
+			<a>cusType.id</a>
+			<b>cusType</b>
+		</field>
+		<field>
+			<a>cusType.name</a>
+			<b>cusTypeName</b>
+		</field>
+		
+		<field>
+			<a>cusOrg.id</a>
+			<b>cusOrg</b>
+		</field>
+		<field>
+			<a>cusOrg.name</a>
+			<b>cusOrgName</b>
+		</field>
+		
+		<field type="one-way">
+            <a>dealStatus.name</a>
+            <b>dealStatusName</b>
+        </field>
+        
+        <field type="one-way">
+            <a>deliverType.name</a>
+            <b>deliverTypeName</b>
+        </field>
+		
+		<field>
+			<a>preEntrance.id</a>
+			<b>preEntranceId</b>
+		</field>
+		<field>
+			<a>preEntrance.name</a>
+			<b>preEntranceName</b>
+		</field>
+	</mapping>
+	
+	<!-- 前台客户登记记录 end  -->
+</mappings>

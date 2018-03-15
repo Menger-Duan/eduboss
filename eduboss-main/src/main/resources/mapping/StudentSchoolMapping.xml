@@ -1,0 +1,28 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.StudentSchool</class-a>
+		<class-b>com.eduboss.domainVo.StudentSchoolVo</class-b>
+		<field>
+			<a>schoolType.id</a>
+			<b>schoolTypeId</b>
+		</field>
+		<field>
+			<a>schoolType.name</a>
+			<b>schoolTypeName</b>
+		</field>
+		<field>
+			<a>region.id</a>
+			<b>regionId</b>
+		</field>
+		<field>
+			<a>region.name</a>
+			<b>regionName</b>
+		</field>
+
+
+
+	</mapping>
+	
+</mappings>

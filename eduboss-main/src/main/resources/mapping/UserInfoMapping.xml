@@ -1,0 +1,109 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.UserInfo</class-a>
+	<class-b>com.eduboss.domainVo.UserInfoVo</class-b>
+
+	<field>
+		<a>nationality.id</a>
+		<b>nationalityId</b>
+	</field>
+	
+	<field>
+		<a>nationality.name</a>
+		<b>nationalityName</b>
+	</field>
+	
+	<field>
+		<a>politicsStatus.id</a>
+		<b>politicsStatusId</b>
+	</field>
+	
+	<field>
+		<a>politicsStatus.name</a>
+		<b>politicsStatusName</b>
+	</field>
+	
+	<field>
+		<a>nativePlace.id</a>
+		<b>nativePlaceId</b>
+	</field>
+	
+	<field>
+		<a>nativePlace.name</a>
+		<b>nativePlaceName</b>
+	</field>
+	
+	<field>
+		<a>maritalStatus.id</a>
+		<b>maritalStatusId</b>
+	</field>
+	
+	<field>
+		<a>maritalStatus.name</a>
+		<b>maritalStatusName</b>
+	</field>
+	
+	<field>
+		<a>highestEducation.id</a>
+		<b>highestEducationId</b>
+	</field>
+	
+	<field>
+		<a>highestEducation.name</a>
+		<b>highestEducationName</b>
+	</field>
+	
+	<field>
+		<a>workType.id</a>
+		<b>workTypeId</b>
+	</field>
+	
+	<field>
+		<a>workType.name</a>
+		<b>workTypeName</b>
+	</field>
+	
+	<field>
+		<a>leaveType.id</a>
+		<b>leaveTypeId</b>
+	</field>
+	
+	<field>
+		<a>leaveType.name</a>
+		<b>leaveTypeName</b>
+	</field>
+	
+	<field>
+		<a>positioning.id</a>
+		<b>positioningId</b>
+	</field>
+	
+	<field>
+		<a>positioning.name</a>
+		<b>positioningName</b>
+	</field>
+	
+	<field>
+		<a>teacherStar.id</a>
+		<b>teacherStarId</b>
+	</field>
+	
+	<field>
+		<a>teacherStar.name</a>
+		<b>teacherStarName</b>
+	</field>
+	
+	<field>
+		<a>jobLevel.id</a>
+		<b>jobLevelId</b>
+	</field>
+	
+	<field>
+		<a>jobLevel.name</a>
+		<b>jobLevelName</b>
+	</field>
+	
+</mapping>
+</mappings>

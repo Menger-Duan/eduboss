@@ -1,0 +1,266 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.eduboss</groupId>
+        <artifactId>eduboss</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- <relativePath>eduboss-parent</relativePath> -->
+    </parent>
+    <artifactId>eduboss-main</artifactId>
+    <packaging>war</packaging>
+    <name>BOSS校长系统</name>
+    <url>xinghuo100.net</url>
+    <!-- 属性配置 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.version>3.2.9.RELEASE</spring.version>
+        <spring.security.version>3.0.5.RELEASE</spring.security.version>
+        <hibernate.version>3.3.1.GA</hibernate.version><!-- 3.3.1.GA -> 3.3.2GA -> 3.4.0.GA实时报表出错 -> 3.5.6-Final所有criterion都要改 -->
+        <struts.version>2.3.4</struts.version>
+        <fasterxml.jackson.version>2.2.0</fasterxml.jackson.version>
+        <codehaus.jackson.version>1.9.13</codehaus.jackson.version>
+        <jetty.version>8.2.0.v20160908</jetty.version>
+        <es.version>1.1.0</es.version>
+        <jdk.version>1.8</jdk.version>
+        <mysql.java.connector.version>5.1.30</mysql.java.connector.version><!-- 3.1.8 -> 3.1.14 -> 5.0.8 -> 5.1.6 -> 5.1.30 ->5.1.35 -->
+        <liquibase.version>3.5.1</liquibase.version>
+    </properties>
+    <build>
+        <!-- 打包名称 -->
+        <finalName>eduboss</finalName>
+        <!-- 资源配置 -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>doc/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <!-- maven插件配置 -->
+        <plugins>
+            <!-- 设定编译插件的jdk版本，默认是1.3 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>cer</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+            <!-- tomcat7 maven plugin -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <path>/${project.build.finalName}</path>
+                </configuration>
+            </plugin>
+            <!-- liquibase maven plugin -->
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
+                <configuration>
+                    <propertyFile>target/classes/liquibase/liquibase.properties</propertyFile>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                </configuration>
+                <!--
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                -->
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <!-- 异常监控 -->
+        <dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-spring</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+    
+        <!-- jetty 用来支持Start.java的main方法启动 -->
+        <dependency>
+                <groupId>org.eclipse.jetty.aggregate</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${jetty.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jsp</artifactId>
+                <version>${jetty.version}</version>
+                <scope>test</scope>
+            </dependency>
+        <!-- servlet-api 仅编译时使用 
+           <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>servlet-api</artifactId>
+              <version>2.5</version>
+              <scope>provided</scope>
+          </dependency>-->
+<!--         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+        </dependency> -->
+        <!-- jdbc 仅打包运行时使用 -->
+      <!--  <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.java.connector.version}</version>
+            <classifier>bin</classifier> 3.1.8需要
+            <scope>runtime</scope>
+        </dependency> -->
+        
+       <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.java.connector.version}</version>
+        </dependency>
+        
+        <!-- elasticsearch -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${es.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.eduboss</groupId>
+            <artifactId>eduboss-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+    </dependencies>
+    
+    <!-- maven仓库定义 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://121.201.35.8:9081/nexus/repository/maven-public/</url>
+<!--              <url>http://repo1.maven.org/maven2/</url> -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- aliyun maven插件仓库定义 -->
+         <repository>
+                <id>sonatype-nexus-staging</id>
+                <name>Sonatype Nexus Staging</name>
+                <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                <releases>
+                        <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                        <enabled>true</enabled>
+                </snapshots>
+        </repository>
+    </repositories>
+    <!-- maven插件仓库定义 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>nexus repository</name>
+            <url>http://121.201.35.8:9081/nexus/repository/maven-public/</url>
+<!--             <url>http://repo1.maven.org/maven2/</url> -->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    
+    <!-- 多环境profiles定义 -->
+    <profiles>
+        <!-- SAT环境 -->
+        <profile>
+            <id>sat</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <db.driver>com.mysql.jdbc.Driver</db.driver>
+                <db.url>jdbc:mysql://111:3306/xinghuo_sat?useOldAliasMetadataBehavior=true</db.url>
+                <db.username>edubossPrd</db.username>
+                <db.password>Psx072bj</db.password>
+            </properties>
+        </profile>
+        <!-- UAT环境 -->
+        <profile>
+            <id>uat</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <db.driver>com.mysql.jdbc.Driver</db.driver>
+                <db.url>jdbc:mysql://10.25.202.85:3306/eduboss_xinghuo_nuat?useOldAliasMetadataBehavior=true</db.url>
+                <db.username>xhedu</db.username>
+                <db.password>d26eda8eF0</db.password>
+            </properties>
+        </profile>
+        <!-- PRE环境 -->
+        <profile>
+            <id>pre</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <db.driver>com.mysql.jdbc.Driver</db.driver>
+                <db.url>pre_secret</db.url>
+                <db.username>pre_secret</db.username>
+                <db.password>pre_secret</db.password>
+            </properties>
+        </profile>
+        <!-- PRD环境 -->
+        <profile>
+            <id>prd</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <db.driver>com.mysql.jdbc.Driver</db.driver>
+                <db.url>secret</db.url>
+                <db.username>secret</db.username>
+                <db.password>secret</db.password>
+            </properties>
+        </profile>
+    </profiles>
+</project>

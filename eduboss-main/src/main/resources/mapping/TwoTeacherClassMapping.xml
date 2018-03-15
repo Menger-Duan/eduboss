@@ -1,0 +1,102 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.TwoTeacherClass</class-a>
+	<class-b>com.eduboss.domainVo.TwoTeacherClassVo</class-b>
+
+	<field>
+		<a>product.id</a>
+		<b>productId</b>
+	</field>
+	
+	<field>
+		<a>product.name</a>
+		<b>productName</b>
+	</field>
+
+	<field>
+		<a>product.gradeDict.name</a>
+		<b>gradeName</b>
+	</field>
+
+	<field>
+		<a>product.gradeDict.id</a>
+		<b>gradeId</b>
+	</field>
+
+	<field>
+		<a>product.classType.name</a>
+		<b>classTypeName</b>
+	</field>
+	<field>
+		<a>product.classType.id</a>
+		<b>classTypeId</b>
+	</field>
+	
+	<field>
+		<a>blCampus.id</a>
+		<b>blCampusId</b>
+	</field>
+	<field>
+		<a>blCampus.name</a>
+		<b>blCampusName</b>
+	</field>
+
+	<field>
+		<a>subject.id</a>
+		<b>subjectId</b>
+	</field>
+	
+	<field>
+		<a>subject.name</a>
+		<b>subjectName</b>
+	</field>
+	
+	<field>
+		<a>teacher.userId</a>
+		<b>teacherId</b>
+	</field>
+	
+	<field>
+		<a>teacher.name</a>
+		<b>teacherName</b>
+	</field>
+
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+
+		<field>
+			<a>phase.id</a>
+			<b>phaseId</b>
+		</field>
+
+		<field>
+			<a>phase.name</a>
+			<b>phaseName</b>
+		</field>
+
+		<field>
+			<a>product.productQuarter.id</a>
+			<b>productQuarterId</b>
+		</field>
+
+		<field>
+			<a>product.productQuarter.name</a>
+			<b>productQuarterName</b>
+		</field>
+
+		<field>
+			<a>product.productVersion.id</a>
+			<b>productVersionId</b>
+		</field>
+
+		<field>
+			<a>product.productVersion.name</a>
+			<b>productVersionName</b>
+		</field>
+
+</mapping>
+</mappings>

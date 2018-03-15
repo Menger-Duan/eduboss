@@ -1,0 +1,16 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.pad.entity.CmsSign</class-a>
+		<class-b>com.pad.dto.CmsSignVo</class-b>
+		<field>
+			<a>type.name</a>
+			<b>typeName</b>
+		</field>
+		<field>
+			<a>type.id</a>
+			<b>type</b>
+		</field>
+	</mapping>
+</mappings>

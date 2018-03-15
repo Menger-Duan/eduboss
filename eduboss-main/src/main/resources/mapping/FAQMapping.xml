@@ -1,0 +1,16 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+        <class-a>com.eduboss.domain.FAQ</class-a>
+        <class-b map-null="false">com.eduboss.domainVo.FAQVo</class-b>
+        <field>
+            <a>createUser.name</a>
+            <b>createUserName</b>
+        </field>
+        <field>
+            <a>replyUser.name</a>
+            <b>replyUserName</b>
+        </field>
+    </mapping>
+</mappings>

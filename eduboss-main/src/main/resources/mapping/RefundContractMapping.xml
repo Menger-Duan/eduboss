@@ -1,0 +1,24 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.RefundContract</class-a>
+		<class-b>com.eduboss.domainVo.RefundContractVo</class-b>
+        <field>
+            <a>contract.student.name</a>
+            <b>studentName</b>
+        </field>
+        <field>
+            <a>contract.student.studyManeger.name</a>
+            <b>studyManagerName</b>
+        </field>
+        <field>
+            <a>userByCreateUserId.name</a>
+            <b>createUserName</b>
+        </field>
+        <field>
+            <a>contract.totalAmount</a>
+            <b>totalAmount</b>
+        </field>
+	</mapping>
+</mappings>

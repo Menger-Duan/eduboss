@@ -1,0 +1,223 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.MiniClassCourse</class-a>
+		<class-b>com.eduboss.domainVo.MiniClassCourseVo</class-b>
+		
+		<field>
+			<a>miniClass.miniClassId</a>
+			<b>miniClassId</b>
+		</field>
+		
+		<field>
+			<a>miniClass.name</a>
+			<b>miniClassName</b>
+		</field>		
+		<field>
+			<a>miniClass.blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>miniClass.blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>studyHead.name</a>
+			<b>studyManegerName</b>
+		</field>
+		
+		<field>
+			<a>miniClass.miniClassType.name</a>
+			<b>miniClassType</b>
+		</field>
+		<field>
+			<a>courseStatus.name</a>
+			<b>courseStatusName</b>
+		</field>
+ 		<field>
+			<a>classroom.classroom</a>
+			<b>classroom</b>
+		</field>	
+		<field>
+			<a>classroom.id</a>
+			<b>classroomId</b>
+		</field>
+		
+		<field>
+            <a>teacher.contact</a>
+            <b>teacherMobile</b>
+        </field>
+        <field>
+            <a>studyHead.contact</a>
+            <b>studyManegerMobile</b>
+        </field>
+        <field>
+			<a>studyHead.userId</a>
+			<b>studyManegerId</b>
+		</field>
+	</mapping>
+	
+	 <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false" map-id="commonClassCourseVo_2">
+		<class-a>com.eduboss.domainVo.MiniClassCourseVo</class-a>
+		<class-b>com.eduboss.domainVo.CommonClassCourseVo</class-b>		
+			<field>
+			<a>miniClassCourseId</a>
+			<b>courseId</b>
+		</field>
+		<field>
+			<a>miniClassId</a>
+			<b>classId</b>
+		</field>
+		
+		<field>
+			<a>miniClassName</a>
+			<b>className</b>
+		</field>
+		
+		<field>
+			<a>blCampusId</a>
+			<b>campusId</b>
+		</field>
+		
+		<field>
+			<a>blCampusName</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>subject</a>
+			<b>subject</b>
+		</field>
+		
+		<field>
+			<a>grade</a>
+			<b>grade</b>
+		</field>
+		
+		<field>
+			<a>subjectId</a>
+			<b>subjectId</b>
+		</field>
+		
+		<field>
+			<a>gradeId</a>
+			<b>gradeId</b>
+		</field>
+		
+		<field>
+			<a>teacherId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teacherName</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>teacherMobile</a>
+			<b>teacherMobile</b>
+		</field>
+		
+		<field>
+			<a>studyManegerId</a>
+			<b>studyManagerId</b>
+		</field>
+		
+		<field>
+			<a>studyManegerName</a>
+			<b>studyManagerName</b>
+		</field>
+		
+		<field>
+			<a>studyManegerMobile</a>
+			<b>studyManagerMobile</b>
+		</field>
+		
+		<field>
+			<a>courseStatus</a>
+			<b>courseStatus</b>
+		</field>
+
+		<field>
+			<a>courseStatusName</a>
+			<b>courseStatusName</b>
+		</field>
+		
+		<field>
+			<a>classroom</a>
+			<b>classroom</b>
+		</field>	
+		
+		<field>
+			<a>classroomId</a>
+			<b>classroomId</b>
+		</field>
+		   <field>
+            <a>courseTime</a>
+            <b>courseBeginTime</b>
+        </field>
+         <field>
+            <a>courseEndTime</a>
+            <b>courseEndTime</b>
+        </field>
+         <field>
+            <a>crashInd</a>
+            <b>crashInd</b>
+        </field>       
+
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domainJdbc.MiniClassCourseJdbc</class-a>
+		<class-b>com.eduboss.domainVo.MiniClassCourseVo</class-b>
+		
+		<field>
+			<a>subjectName</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>gradeName</a>
+			<b>grade</b>
+		</field>
+		
+		<field>
+			<a>courseStatus.name</a>
+			<b>courseStatusName</b>
+		</field>
+		
+	</mapping>
+	
+</mappings>

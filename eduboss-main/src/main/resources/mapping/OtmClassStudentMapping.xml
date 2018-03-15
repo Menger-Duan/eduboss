@@ -1,0 +1,33 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.OtmClassStudent</class-a>
+		<class-b>com.eduboss.domainVo.OtmClassStudentVo</class-b>
+	
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		
+		<field>
+			<a>otmClass.otmClassId</a>
+			<b>otmClassId</b>
+		</field>
+		<field>
+			<a>otmClass.name</a>
+			<b>otmClassName</b>
+		</field>
+		
+		<field>
+			<a>otmClass.otmType</a>
+			<b>otmType</b>
+		</field>
+	</mapping>
+</mappings>

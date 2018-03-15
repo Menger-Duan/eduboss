@@ -1,0 +1,64 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.RollbackBackupRecords</class-a>
+		<class-b map-null="false">com.eduboss.domainVo.RollbackBackupRecordsVo</class-b>
+		<field>
+			<a>contract.id</a>
+			<b>contractId</b>
+		</field>
+		<field>
+			<a>course.subject.name</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>product.name</a>
+			<b>productName</b>
+		</field>
+		<field>
+			<a>operateUser.name</a>
+			<b>operateUserName</b>
+		</field>
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>miniClass.name</a>
+			<b>miniClassName</b>
+		</field>
+		
+		<field>
+			<a>otmClass.name</a>
+			<b>otmClassName</b>
+		</field>
+		
+		<field>
+			<a>productType.name</a>
+			<b>productTypeName</b>
+		</field>
+		<field>
+			<a>productType.value</a>
+			<b>productTypeValue</b>
+		</field>	
+		<field>
+			<a>contractProduct.id</a>
+			<b>contractProductId</b>
+		</field>
+		
+		<field>
+			<a>payType.name</a>
+			<b>payTypeName</b>
+		</field>
+		<field>
+			<a>payType.value</a>
+			<b>payTypeValue</b>
+		</field>
+		
+	</mapping>
+</mappings>

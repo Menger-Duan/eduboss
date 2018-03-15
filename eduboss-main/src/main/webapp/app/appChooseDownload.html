@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EDUBOSS校长系统App端下载</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="libs/bootstrap.min.css?_auto_version_">
+<style>
+	body{
+		font-size:20px;
+	}
+</style>
+<script type="text/javascript" src="libs/jquery-2.0.2.min.js?_auto_version_"></script>
+<script type="text/javascript" src="../js/common.js?_auto_version_"></script>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top grayBg" role="navigation">
+		<div class="container">
+			<a class="navbar-brand">EDUBOSS校长系统App端下载</a>
+		</div>
+	</div>
+
+	<div class="container navigationPadding" style="padding-top:40px;text-align:center;">
+		<br><br>
+		 <div style="color:gray;" id="openTips">
+		 	如果在微信中打开本页面没有反应，请点击右上角 “...” 选项，并在弹出界面选择 “在浏览器中打开” <span >(苹果手机是“在Safari中打开”)</span>
+		 </div>
+		 <br><br>
+		<div style="color:hsl(210, 33%, 20%);font-size:20px;cursor:pointer;">
+		 	<a href="../index.html">返回主页</a>
+		 </div>		 
+	</div>
+	
+<script type="text/javascript">
+	$("#openTips").hide();
+	//判断手机平台
+	function testPlatform(){
+		var ua = navigator.userAgent;
+    	var browser = null;
+    	//android终端或者uc浏览器
+    	if(ua.indexOf("Android") > -1)
+    		browser = "ANDROID";
+    	//ios终端
+    	else if(!!ua.match(/\(i[^;]+;( nav;)? CPU.+Mac OS X/))
+    		browser = "IOS";
+    	return browser;
+	}
+	var platform = testPlatform();
+	if(!platform) 
+		alert("请使用手机下载BOSS老师端！");
+	if(platform){
+		$.get(EduBoss.serviceApi.getAppLastVersion, {
+			"appId": "eduBossManager",
+			"mobileType": platform
+		}, function (response) {
+			if(response.downloadUrl)
+				window.location.href = response.downloadUrl;
+			//数据库还没有记录ios版的下载链接
+			else
+				window.location.href = "https://itunes.apple.com/cn/app/id930738031";
+		});
+	}
+	//是否是微信
+	function is_weixn(){
+	    var ua = navigator.userAgent.toLowerCase();
+	    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	        return true;  
+	    } else {
+	        return false;  
+	    }
+	}
+	if (is_weixn()) {
+		$("#openTips").show();
+	}
+</script>
+</body>
+</html>

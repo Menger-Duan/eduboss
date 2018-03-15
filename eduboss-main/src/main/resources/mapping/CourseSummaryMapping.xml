@@ -1,0 +1,65 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.CourseSummary</class-a>
+		<class-b>com.eduboss.domainVo.CourseSummarySearchResultVo</class-b>
+	
+		
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teachingManager.name</a>
+			<b>teachingManagerName</b>
+		</field>
+		<field>
+			<a>student.studyManeger.name</a>
+			<b>studyManagerName</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subject</b>
+		</field>
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		<field>
+			<a>courseRequirement.id</a>
+			<b>courseRequeirmentId</b>
+		</field>
+        <field>
+            <a>product.id</a>
+            <b>productId</b>
+        </field>
+        <field>
+            <a>product.name</a>
+            <b>productName</b>
+        </field>
+		
+		
+	</mapping>
+</mappings>

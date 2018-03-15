@@ -1,0 +1,37 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.SystemNoticeReply</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeReplyVo</class-b>
+		<field>
+			<a>user.userId</a>
+			<b>userId</b>
+		</field>
+		<field>
+			<a>user.name</a>
+			<b>userName</b>
+		</field>
+		<field>
+			<a>systemNotice.id</a>
+			<b>systemNoticeId</b>
+		</field>
+		<field>
+			<a>systemNotice.title</a>
+			<b>systemNoticeTitle</b>
+		</field>
+		<field>
+			<a>systemNotice.content</a>
+			<b>systemNoticeContent</b>
+		</field>
+		<field>
+			<a>user.organizationId</a>
+			<b>userOrgId</b>
+		</field>
+		<field>
+			<a>user.organizationName</a>
+			<b>userOrg</b>
+		</field>
+	</mapping>
+	
+</mappings>

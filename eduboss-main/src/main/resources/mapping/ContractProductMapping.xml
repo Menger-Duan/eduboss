@@ -1,0 +1,69 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domain.ContractProduct</class-a>
+		<class-b>com.eduboss.domainVo.ContractProductVo</class-b>
+		<field>
+			<a>product.id</a>
+			<b>productId</b>
+		</field>
+		<!-- <field>
+			<a>product.category</a>
+			<b>productType</b>
+		</field> -->
+		<field>
+			<a>contract.id</a>
+			<b>contractId</b>
+		</field>
+		<field>
+			<a>product.name</a>
+			<b>productionName</b>
+		</field>
+		<field>
+			<a>planAmount</a>
+			<b>payment</b>
+		</field>
+		<field>
+			<a>type</a>
+			<b>productType</b>
+		</field>
+		<field>
+			<a>type.name</a>
+			<b>productTypeName</b>
+		</field>
+		<field type="one-way">
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+		<field type="one-way">
+			<a>paidStatus.name</a>
+			<b>paidStatusName</b>
+		</field>
+		<field>
+			<a>prodSubjects</a>
+			<b>contractProductSubVos</b>
+		</field>
+        <field>
+            <a>product.subjectIds</a>
+            <b>subjectIds</b>
+        </field>
+		<field>
+            <a>product</a>
+            <b>productVo</b>
+        </field>
+		<field>
+            <a>contract.student.id</a>
+            <b>studentId</b>
+        </field>
+        <field>
+            <a>contract.student.name</a>
+            <b>studentName</b>
+        </field>
+	</mapping>
+	<mapping date-format="yyyy-MM-dd"  map-null="false" map-id="withContractProductForMobile">
+		<class-a>com.eduboss.domainVo.ContractProductVo</class-a>
+		<class-b>com.eduboss.domainVo.ContractProductMobileVo</class-b>
+		
+	</mapping>
+</mappings>

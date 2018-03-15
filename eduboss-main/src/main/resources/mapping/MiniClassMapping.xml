@@ -1,0 +1,350 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.MiniClass</class-a>
+		<class-b>com.eduboss.domainVo.MiniClassVo</class-b>
+	
+		<field>
+			<a>product.id</a>
+			<b>productId</b>
+		</field>
+		
+		<field>
+			<a>product.name</a>
+			<b>productName</b>
+		</field>
+		
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>gradeName</b>
+		</field>
+	
+		<field>
+			<a>product.gradeSegmentDict.id</a>
+			<b>gradeSegmentId</b>
+		</field>
+		<field>
+			<a>product.gradeSegmentDict.name</a>
+			<b>gradeSegmentName</b>
+		</field>
+	
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		
+		<field>
+			<a>subject.name</a>
+			<b>subjectName</b>
+		</field>
+		
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		
+		<field>
+			<a>product.classType.id</a>
+			<b>miniClassTypeId</b>
+		</field>
+		
+		<field>
+			<a>product.classType.name</a>
+			<b>miniClassTypeName</b>
+		</field>
+		
+		<!-- <field>
+			<a>classTime.id</a>
+			<b>classTimeId</b>
+		</field>
+		
+		<field>
+			<a>classTime.name</a>
+			<b>classTimeName</b>
+		</field> -->
+		
+		<field>
+			<a>studyManeger.userId</a>
+			<b>studyManegerId</b>
+		</field>
+		
+		<field>
+			<a>studyManeger.name</a>
+			<b>studyManegerName</b>
+		</field>
+		
+		
+		<field>
+			<a>blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		<field>
+			<a>miniClassCourseType.name</a>
+			<b>miniClassCourseTypeName</b>
+		</field>
+		<field>
+			<a>classroom.id</a>
+			<b>classroomId</b>
+		</field>
+		<field>
+			<a>classroom.classroom</a>
+			<b>classroomName</b>
+		</field>
+		<field>
+			<a>product.courseSeries.id</a>
+			<b>courseSeriesId</b>
+		</field>
+		<field>
+			<a>product.courseSeries.name</a>
+			<b>courseSeriesName</b>
+		</field>
+		<field>
+			<a>product.productVersion.id</a>
+			<b>productVersionId</b>
+		</field>
+		<field>
+			<a>product.productVersion.name</a>
+			<b>productVersionName</b>
+		</field>
+		<field>
+			<a>product.productQuarter.id</a>
+			<b>productQuarterId</b>
+		</field>
+		<field>
+			<a>product.productQuarter.name</a>
+			<b>productQuarterName</b>
+		</field>
+		<field>
+			<a>product.classType.id</a>
+			<b>classTypeId</b>
+		</field>
+		<field>
+			<a>product.classType.name</a>
+			<b>classTypeName</b>
+		</field>
+		<field>
+			<a>product.productGroup.id</a>
+			<b>productGroupId</b>
+		</field>
+		<field>
+			<a>product.productGroup.name</a>
+			<b>productGroupName</b>
+		</field>
+		<field>
+			<a>product.subject.id</a>
+			<b>productSubjectId</b>
+		</field>
+		<field>
+			<a>product.subject.name</a>
+			<b>productSubjectName</b>
+		</field>
+		<field>
+			<a>recruitStudentStatus.value</a>
+			<b>recruitStudentStatusId</b>
+		</field>
+		
+		<field>
+			<a>recruitStudentStatus.name</a>
+			<b>recruitStudentStatusName</b>
+		</field>
+		
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+		
+		<field>
+			<a>phase.id</a>
+			<b>phaseId</b>
+		</field>
+		
+		<field>
+			<a>phase.name</a>
+			<b>phaseName</b>
+		</field>
+		
+		<field>
+			<a>modal.id</a>
+			<b>modalId</b>
+		</field>
+		
+		<field>
+			<a>modal.modalName</a>
+			<b>modalName</b>
+		</field>		
+		
+	</mapping>
+
+	<mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domainVo.MiniClassVo</class-a>
+		<class-b>org.boss.rpc.base.dto.MiniClassRpcVo</class-b>
+		
+		<field>
+			<a>miniClassTypeId</a>
+			<b>classType</b>
+		</field>
+		<field>
+			<a>teacherName</a>
+			<b>teacher</b>
+		</field>
+		<field>
+			<a>gradeName</a>
+			<b>grade</b>
+		</field>
+		<field>
+			<a>unitPrice</a>
+			<b>price</b>
+		</field>
+		<field>
+			<a>subjectName</a>
+			<b>subject</b>
+		</field>
+	
+	</mapping>
+
+
+	<mapping date-format="yyyy-MM-dd"  map-null="false">
+		<class-a>com.eduboss.domain.MiniClass</class-a>
+		<class-b>com.eduboss.dto.MiniClassModalVo</class-b>
+
+		<field>
+			<a>product.id</a>
+			<b>productId</b>
+		</field>
+
+		<field>
+			<a>product.name</a>
+			<b>productName</b>
+		</field>
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+
+
+		<field>
+			<a>studyManeger.userId</a>
+			<b>studyManegerId</b>
+		</field>
+
+		<field>
+			<a>studyManeger.name</a>
+			<b>studyManegerName</b>
+		</field>
+
+
+		<field>
+			<a>blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		<field>
+			<a>classroom.id</a>
+			<b>classroomId</b>
+		</field>
+		<field>
+			<a>classroom.classroom</a>
+			<b>classroomName</b>
+		</field>
+
+		<field>
+			<a>classroom.classMember</a>
+			<b>classRoomMember</b>
+		</field>
+
+		<field>
+			<a>product.productVersion.id</a>
+			<b>productVersionId</b>
+		</field>
+		<field>
+			<a>product.productQuarter.id</a>
+			<b>productQuarterId</b>
+		</field>
+		<field>
+			<a>status.name</a>
+			<b>statusName</b>
+		</field>
+
+		<field>
+			<a>phase.id</a>
+			<b>phaseId</b>
+		</field>
+		<field>
+			<a>phase.name</a>
+			<b>phaseName</b>
+		</field>
+
+		<field>
+			<a>modal.id</a>
+			<b>modalId</b>
+		</field>
+		<field>
+			<a>modal.modalName</a>
+			<b>modalName</b>
+		</field>
+		<!--<field>-->
+			<!--<a>modal.courseWeek.name</a>-->
+			<!--<b>courseWeek</b>-->
+		<!--</field>-->
+		<field>
+			<a>modal.coursePhase.name</a>
+			<b>coursePhase</b>
+		</field>
+		<!--<field>-->
+			<!--<a>modal.courseWeek.value</a>-->
+			<!--<b>courseWeekId</b>-->
+		<!--</field>-->
+		<field>
+			<a>modal.coursePhase.id</a>
+			<b>coursePhaseId</b>
+		</field>
+		<field>
+			<a>blCampus.parentId</a>
+			<b>blBrenchId</b>
+		</field>
+
+		<field>
+			<a>product.classType.name</a>
+			<b>classTypeName</b>
+		</field>
+		<field>
+			<a>product.classType.id</a>
+			<b>classTypeId</b>
+		</field>
+
+	</mapping>
+
+</mappings>

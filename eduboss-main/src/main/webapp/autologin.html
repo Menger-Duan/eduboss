@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us" id="extr-page">
+	<head>
+		<meta charset="utf-8">
+		<title> EDUBOSS校长系统 </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/bootstrap.min.css?_auto_version_">
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/font-awesome.min.css?_auto_version_">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-production.min.css?_auto_version_">
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-skins.min.css?_auto_version_">
+
+		<!-- SmartAdmin RTL Support is under construction
+			 This RTL CSS will be released in version 1.5
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/smartadmin-rtl.min.css?_auto_version_"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/your_style.css?_auto_version_"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="framework/css/demo.min.css?_auto_version_">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="framework/img/favicon/favicon.ico" type="framework/image/x-icon">
+		<link rel="icon" href="framework/img/favicon/favicon.ico" type="framework/image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"> -->
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="framework/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="framework/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="framework/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="framework/img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="framework/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="framework/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="framework/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+	</head>
+	
+	<body class="animated fadeInDown">
+
+		<header id="header">
+
+			<div id="logo-group">
+				<span id="logo"> <img src="framework/img/logo.png" alt="SmartAdmin"> </span>
+			</div>
+
+			
+		</header>
+
+		<div id="main" role="main">
+
+			<!-- MAIN CONTENT -->
+			<div id="content" class="container">
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+						<h1 class="txt-color-red login-header-big">EDUBOSS校长系统</h1>
+						<div class="hero">
+
+							<div class="pull-left login-desc-box-l">
+								<h4 class="paragraph-header">全新设计，全新体验，量身定制！</h4>
+							</div>
+							
+							<img src="framework/img/demo/iphoneview.png" class="pull-right display-image" alt="" style="width:210px">
+
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<h5 class="about-heading">先进时尚的UI和交互</h5>
+								<p>
+									采用国际先进的UI及交互框架，带来全新的体验！
+								</p>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<h5 class="about-heading">量身定做，实用为王</h5>
+								<p>
+									基于实际使用需求，以提高工作效率，帮助管理运营为目的，量身定做。<br>
+									先进的技术架构，高可用性及性能稳定度，让用户不再与系统作斗争。
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+						<div class="well no-padding">
+							<form action="/eduboss/j_spring_security_check" id="login-form" class="smart-form client-form" method="post">
+								<header>
+									登录
+								</header>
+
+								<fieldset>
+									
+									<section>
+										<label class="label">用户名</label>
+										<label class="input"> <i class="icon-append fa fa-user"></i>
+											<input type="text" id="j_username" name="j_username" value="">
+											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> 请输入用户名。</b></label>
+									</section>
+
+									<section>
+										<label class="label">密码</label>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<input type="password" id="j_password" name="j_password">
+											<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> 请输入密码</b> </label>
+										<div class="note">
+											<a href="forgotpassword.html">忘记密码?</a>
+										</div>
+									</section>
+
+									<section>
+										<label class="checkbox">
+											<input type="checkbox" name="_spring_security_remember_me" checked="">
+											<i></i>自动登录</label>
+									</section>
+								</fieldset>
+								<footer>
+									<button type="submit" class="btn btn-primary">
+										登录
+									</button>
+								</footer>
+							</form>
+
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--================================================== -->	
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script src="framework/js/plugin/pace/pace.min.js?_auto_version_"></script>
+
+	    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	    <script src="framework/js/libs/jquery-2.0.2.min.js?_auto_version_"></script>
+	    <script src="framework/js/libs/jquery-ui-1.10.3.min.js?_auto_version_"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
+		<script src="framework/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js?_auto_version_"></script> -->
+
+		<!-- BOOTSTRAP JS -->		
+		<script src="framework/js/bootstrap/bootstrap.min.js?_auto_version_"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="framework/js/plugin/jquery-validate/jquery.validate.min.js?_auto_version_"></script>
+		
+		<!-- JQUERY MASKED INPUT -->
+		<script src="framework/js/plugin/masked-input/jquery.maskedinput.min.js?_auto_version_"></script>
+		
+		<!--[if IE 8]>
+			
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+			
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="framework/js/app.min.js?_auto_version_"></script>
+		
+		<script src="js/common.js?_auto_version_"></script>
+
+		<script type="text/javascript">
+			runAllForms();
+			
+			
+			function $G(){
+				var Url=top.window.location.href;
+				var u,g,StrBack='';
+				if(arguments[arguments.length-1]=="#")
+				   u=Url.split("#");
+				else
+				   u=Url.split("?");
+				if (u.length==1) g='';
+				else g=u[1]; 
+				if(g!=''){
+				   gg=g.split("&");
+				   var MaxI=gg.length;
+				   str = arguments[0]+"=";
+				   for(i=0;i<MaxI;i++){
+				      if(gg[i].indexOf(str)==0) {
+				        StrBack=gg[i].replace(str,"");
+				        break;
+				      }
+				   }
+				}
+				return StrBack;
+				}
+
+			$(function() {
+				
+				
+				
+				var j_username=$G("j_username");
+				var j_password=$G("j_password");
+				
+// 				alert(j_username);
+// 				alert(j_password);
+				$("#j_username").val(j_username);
+				$("#j_password").val(j_password);
+				
+				$("#login-form").submit();
+				
+				
+// 				.submit(function(e){
+// 					  alert("Submitted");
+// 				});
+				
+				
+// 				(function(e){
+					
+// 					debugger;
+// 					//alert("");
+// 					//location.href='http://192.168.1.110:8080/eduboss/index.html#function/course/courseSummary.html';
+// 				});
+				
+				//setTimeout(function(){}, 3500);
+// 				debugger;
+// 				function ajax_post(){
+	
+	
+	
+// 					  $.post("http://192.168.1.110:8080/eduboss/j_spring_security_check.do",{'j_username':j_username,'j_password':j_password},
+// 					  function(data){
+// 					    //$('#msg').html("please enter the email!");
+// 					    //alert(data);
+// // 					    $('#msg').html(data.token);
+// 						debugger;
+// 						location.href="http://192.168.1.110:8080/eduboss/index.html#function/course/courseSummary.html";
+// 						//alert(data.token);
+// 					  },
+// 					  "json");//这里返回的类型有：json,html,xml,text
+					  
+					  
+					  
+// 					};
+				
+				
+				
+				// Validation
+				$("#login-form").validate({
+					// Rules for form validation
+					rules : {
+						email : {
+							required : true,
+							email : true
+						},
+						password : {
+							required : true,
+							minlength : 3,
+							maxlength : 20
+						}
+					},
+
+					// Messages for form validation
+					messages : {
+						email : {
+							required : '请输入用户名',
+							email : 'Please enter a VALID email address'
+						},
+						password : {
+							required : '请输入密码'
+						}
+					},
+
+					// Do not change code below
+					errorPlacement : function(error, element) {
+						error.insertAfter(element.parent());
+					}
+				});
+				
+				/* $("#login-form").attr("action", EduBoss.serviceApi.loginUrl);
+				alert ($("#login-form").attr("action")); */
+			});
+			
+			
+		</script>
+
+	</body>
+</html>

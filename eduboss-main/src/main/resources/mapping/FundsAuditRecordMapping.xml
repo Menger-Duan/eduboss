@@ -1,0 +1,35 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.FundsAuditRecord</class-a>
+		<class-b>com.eduboss.domainVo.FundsAuditRecordVo</class-b>
+		<field>
+			<a>receiptUser.userId</a>
+			<b>receiptUserId</b>
+		</field>
+		<field>
+			<a>receiptUser.name</a>
+			<b>receiptUserName</b>
+		</field>
+		
+		<field>
+			<a>auditUser.userId</a>
+			<b>auditUserId</b>
+		</field>
+		<field>
+			<a>auditUser.name</a>
+			<b>auditUserName</b>
+		</field>
+		
+		<field>
+			<a>auditStatus.name</a>
+			<b>auditStatusName</b>
+		</field>
+		<field>
+			<a>auditStatus.value</a>
+			<b>auditStatusValue</b>
+		</field>
+		
+	</mapping>
+</mappings>

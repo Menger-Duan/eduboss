@@ -1,0 +1,71 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.LectureClassStudent</class-a>
+	<class-b>com.eduboss.domainVo.LectureClassStudentVo</class-b>
+
+	<field>
+		<a>student.id</a>
+		<b>studentId</b>
+	</field>
+	
+	<field>
+		<a>student.name</a>
+		<b>studentName</b>
+	</field>
+	
+	<field>
+		<a>chargeUser.userId</a>
+		<b>chargeUserId</b>
+	</field>
+	<field>
+		<a>chargeUser.name</a>
+		<b>chargeUserName</b>
+	</field>
+
+	<field>
+		<a>lectureClass.lectureId</a>
+		<b>lectureId</b>
+	</field>
+	<field>
+		<a>lectureClass.lectureName</a>
+		<b>lectureName</b>
+	</field>
+
+	
+	<field>
+		<a>teacher.userId</a>
+		<b>teacherId</b>
+	</field>
+	
+	<field>
+		<a>teacher.name</a>
+		<b>teacherName</b>
+	</field>	
+	
+	<field>
+		<a>chargeStatus.name</a>
+		<b>chargeStatusName</b>
+	</field>
+	<field>
+		<a>auditStatus.name</a>
+		<b>auditStatusName</b>
+	</field>
+	<field>
+		<a>hasTeacherAttendance.name</a>
+		<b>hasTeacherAttendanceName</b>
+	</field>
+	
+	<field>
+		<a>contractProduct.id</a>
+		<b>contractProductId</b>
+	</field>
+	
+	<field>
+		<a>student.blCampusId</a>
+		<b>blSchoolId</b>
+	</field>
+	
+</mapping>
+</mappings>

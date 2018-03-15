@@ -1,0 +1,369 @@
+--从uat merge到pre 整理如下必须的sql：
+
+1、修改菜单
+   新增TMK工作台 网络工作台 目录
+   
+   update resource set ID ='TMKWorkbench' where ID ='TMKWorkbrenth';
+   update resource set ID ='InternetWorkbench' where ID ='InternetWorkbrenth';
+   INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('TMKWorkbrenth', 'MENU', 'TMK工作台', 1, '-1', 3, '#');
+   INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('InternetWorkbrenth', 'MENU', '网络工作台', 1, '-1', 4, '#');
+
+   修改前台工作台 咨询师工作台 去掉本身的链接，然后修改为有子目录
+   UPDATE resource SET HAS_CHILDREN =1,RURL ='#' WHERE RNAME ='前台工作台';
+   UPDATE resource SET HAS_CHILDREN =1,RURL ='#' WHERE RNAME ='咨询师工作台';
+   
+   在TMK工作台下增加 子菜单
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('getCustomerByContact_TMK', 'MENU', '客户查询', 0, 'TMKWorkbench', 1, 'function/customer/searchCustomerByContact.html?workbrenchType=TMK');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('appointmentCustomers_TMK', 'MENU', '预约客户管理', 0, 'TMKWorkbench', 2, 'function/customer/appointmentCustomers.html?workbrenchType=TMK');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('followupCustomers_TMK', 'MENU', '跟进客户管理', 0, 'TMKWorkbench', 4, 'function/customer/getFollowupCustomers.html?workbrenchType=TMK');  
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('distributeCustomers_TMK', 'MENU', '分配客户管理', 0, 'TMKWorkbench', 3, 'function/customer/getDistributeCustomers.html?workbrenchType=TMK');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('inputCustomer_TMK', 'MENU', '客户录入', 0, 'TMKWorkbench', 5, 'function/customer/inputCustomer.html?workbrenchType=TMK');
+
+   在前台工作台下增加 子菜单
+
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('getCustomerByContact_RECEPTION', 'MENU', '客户查询', 0, '1', 1, 'function/customer/searchCustomerByContact.html?workbrenchType=RECEPTION');  
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('inputCustomer_RECEPTION', 'MENU', '客户录入', 0, '1', 5, 'function/customer/inputCustomer.html?workbrenchType=RECEPTION');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('distributeCustomers_RECEPTION', 'MENU', '前台客户管理', 0, '1', 4, 'function/customer/getDistributeCustomers2.html?workbrenchType=RECEPTION');
+update resource set RNAME ='来访接待管理' where ID ='visitCustomerManage';
+
+
+   在咨询师工作台下增加 子菜单
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('getCustomerByContact_CALL_OUT', 'MENU', '客户查询', 0, '2', 1, 'function/customer/searchCustomerByContact.html?workbrenchType=CALL_OUT');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('appointmentCustomers_CALL_OUT', 'MENU', '预约客户管理', 0, '2', 2, 'function/customer/appointmentCustomers.html?workbrenchType=CALL_OUT');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('distributeCustomers_CALL_OUT', 'MENU', '分配客户管理', 0, '2', 3, 'function/customer/getDistributeCustomers.html?workbrenchType=CALL_OUT');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('followupCustomers_CALL_OUT', 'MENU', '跟进客户管理', 0, '2', 4, 'function/customer/getFollowupCustomers.html?workbrenchType=CALL_OUT');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('inputCustomer_CALL_OUT', 'MENU', '客户录入', 0, '2', 5, 'function/customer/inputCustomer.html?workbrenchType=CALL_OUT');
+
+
+  在网络工作台下增加 子菜单
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('getCustomerByContact_ONLINE', 'MENU', '客户查询', 0, 'InternetWorkbench', 1, 'function/customer/searchCustomerByContact.html?workbrenchType=ON_LINE');  
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('distributeCustomers_ONLINE', 'MENU', '分配客户管理', 0, 'InternetWorkbench', 3, 'function/customer/getDistributeCustomers.html?workbrenchType=ON_LINE');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('followupCustomers_ONLINE', 'MENU', '跟进客户管理', 0, 'InternetWorkbench', 4, 'function/customer/getFollowupCustomers.html?workbrenchType=ON_LINE');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('inputCustomer_ONLINE', 'MENU', '客户录入', 0, 'InternetWorkbench', 21, 'function/customer/inputCustomer.html?workbrenchType=ON_LINE');
+
+  在客户管理 下增加 子菜单
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('getCustomerByContact_MANAGER', 'MENU', '客户查询', 0, '3', 1, 'function/customer/searchCustomerByContact.html?workbrenchType=CUSTOMERMANAGE');  
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('inputCustomer_MANAGER', 'MENU', '客户录入', 0, '3', 5, 'function/customer/inputCustomer.html?workbrenchType=MANAGER');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('distributeCustomers_MANAGER', 'MENU', '前台客户管理', 0, '3', 18, 'function/customer/getDistributeCustomers2.html?workbrenchType=MANAGER');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('addTransferCustomer', 'MENU', '转介绍登记', 0, '3', 15, 'function/customer/addTransferCustomer.html');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('auditTransferCustomerRecord', 'MENU', '转介绍审核', 0, '3', 14, 'function/customer/auditTransferCustomer.html');
+INSERT INTO resource (ID, RTYPE, RNAME, HAS_CHILDREN, PARENT_ID, RORDER, RURL) VALUE ('auditInvalidCustomerRecord', 'MENU', '无效客户审核', 0, '3', 16, 'function/customer/auditInvalidCustomer.html');
+
+
+2、增加表 
+
+CREATE TABLE `invalid_customer_audit` (
+`id`  bigint(20) NOT NULL AUTO_INCREMENT ,
+`customer_id`  varchar(32) NULL COMMENT 'customerid' ,
+`previous_status`  varchar(32) NULL COMMENT '客户无效审核之前的状态' ,
+`current_status`  varchar(32) NULL COMMENT '客户审核后的状态' ,
+`audit_status`  varchar(32) NULL COMMENT '审核状态' ,
+`remark`  varchar(512) NULL COMMENT '备注' ,
+`create_user_id`  varchar(32) NULL COMMENT '创建者id' ,
+`create_time`  varchar(32) NULL COMMENT '创建时间' ,
+`modify_user_id`  varchar(32) NULL COMMENT '修改者id' ,
+`modify_time`  varchar(32) NULL COMMENT '修改时间' ,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+create table `transfer_introduce_customer`(
+`id`  varchar(32) NOT NULL COMMENT 'tra开头的id' ,
+`customer_id`  varchar(32) NULL DEFAULT NULL COMMENT 'customerid',
+`customer_name`  varchar(32) NULL DEFAULT NULL COMMENT '客户姓名' ,
+`contact`  varchar(32) NULL DEFAULT NULL COMMENT '联系方式' ,
+`introducer`  varchar(32) NULL DEFAULT NULL COMMENT '介绍人' ,
+`introducer_type`  varchar(32) NULL DEFAULT NULL COMMENT '介绍人类型' ,
+`remark`  varchar(512) NULL DEFAULT NULL COMMENT '备注' ,
+`audit_status`  varchar(32) NULL DEFAULT NULL COMMENT '审核状态' ,
+`create_user_id`  varchar(32) NULL DEFAULT NULL COMMENT '创建者id' ,
+`create_time`  varchar(32) NULL DEFAULT NULL COMMENT '创建时间' ,
+`modify_user_id`  varchar(32) NULL DEFAULT NULL COMMENT '修改者id' ,
+`modify_time`  varchar(32) NULL DEFAULT NULL COMMENT '修改时间' ,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE `delivertarget_change_record` (
+`id`  varchar(32) NULL COMMENT '主键' ,
+`customer_id`  varchar(32) NULL DEFAULT NULL COMMENT '客户主键' ,
+`previous_target`  varchar(32) NULL DEFAULT NULL COMMENT '变动前的分配目标' ,
+`current_target`  varchar(32) NULL DEFAULT NULL COMMENT '当前的分配目标' ,
+`remark`  varchar(512) NULL DEFAULT NULL COMMENT '备注' ,
+`create_user_id`  varchar(32) NULL DEFAULT NULL COMMENT '创建者id' ,
+`create_time`  varchar(32) NULL DEFAULT NULL COMMENT '创建时间' ,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+ALTER TABLE customer ADD COLUMN RECEIVE_TIME VARCHAR(20);
+ALTER TABLE customer ADD COLUMN TRANSFER_TIME VARCHAR(20);
+ALTER TABLE `customer`
+ADD COLUMN `PRE_ENTRANCE`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '准资源入口' AFTER `TRANSFER_TIME`;
+
+ALTER TABLE `customer_dynamic_status`
+ADD COLUMN `RES_ENTRANCE`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '资源入口' AFTER `REFERUSER_ID`,
+ADD COLUMN `STATUS_NUM`  tinyint(4) NULL DEFAULT 0 COMMENT '用于统计的时候取值，取值范围为-1，+1' AFTER `RES_ENTRANCE`;
+
+ALTER TABLE `transfer_introduce_customer`
+ADD COLUMN `customer_status`  tinyint(4) NULL COMMENT '标注是新客户1还是老客户0' AFTER `modify_time`,
+ADD COLUMN `res_entrance`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '资源入口' AFTER `customer_status`;
+
+ALTER TABLE `gain_customer`
+MODIFY COLUMN `DELIVERTARGET`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '调配客户去向方' AFTER `CUS_ID`,
+ADD COLUMN `DELIVERFROM`  varchar(32) NULL COMMENT '调配客户来源方' AFTER `CUS_ID`;
+
+CREATE TABLE transfer_customer(
+	ID VARCHAR(32),
+	CUS_ID VARCHAR(32),
+	TRANSFER_TIME VARCHAR(20),
+	RECEIVE_TIME VARCHAR(20),
+	TRANSFER_CAMPUS VARCHAR(32),
+	RECEIVE_CAMPUS VARCHAR(32),
+	CREATE_TIME VARCHAR(20),
+	CREATE_USER VARCHAR(32),
+	PRIMARY KEY (ID)
+);
+ALTER TABLE `transfer_customer`
+ADD COLUMN `DELIVER_TARGET_FROM`  varchar(32) NULL COMMENT '原来的分配目标' AFTER `RECEIVE_CAMPUS`,
+ADD COLUMN `DELIVER_TARGET_TO`  varchar(32) NULL COMMENT '将要分配的' AFTER `DELIVER_TARGET_FROM`;
+
+ALTER TABLE `transfer_introduce_customer`
+ADD COLUMN `pre_entrance`  varchar(32) NULL DEFAULT NULL COMMENT '审核通过之前的资源入口' AFTER `customer_status`;
+
+
+ALTER TABLE `invalid_customer_audit`
+ADD COLUMN `invalid_remark`  varchar(512) NULL DEFAULT NULL COMMENT '无效标记' AFTER `modify_time`;
+
+ALTER TABLE `transfer_introduce_customer`
+ADD COLUMN `parent_id`  varchar(32) NULL DEFAULT NULL COMMENT '记录父节点' AFTER `id`;
+
+ALTER TABLE `invalid_customer_audit`
+ADD COLUMN `parent_id`  bigint(20) NULL COMMENT '记录父节点' AFTER `id`;
+
+--comment 修改错误的命名
+UPDATE resource SET RURL = 'CommonAction/getCampusForSelection.do' WHERE RURL  LIKE'%getCapumsForSelection%';
+
+   修改 data_dict字典表
+DELETE from data_dict WHERE id ='CONSULTOR';
+INSERT INTO data_dict(ID,NAME,VALUE,DICT_ORDER,CATEGORY,STATE,IS_SYSTEM)VALUES('TRANSFER','转介绍','TRANSFER','8','RES_ENTRANCE','0','1');
+UPDATE data_dict set `NAME` ='网络' WHERE ID ='ON_LINE';
+
+
+   增加接口访问权限
+   
+--comment 设置客户无效
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('setCustomerInvalid', 'ANON_RES', '/CustomerAction/setCustomerInvalid.do');
+--comment 审核无效客户申请
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('auditInvalidCustomer', 'ANON_RES', '/CustomerAction/auditInvalidCustomer.do');
+--comment 获取无效客户申请审核列表
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getInvalidCustomerAuditRecords', 'ANON_RES', '/CustomerAction/getInvalidCustomerAuditRecords.do');
+--comment 保存转介绍的客户信息
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('saveTransferCustomer', 'ANON_RES', '/CustomerAction/saveTransferCustomer.do');
+--comment 获取转介绍客户的审核记录
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getTransferCustomers', 'ANON_RES', '/CustomerAction/getTransferCustomers.do');
+--comment 审核 转介绍客户审核申请
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('auditTransferCustomer', 'ANON_RES', '/CustomerAction/auditTransferCustomer.do');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('distributeCustomersForPlat', 'ANON_RES', '/CustomerAction/getDistributeCustomersForPlat.do');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('signupCustomers', 'ANON_RES', '/CustomerAction/getAllSignupCustomers.do');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getDistributeCustomers', 'ANON_RES', '/CustomerAction/getDistributeCustomers.do');
+
+--comment 跟进客户管理--释放多个客户到资源池
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('releaseCustomer', 'ANON_RES', '/CustomerAction/releaseCustomer.do');
+--comment 跟进客户管理-已签单的客户列表
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getSignupCustomers', 'ANON_RES', '/CustomerAction/getSignupCustomers.do');
+--comment 分配客户管理--获取多个客户(从个人或者其他资源池获取)
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('distributeCustomer', 'ANON_RES', '/CustomerAction/distributeCustomer.do');
+
+--comment 预约客户管理接口权限
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getAppointmentRecordsForPlat', 'ANON_RES', '/CustomerAction/getAppointmentRecordsForPlat.do');
+
+--comment 增加接口资源
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('loadInvalidCustomerResult', 'ANON_RES', '/CustomerAction/loadInvalidCustomerResult.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('loadTransferCustomerResult', 'ANON_RES', '/CustomerAction/loadTransferCustomerResult.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getLostCustomersForPlat', 'ANON_RES', '/CustomerAction/getLostCustomersForPlat.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getInvalidCustomersForPlat', 'ANON_RES', '/CustomerAction/getInvalidCustomersForPlat.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('allCustomers', 'ANON_RES', '/CustomerAction/getAllCustomers.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getCustomerOverviewForPlat', 'ANON_RES', '/CustomerAction/getCustomerOverviewForPlat.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('allocateCustomer', 'ANON_RES', '/CustomerAction/allocateCustomer.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('saveCustomer', 'ANON_RES', '/CustomerAction/saveCustomer.do');
+--comment 客户资源调配
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('allocateCustomerResource', 'ANON_RES', '/CustomerAction/allocateCustomerResource.do');
+--comment 转校
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('turnCampusCustomer', 'ANON_RES', '/CustomerAction/turnCampusCustomer.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('findCustomeRegistRecord', 'ANON_RES', '/CustomerAction/findCustomeRegistRecord.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('receiveCampusCustomer', 'ANON_RES', '/CustomerAction/receiveCampusCustomer.do');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getRelatedStudentsByCusId', 'ANON_RES', '/CustomerAction/getRelatedStudentsByCusId.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('loadFollowupCustomerById', 'ANON_RES', '/CustomerAction/loadFollowupCustomerById.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('isExceedPeriod', 'ANON_RES', '/CustomerAction/isExceedPeriod.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getResourcePoolCustomer', 'ANON_RES', '/CustomerAction/getResourcePoolCustomer.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getAuditRecordById', 'ANON_RES', '/CustomerAction/getAuditRecordById.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getBranchCampus', 'ANON_RES', '/CommonAction/getBranchCampus.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('customerPoolTreeCommonModal', 'ANON_RES', 'js/customer/customerPoolTreeCommonModal/template.html');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('loadCustomerRecord', 'ANON_RES', '/CustomerAction/loadCustomerRecord.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getResourcePoolWithVolume', 'ANON_RES', '/ResourcePoolController/getResourcePoolWithVolume.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('checkPersonPoolVolume', 'ANON_RES', '/ResourcePoolController/checkPersonPoolVolume.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('attendanceCount', 'ANON_RES', '/CourseController/attendanceCount.do');
+
+
+create table data_dict_20161215_bak as select * from data_dict;
+create table resource_20161215_bak as select * from resource;
+create table role_resource_20161215_bak as select * from role_resource;
+create table user_dept_job_20161215_bak as select * from user_dept_job;
+create table user_job_20161215_bak as select * from user_job;
+
+
+DELETE from resource WHERE RNAME ='公共客户查询';
+DELETE from role_resource WHERE resourceID not in (SELECT id from resource);
+DELETE from resource WHERE id in ('appointmentCustomersConsultor','appointmentCustomersInternet','appointmentCustomersTMK');
+DELETE from role_resource WHERE resourceID in ('appointmentCustomersConsultor','appointmentCustomersInternet','appointmentCustomersTMK');
+
+
+
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('followupCustomersForPlat', 'ANON_RES', '/CustomerAction/getFollowupCustomersForPlat.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('transferCustomerList', 'ANON_RES', 'CustomerAction/transferCustomerList.do');
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('customerResourceInfoModal', 'ANON_RES', '/function/customer/customerResourceInfoModal.html');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('checkCustomerContact', 'ANON_RES', '/CustomerAction/checkCustomerContact.do');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('selectSchoolModal', 'ANON_RES', 'function/customer/selectSchoolModal.html');
+
+INSERT INTO resource(ID, RTYPE, RURL) VALUE('getResourcePoolUserBySearch', 'ANON_RES', '/ResourcePoolController/getResourcePoolAndUserBySearch.do');
+
+-- 报错缺少 员工推荐 郭诗博
+INSERT INTO `data_dict` (`ID`, `NAME`, `VALUE`, `DICT_ORDER`, `PARENT_ID`, `CATEGORY`, `ICON`, `DATA`, `REMARK`, `CREATE_TIME`, `CREATE_USER_ID`, `STATE`, `IS_SYSTEM`) VALUES ('EMPLOYEE_INTRODUCE', '员工推荐', 'EMPLOYEE_INTRODUCE', '10', 'INTRODUCE', 'CUS_ORG', NULL, NULL, NULL, NULL, NULL, '0', '1');
+
+
+
+
+DELETE from user_dept_job WHERE JOB_ID in (SELECT ID from user_job WHERE JOB_NAME LIKE '%TMK专员%');
+DELETE from user_job WHERE JOB_NAME LIKE '%TMK专员%';
+UPDATE user_job SET JOB_NAME ='TMK专员',JOB_SIGN ='tmkzy' WHERE JOB_NAME LIKE '%外呼专员%';
+
+DELETE from role_resource WHERE roleID in (SELECT id from role WHERE `name` LIKE '%TMK专员%');
+DELETE from role WHERE `name` like '%TMK专员%';
+UPDATE role SET `name`='TMK专员',ROLE_SIGN ='tmkzy' WHERE `name` LIKE '%外呼专员%';
+
+create table SYSTEM_NOTICE_ROLE_20161215_bak as select * from SYSTEM_NOTICE_ROLE;
+DELETE from SYSTEM_NOTICE_ROLE WHERE role_id in (SELECT id from role WHERE `name` LIKE '%TMK专员%');
+
+UPDATE user_job set JOB_NAME ='TMK主管',REMARK ='TMK主管' WHERE JOB_NAME ='外呼主管';
+UPDATE user_job set JOB_NAME ='TMK助理',REMARK ='TMK助理' WHERE JOB_NAME ='外呼助理';
+UPDATE role set `name` ='TMK主管' WHERE `name` ='外呼主管';
+
+
+DROP procedure IF EXISTS `proc_resource_back`;
+CREATE  PROCEDURE `proc_resource_back`()
+BEGIN
+
+
+
+		DECLARE cus_id varchar(32);
+
+    DECLARE return_node varchar(32);
+
+		DECLARE nowDate char(32);
+		
+		DECLARE deliverTarget varchar(32);
+
+
+
+	 DECLARE cur1 CURSOR FOR select cus.id,RETURN_NOTE,NOW(),cus.DELEVER_TARGET as deliverTarget
+
+			from 
+
+			( 
+
+				select c.*,p.RETURN_NOTE,p.RECOVEY_PERIOD from customer c  INNER JOIN resource_pool p on c.delever_target= p.organization_id
+
+			 where c.DELEVER_TARGET is not null and c.DEAL_STATUS in ('STAY_FOLLOW','FOLLOWING')  and p.`STATUS`='VALID' and p.CYCLE_TYPE='1' ) cus where TO_DAYS(NOW())-TO_DAYS(cus.modify_time)>cus.recovey_period;
+
+
+
+
+
+	 DECLARE cur2 CURSOR FOR select cus.id,cus.orgId,NOW() as nowDate,cus.DELEVER_TARGET as deliverTarget from 
+
+			( 
+
+				select c.*,uj.return_cycle,o.id as orgId from customer  c 
+
+					INNER JOIN user_dept_job udj on c.delever_target=udj.user_id
+
+					INNER JOIN user_job uj on udj.job_id = uj.id
+
+					INNER JOIN user u on u.user_id=c.delever_target
+
+					INNER JOIN organization o on u.organizationid=o.id
+
+					where uj.is_customer_follow='0' and udj.isMajorRole ='0' and c.DELEVER_TARGET is not null and c.DEAL_STATUS in ('STAY_FOLLOW','FOLLOWING') and uj.CYCLE_TYPE='1' )cus
+
+						where TO_DAYS(NOW())-TO_DAYS(cus.modify_time)>cus.return_cycle;
+
+
+
+ DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET @CURSOR_STOP_FLAG = true;
+
+
+
+    SET @CURSOR_STOP_FLAG =false;
+
+    OPEN cur1;
+
+		FETCH cur1 into cus_id,return_node,nowDate,deliverTarget;
+
+			WHILE !@CURSOR_STOP_FLAG do
+
+				
+
+					UPDATE customer set DELEVER_TARGET=return_node,MODIFY_TIME=nowDate,DELIVER_TYPE='CUSTOMER_RESOURCE_POOL',DEAL_STATUS='STAY_FOLLOW' where id=cus_id;
+
+					INSERT into customer_dynamic_status VALUES(CONCAT("CUS00000",(select nextval('customer_dynamic_status'))),cus_id,'BACK',nowDate,return_node,NULL,NULL,NULL,0);
+					
+					INSERT into gain_customer VALUES(CONCAT("GAI0",(select nextval('gain_customer'))),cus_id,deliverTarget,return_node,'系统回收',NULL,nowDate);
+
+				
+
+			FETCH cur1 into cus_id,return_node,nowDate,deliverTarget;
+
+			END WHILE;
+
+		CLOSE cur1;
+
+
+
+ SET @CURSOR_STOP_FLAG =false;
+
+	OPEN cur2;
+
+	FETCH cur2 INTO cus_id,return_node,nowDate,deliverTarget;
+
+		WHILE !@CURSOR_STOP_FLAG do
+
+			
+
+					UPDATE customer set DELEVER_TARGET=return_node,MODIFY_TIME=nowDate,DELIVER_TYPE='CUSTOMER_RESOURCE_POOL',DEAL_STATUS='STAY_FOLLOW' where id=cus_id;
+
+					INSERT into customer_dynamic_status VALUES(CONCAT("CUS00000",(select nextval('customer_dynamic_status'))),cus_id,'BACK',nowDate,return_node,NULL,NULL,NULL,0);
+
+                    INSERT into gain_customer VALUES(CONCAT("GAI0",(select nextval('gain_customer'))),cus_id,deliverTarget,return_node,'系统回收',NULL,nowDate);
+			
+
+				FETCH cur2 into cus_id,return_node,nowDate,deliverTarget;
+
+			END WHILE;
+
+		CLOSE cur2;
+
+
+
+END
+
+ALTER TABLE `customer`
+ADD COLUMN `GET_CUSTOMER_TIME`  varchar(20) NULL COMMENT '客户获取时间' AFTER `PRE_ENTRANCE`;
+
+
+

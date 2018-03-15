@@ -1,0 +1,72 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.TeacherVersion</class-a>
+		<class-b>com.eduboss.domainVo.TeacherVersionVo</class-b>
+		<field>
+			<a>teacher.userId</a>
+			<b>teacherId</b>
+		</field>
+		<field>
+			<a>teacher.name</a>
+			<b>teacherName</b>
+		</field>
+		<field>
+			<a>teacher.sex</a>
+			<b>sex</b>
+		</field>
+		<field>
+			<a>teacher.entryDate</a>
+			<b>entryDate</b>
+		</field>
+		<field>
+			<a>teacher.borthday</a>
+			<b>birthDay</b>
+		</field>
+		<field>
+			<a>teacher.contact</a>
+			<b>contact</b>
+		</field>
+		<field>
+			<a>teacher.workType.value</a>
+			<b>workType</b>
+		</field>
+		<field>
+			<a>teacher.employeeNo</a>
+			<b>jobNumber</b>
+		</field>
+		<field>
+			<a>teacher.enableFlg</a>
+			<b>enableFlg</b>
+		</field>
+		
+		<field>
+			<a>blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+		
+		<field>
+			<a>mainSubject.id</a>
+			<b>mainSubjectId</b>
+		</field>
+		<field>
+			<a>mainSubject.name</a>
+			<b>mainSubjectName</b>
+		</field>
+		
+		<field>
+			<a>mainGrade.id</a>
+			<b>mainGradeId</b>
+		</field>
+		<field>
+			<a>mainGrade.name</a>
+			<b>mainGradeName</b>
+		</field>
+	</mapping>
+
+</mappings>

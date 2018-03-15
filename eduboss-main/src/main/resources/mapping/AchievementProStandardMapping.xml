@@ -1,0 +1,37 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+	<class-a>com.eduboss.domain.AchievementProStandard</class-a>
+	<class-b>com.eduboss.domainVo.AchievementProStandardVo</class-b>
+	
+	   <field>
+            <a>standardCategory.name</a>
+            <b>standardCategoryName</b>
+        </field>
+        <field>
+            <a>standardCategory.value</a>
+            <b>standardCategoryValue</b>
+        </field>
+        
+        <field>
+            <a>greaterType.name</a>
+            <b>greaterTypeName</b>
+        </field>
+        <field>
+            <a>greaterType.value</a>
+            <b>greaterTypeValue</b>
+        </field>
+        
+        <field>
+            <a>lessType.name</a>
+            <b>lessTypeName</b>
+        </field>
+        <field>
+            <a>lessType.value</a>
+            <b>lessTypeValue</b>
+        </field>
+	
+	</mapping>
+
+</mappings>

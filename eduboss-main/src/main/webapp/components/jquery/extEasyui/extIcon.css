@@ -1,0 +1,91 @@
+.icon-upload{
+	background:url('icons/ico-upload.png') no-repeat;
+}
+.icon-use{
+	background:url('icons/330.gif') no-repeat;
+}
+.icon-addUser{
+	background:url('icons/005.gif') no-repeat;
+}
+.icon-delUser{
+	background:url('icons/006.gif') no-repeat;
+}
+.icon-editUser{
+	background:url('icons/007.gif') no-repeat;
+}
+.icon-addAuthority{
+	background:url('icons/001.gif') no-repeat;
+}
+.icon-delAuthority{
+	background:url('icons/002.gif') no-repeat;
+}
+.icon-editAuthority{
+	background:url('icons/003.gif') no-repeat;
+}
+
+.icon-role{
+	background:url('icons/202.gif') no-repeat;
+}
+.icon-addrole{
+	background:url('icons/199.gif') no-repeat;
+}
+.icon-updaterole{
+	background:url('icons/201.gif') no-repeat;
+}
+.icon-delrole{
+	background:url('icons/200.gif') no-repeat;
+}
+.icon-roleauthority{
+	background:url('icons/275.gif') no-repeat;
+}
+.icon-addKn{
+	background:url('icons/038.gif') no-repeat;
+}
+.icon-updateKn{
+	background:url('icons/040.gif') no-repeat;
+}
+.icon-delKn{
+	background:url('icons/039.gif') no-repeat;
+}
+.icon-detailKn{
+	background:url('icons/041.gif') no-repeat;
+}
+.icon-moveKn{
+	background:url('icons/094.gif') no-repeat;
+}
+.icon-delete{
+	background:url('icons/324.gif') no-repeat;
+}
+.icon-typeAdd{
+	background:url('icons/088.gif') no-repeat;
+}
+.icon-typeEdit{
+	background:url('icons/090.gif') no-repeat;
+}
+.icon-typeDel{
+	background:url('icons/089.gif') no-repeat;
+}
+.icon-upMove{
+	background:url('icons/132.gif') no-repeat;
+}
+.icon-downMove{
+	background:url('icons/170.gif') no-repeat;
+}
+.icon-addProject{
+	background:url('icons/241.gif') no-repeat;
+}
+.icon-delProject{
+	background:url('icons/242.gif') no-repeat;
+}
+.icon-getProject{
+	background:url('icons/243.gif') no-repeat;
+}
+.icon-editProject{
+	background:url('icons/276.gif') no-repeat;
+}
+.icon-startProject{
+	background:url('icons/275.gif') no-repeat;
+}
+.icon-copyProject{
+	background:url('icons/219.gif') no-repeat;
+}

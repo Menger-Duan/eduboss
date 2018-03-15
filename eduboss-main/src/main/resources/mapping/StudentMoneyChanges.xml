@@ -1,0 +1,75 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+	<class-a>com.eduboss.domain.StudentMoneyChanges</class-a>
+	<class-b map-null="false">com.eduboss.domainVo.StudentMoneyChangesVo</class-b>
+	
+	<field>
+		<a>student.id</a>
+		<b>studentId</b>
+	</field>
+	<field>
+		<a>student.name</a>
+		<b>studentName</b>
+	</field>
+	<field>
+		<a>campus.name</a>
+		<b>campusName</b>
+	</field>
+	<field>
+		<a>student.studyManeger.name</a>
+		<b>studyManagerName</b>
+	</field>
+	<field>
+		<a>productType.name</a>
+		<b>productTypeName</b>
+	</field>
+	<field>
+		<a>chargeType.name</a>
+		<b>chargeType</b>
+	</field>
+	<field>
+		<a>channel.name</a>
+		<b>channel</b>
+	</field>
+	<field>
+		<a>course.courseId</a>
+		<b>courseId</b>
+	</field>
+	<field>
+		<a>course.subject.name</a>
+		<b>courseName</b>
+	</field>
+	<field>
+		<a>miniClass.miniClassCourseId</a>
+		<b>miniClassCourseId</b>
+	</field>
+	<field>
+		<a>miniClass.miniClass.name</a>
+		<b>miniClassName</b>
+	</field>
+	<field>
+		<a>promiseClassRecord.promiseClass.id</a>
+		<b>promiseCourseId</b>
+	</field>
+	<field>
+		<a>promiseClassRecord.promiseClass.pName</a>
+		<b>promiseClassName</b>
+	</field>
+	<field>
+		<a>otmClassCourse.otmClassCourseId</a>
+		<b>otmClassCourseId</b>
+	</field>
+	<field>
+		<a>otmClassCourse.otmClass.name</a>
+		<b>otmClassName</b>
+	</field>
+
+		<field>
+			<a>operateUser.name</a>
+			<b>operateUserName</b>
+		</field>
+
+	</mapping>
+</mappings>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+    default-lazy-init="false" >
+   <!-- 提供方应用名称信息，这个相当于起一个名字，我们dubbo管理页面比较清晰是哪个应用暴露出来的 -->
+   <context:property-placeholder location="classpath:systemconfig.properties" /> 
+   
+   <dubbo:application name="eduboss-${app.env}"></dubbo:application>
+   <!-- 使用zookeeper注册中心暴露服务地址 -->  
+   <dubbo:registry address="${dubbo.registry.address}" file="dubbo-registry-eduboss-${app.env}/dubbo-registry.properties" check="false" ></dubbo:registry>
+   
+  <dubbo:protocol name="dubbo" port="${dubbo.port}" />
+  
+  <dubbo:monitor protocol="registry" />
+   
+   <dubbo:consumer check="false" timeout="5000" mock="return null" />
+   
+   
+   <!-- 要暴露的服务接口，可以增加path自定义路径 -->     
+   <!-- 服务提供者 -->
+   <dubbo:service interface="org.boss.rpc.eduboss.service.DataDictRpc"  ref="dataDictRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.OrganizationRpc"  ref="organizationRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.CourseRpc"  ref="courseRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.TeacherRpc"  ref="teacherRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.UserRpc"  ref="userRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.CustomerRpc"  ref="customerRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.StudentRpc"  ref="studentRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.OrderRpc"  ref="orderRpcImpl" group="${app.env}" />
+   <dubbo:service interface="org.boss.rpc.eduboss.service.ProductRpc"  ref="productRpcImpl" group="${app.env}" />
+   
+   <!-- 服务消费者 -->
+   <!-- <dubbo:reference check="false" interface="org.boss.rpc.mobile.service.OrderRpc" id="testOrderRpc" /> -->
+   <dubbo:reference check="false" interface="org.boss.rpc.mobile.service.BossCourseRpc" id="bossCourseRpc" group="${mobile.app.env}" />
+   <dubbo:reference check="false" interface="org.boss.rpc.mobile.service.BossSchoolAreaRpc" id="bossSchoolAreaRpc" group="${mobile.app.env}" />
+   <dubbo:reference check="false" interface="org.boss.rpc.mobile.service.BossOrderRpc" id="bossOrderRpc" group="${mobile.app.env}" />
+   
+</beans>

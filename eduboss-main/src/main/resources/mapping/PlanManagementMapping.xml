@@ -1,0 +1,39 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+	<class-a>com.eduboss.domain.PlanManagement</class-a>
+	<class-b>com.eduboss.domainVo.PlanManagementVo</class-b>
+	<field>
+		<a>timeType.name</a>
+		<b>timeTypeName</b>
+	</field>
+	<field>
+		<a>quarterId.name</a>
+		<b>quarterName</b>
+	</field>
+	<field>
+		<a>monthId.name</a>
+		<b>monthName</b>
+	</field>
+	
+	<field>
+		<a>year.id</a>
+		<b>yearId</b>
+	</field>
+	<field>
+		<a>year.name</a>
+		<b>yearName</b>
+	</field>
+	
+	<field>
+		<a>targetType.id</a>
+		<b>targetTypeId</b>
+	</field>
+	<field>
+		<a>targetType.name</a>
+		<b>targetTypeName</b>
+	</field>
+	
+</mapping>
+</mappings>

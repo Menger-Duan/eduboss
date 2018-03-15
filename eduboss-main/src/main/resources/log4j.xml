@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] [%c]-[%p] - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="HTML" class="org.apache.log4j.FileAppender">
+		<layout class="com.eduboss.logger.EduBossHTMLLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+		</layout>
+		<param name="File" value="${webapp.root}/logs/log.html"/>
+		<param name="Threshold" value="ERROR" />
+	</appender>
+
+	<appender name="LOGFILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/tmp/edubossLog/xinghuo/edubosslog.log" />
+		<param name="Append" value="true" />
+		<!-- 指定日志输出级别 -->
+		<param name="Threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] [%c]-[%p] - %m%n" />
+		</layout>
+	</appender>
+
+    <appender name="ERRORFILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/tmp/edubossLog/xinghuo/edubossErrorLog.log" />
+        <param name="Append" value="true" />
+        <!-- 指定日志输出级别 -->
+        <param name="Threshold" value="ERROR" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] [%c]-[%p] - %m%n" />
+        </layout>
+    </appender>
+	
+	<appender name="PROCEDURE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/tmp/procedureLog/xinghuo/procedurelog.log" />
+		<param name="Append" value="true" />
+		<!-- 指定日志输出级别 -->
+		<param name="Threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] [%c]-[%p] - %m%n" />
+		</layout>
+    </appender>
+    
+    <appender name="ACCESSlOG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/tmp/accesslog/xinghuo/accesslog.log" />
+		<param name="Append" value="true" />
+		<!-- 指定日志输出级别 -->
+		<param name="Threshold" value="INFO" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] [%c]-[%p] - %m%n" />
+		</layout>
+    </appender>
+	
+	<logger name="org.nutz.dao.impl">
+		<level value="INFO" />
+	</logger>
+	<logger name="com.opensymphony.xwork2.DefaultActionProxy">
+		<level value="ERROR" />
+	</logger>
+	<logger name="com.opensymphony.xwork2.DefaultActionProxy">
+		<level value="ERROR" />
+	</logger>
+	<logger name="com.mchange.v2">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.hibernate.SQL">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.hibernate">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.apache.struts2">
+		<level value="ERROR" />
+	</logger>
+	
+	<logger name="org.directwebremoting.log">
+		<level value="INFO" />
+	</logger>
+	
+	<logger name="org.dozer">
+		<level value="INFO" />
+	</logger>
+	
+	<logger name="com.eduboss.dao.ProcedureDao">
+		<level value="INFO" />
+		<appender-ref ref="PROCEDURE" />
+	</logger>
+	
+	<!-- 访问日志  -->
+	<logger name="com.eduboss.logger.LoggerFilter">
+		<level value="INFO" />
+		<appender-ref ref="ACCESSlOG" />
+	</logger>
+	
+	
+	<root>
+		<level value="info" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="HTML" />
+		<appender-ref ref="LOGFILE" />
+        <appender-ref ref="ERRORFILE" />
+	</root>
+
+
+
+</log4j:configuration>

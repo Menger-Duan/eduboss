@@ -1,0 +1,115 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.OdsMonthPaymentReciept</class-a>
+		<class-b map-null="false">com.eduboss.domainVo.OdsMonthPaymentRecieptVo</class-b>
+		<field>
+			<a>group.id</a>
+			<b>groupId</b>
+		</field>
+		<field>
+			<a>group.name</a>
+			<b>groupName</b>
+		</field>
+		<field>
+			<a>brench.id</a>
+			<b>brenchId</b>
+		</field>
+		<field>
+			<a>brench.name</a>
+			<b>brenchName</b>
+		</field>
+		<field>
+			<a>campus.id</a>
+			<b>campusId</b>
+		</field>
+		<field>
+			<a>campus.name</a>
+			<b>campusName</b>
+		</field>
+		
+		<field>
+			<a>transactionCampus.id</a>
+			<b>transactionCampusId</b>
+		</field>
+		<field>
+			<a>transactionCampus.name</a>
+			<b>transactionCampusName</b>
+		</field>
+		
+		<field>
+			<a>contractType.value</a>
+			<b>contractTypeId</b>
+		</field>
+		<field>
+			<a>contractType.name</a>
+			<b>contractTypeName</b>
+		</field>
+		
+		<field>
+			<a>contractStatus.value</a>
+			<b>contractStatusId</b>
+		</field>
+		<field>
+			<a>contractStatus.name</a>
+			<b>contractStatusName</b>
+		</field>
+				
+		<field>
+			<a>bonusType.value</a>
+			<b>bonusTypeId</b>
+		</field>
+		<field>
+			<a>bonusType.name</a>
+			<b>bonusTypeName</b>
+		</field>		
+		<field>
+			<a>bonusStaff.userId</a>
+			<b>bonusStaffId</b>
+		</field>
+		<field>
+			<a>bonusStaff.name</a>
+			<b>bonusStaffName</b>
+		</field>		
+		<field>
+			<a>bonusStaffOrg.id</a>
+			<b>bonusStaffOrgId</b>
+		</field>
+		<field>
+			<a>bonusStaffOrg.name</a>
+			<b>bonusStaffOrgName</b>
+		</field>
+		
+		<field>
+			<a>contractPaidStatus.name</a>
+			<b>contractPaidStatusName</b>
+		</field>
+				
+		<field>
+			<a>contractPaidStatus.value</a>
+			<b>contractPaidStatusId</b>
+		</field>
+		
+		<field>
+			<a>receiptStatus.name</a>
+			<b>receiptStatusName</b>
+		</field>
+				
+		<field>
+			<a>receiptStatus.value</a>
+			<b>receiptStatusId</b>
+		</field>
+		
+		<field>
+			<a>productType.value</a>
+			<b>productTypeId</b>
+		</field>
+		<field>
+			<a>productType.name</a>
+			<b>productTypeName</b>
+		</field>
+	
+	</mapping>
+
+</mappings>

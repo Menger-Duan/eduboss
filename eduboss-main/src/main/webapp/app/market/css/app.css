@@ -1,0 +1,121 @@
+.navbar-inverse {
+	border-width:0 0 1px 0;
+	border-color: #CCC;
+}
+.navbar-inverse .navbar-brand {
+	padding-left:0px;
+	color:#000000;
+}
+.navigationPadding{
+	padding: 50px 0px 10px 0px;
+}
+.main {
+	padding: 15px;
+}
+.grayBg {
+	background-color: #F2F2F2;
+	opacity:0.8
+}
+.noPadding {
+	padding:0px;
+}
+.padding-left-right-10{
+	padding-left:10px;
+	padding-right:10px;
+}
+.padding-left-right-15{
+	padding-left:15px;
+	padding-right:15px;
+}
+.padding-10{
+	padding:10px;
+}
+.blockMarginLeft{
+	margin:10px;
+}
+.marg-bottom-10 {
+	margin-bottom:10px;
+}
+.margin-right-10 {
+	margin-right:15px;
+}
+.margin-buttom-15 {
+	margin-buttom:15px;
+}
+.blockMargin {
+	margin:15px;
+}
+.gray {
+	color: #aaa;
+}
+.right {
+	float:right;
+}
+.center {
+	float:center;
+}
+.left {
+	float:left;
+}
+.alertColor {
+	color:#ff3b30;
+}
+.blue {
+	color:#007aff;
+}
+.tdAlignRiht {
+	text-align: right;
+}
+.btn-blue {
+	color:#007aff;
+	border-color:#007aff;
+	background-color: #FFFFFF;
+}
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active, .btn-blue.active, .open .dropdown-toggle.btn-blue {
+	color:#007aff;
+	border-color:#007aff;
+	background-color: #eeeeee;
+}
+.btn-red {
+	color:#FF6600;
+	border-color:#FF6600;
+	background-color: #FFFFFF;
+}
+.btn-red:hover, .btn-red:focus, .btn-red:active, .btn-red.active, .open .dropdown-toggle.btn-red {
+	color:#FF6600;
+	border-color:#FF6600;
+	background-color: #eeeeee;
+}
+.hide {
+	display:none;
+}
+.show {
+	display:block;
+}
+#judgerLayout {
+	height:180px;
+	width:100%;
+	overflow: auto;
+}
+#judgerLayout > div {
+	height:180px;
+}
+.judgerBlock {
+	width:90px;
+	margin-top:10px;
+	margin-right:10px;
+}
+.judgerBlock .disScore {
+	color:#999;
+	border-color:#999;
+	background-color: #eeeeee;
+}
+.noMarginTop {
+	margin-top: 0px;
+}
+.singleLineText {
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}

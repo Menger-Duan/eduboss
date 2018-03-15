@@ -1,0 +1,87 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.SystemNotice</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeVo</class-b>
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		<field>
+			<a>modifyUser.userId</a>
+			<b>modifyUserId</b>
+		</field>
+		<field>
+			<a>modifyUser.name</a>
+			<b>modifyUserName</b>
+		</field>
+		<field>
+			<a>createUser.organizationId</a>
+			<b>createUserOrgId</b>
+		</field>
+		<field>
+			<a>createUser.organizationName</a>
+			<b>createUserOrg</b>
+		</field>
+		<field>
+			<a>modifyUser.organizationId</a>
+			<b>modifyUserOrgId</b>
+		</field>
+		<field>
+			<a>modifyUser.organizationName</a>
+			<b>modifyUserOrg</b>
+		</field>
+		<field>
+			<a>noticeType.id</a>
+			<b>noticeType</b>
+		</field>
+		<field>
+			<a>noticeType.name</a>
+			<b>noticeTypeName</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" >
+		<class-a>com.eduboss.domainVo.SystemNoticeVo</class-a>
+		<class-b>com.eduboss.domainVo.WelcomeNoticeVo</class-b>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" >
+		<class-a>com.eduboss.domain.SystemNotice</class-a>
+		<class-b>com.eduboss.domainVo.WelcomeNoticeVo</class-b>
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+		<field>
+			<a>createUser.userId</a>
+			<b>createUserId</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false"  map-id="withSystemNoticeForMobile">
+		<class-a>com.eduboss.domainVo.SystemNoticeVo</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeMobileVo</class-b>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domain.SystemNotice</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeMobileVo</class-b>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domainVo.SystemNoticeVo</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeMobileDetailVo</class-b>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domain.SystemNotice</class-a>
+		<class-b>com.eduboss.domainVo.SystemNoticeMobileDetailVo</class-b>
+	</mapping>
+	
+</mappings>

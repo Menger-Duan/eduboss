@@ -1,0 +1,57 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.DataDict</class-a>
+		<class-b>com.eduboss.domainVo.DataDictVo</class-b>
+		<field>
+			<a>parentDataDict.id</a>
+			<b>parentDataDictId</b>
+		</field>
+		
+		<field>
+			<a>parentDataDict.name</a>
+			<b>parentDataDictName</b>
+		</field>
+		<field>
+			<a>parentDataDict.value</a>
+			<b>parentDataDictValue</b>
+		</field>
+		<field>
+			<a>parentDataDict.category.name</a>
+			<b>parentDataDictCategoryName</b>
+		</field>
+		<field>
+			<a>parentDataDict.category.value</a>
+			<b>parentDataDictCategoryValue</b>
+		</field>
+		<field>
+			<a>category.name</a>
+			<b>categoryName</b>
+		</field>
+		<field>
+			<a>category.value</a>
+			<b>categoryValue</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.DataDict</class-a>
+		<class-b>org.boss.rpc.base.dto.DataDictRpcVo</class-b>
+		<field>
+			<a>name</a>
+			<b>text</b>
+		</field>
+		
+		<field>
+            <a>parentDataDict.id</a>
+            <b>parentId</b>
+        </field>
+        
+        <field>
+            <a>parentDataDict.name</a>
+            <b>parentName</b>
+        </field>
+	</mapping>
+
+</mappings>

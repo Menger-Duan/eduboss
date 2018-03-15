@@ -1,0 +1,20 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.ResourcePoolRole</class-a>
+		<class-b>com.eduboss.domainVo.ResourcePoolRoleVo</class-b>
+		<field>
+			<a>organizationId</a>
+			<b>organizationId</b>
+		</field>
+		<field>
+			<a>roleId</a>
+			<b>roleId</b>
+		</field>
+		<field>
+			<a>role.name</a>
+			<b>roleName</b>
+		</field>
+	</mapping>
+</mappings>

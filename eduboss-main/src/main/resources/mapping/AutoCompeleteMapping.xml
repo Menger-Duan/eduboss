@@ -1,0 +1,56 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.User</class-a>
+		<class-b>com.eduboss.domainVo.AutoCompleteOptionVo</class-b>
+		<field>
+			<a>name</a>
+			<b>label</b>
+		</field>
+		<field>
+			<a>userId</a>
+			<b>value</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domainVo.ProductVo</class-a>
+		<class-b>com.eduboss.domainVo.AutoCompleteOptionVo</class-b>
+		<field>
+			<a>name</a>
+			<b>label</b>
+		</field>
+		<field>
+			<a get-method="getSmallClassAutoCompleteValue">value</a>
+			<b>value</b>
+		</field>
+	</mapping>
+	
+	<mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.Student</class-a>
+		<class-b>com.eduboss.domainVo.AutoCompleteOptionVo</class-b>
+		<field>
+			<a>name</a>
+			<b>label</b>
+		</field>
+		<field>
+			<a>id</a>
+			<b>value</b>
+		</field>
+	</mapping>
+
+	<mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.ClassroomManage</class-a>
+		<class-b>com.eduboss.domainVo.AutoCompleteOptionVo</class-b>
+		<field>
+			<a>classroom</a>
+			<b>label</b>
+		</field>
+		<field>
+			<a>id</a>
+			<b>value</b>
+		</field>
+	</mapping>
+	
+</mappings>

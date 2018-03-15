@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EDUBOSS校长系统App端下载</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="libs/bootstrap.min.css?_auto_version_">
+<script type="text/javascript" src="libs/jquery-2.0.2.min.js?_auto_version_"></script>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top grayBg" role="navigation">
+		<div class="container">
+			<a class="navbar-brand">EDUBOSS校长系统App端下载</a>
+		</div>
+	</div>
+
+	<div class="container navigationPadding" style="padding-top:40px;text-align:center;">
+		</br></br>
+		<img src="libs/appdownload.png" width=300 height=300 />
+		</br></br>
+		<a id="teacherAndroidBtn" class="btn btn-primary btn-blue" href="http://xuebangsoft-tools.oss-cn-shenzhen.aliyuncs.com/EduBossTeacherXH_v2.3.5_release.apk" style="width:300px">点击下载老师端Android版</a>
+		</br></br>
+		<a id="teacherIosBtn" class="btn btn-primary btn-blue" href="https://itunes.apple.com/cn/app/id930738031" style="width:300px">点击下载老师端ios版</a>
+		</br></br>
+		 <div style="color:gray;" id="openTips">
+		 	如果在微信中打开本页面点击没有反应，请点击右上角 “...” 选项，并在弹出界面选择 “在浏览器中打开” <span >(苹果手机是“在Safari中打开”)</span>
+		 </div>
+	</div>
+	
+	<script type="text/javascript">
+	function is_weixn(){
+	    var ua = navigator.userAgent.toLowerCase();
+	    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	        return true;  
+	    } else {
+	        return false;  
+	    }
+	}
+	if (is_weixn()) {
+		$("#openTips").show();
+	} else {
+		$("#openTips").hide();
+	}
+	</script>
+</body>
+</html>

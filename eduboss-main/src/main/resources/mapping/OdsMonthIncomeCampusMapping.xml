@@ -1,0 +1,53 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" map-empty-string="false">
+		<class-a>com.eduboss.domain.OdsMonthIncomeCampus</class-a>
+		<class-b>com.eduboss.domainVo.OdsMonthIncomeCampusPrintVo</class-b>
+		<field>
+			<a>currentAuditUser.userId</a>
+			<b>currentAuditUserId</b>
+		</field>
+		<field>
+			<a>currentAuditUser.name</a>
+			<b>currentAuditUserName</b>
+		</field>
+		
+		<field>
+			<a>campusConfirmUser.userId</a>
+			<b>campusConfirmUserId</b>
+		</field>
+		<field>
+			<a>campusConfirmUser.name</a>
+			<b>campusConfirmUserName</b>
+		</field>
+		
+		<field>
+			<a>financeFirstAuditUser.userId</a>
+			<b>financeFirstAuditUserId</b>
+		</field>
+		<field>
+			<a>financeFirstAuditUser.name</a>
+			<b>financeFirstAuditUserName</b>
+		</field>
+		
+		<field>
+			<a>brenchConfirmUser.userId</a>
+			<b>brenchConfirmUserId</b>
+		</field>
+		<field>
+			<a>brenchConfirmUser.name</a>
+			<b>brenchConfirmUserName</b>
+		</field>
+		
+		<field>
+			<a>financeEndAuditUser.userId</a>
+			<b>financeEndAuditUserId</b>
+		</field>
+		<field>
+			<a>financeEndAuditUser.name</a>
+			<b>financeEndAuditUserName</b>
+		</field>
+		
+	</mapping>
+</mappings>

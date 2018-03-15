@@ -1,0 +1,35 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.SubjectGroup</class-a>
+		<class-b>com.eduboss.domainVo.SubjectGroupVo</class-b>
+		<field>
+			<a>name.id</a>
+			<b>nameId</b>
+		</field>
+		<field>
+			<a>name.name</a>
+			<b>nameName</b>
+		</field>
+		
+		<field>
+			<a>blBrench.id</a>
+			<b>blBrenchId</b>
+		</field>
+		<field>
+			<a>blBrench.name</a>
+			<b>blBrenchName</b>
+		</field>
+		
+		<field>
+			<a>blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+	</mapping>
+
+</mappings>

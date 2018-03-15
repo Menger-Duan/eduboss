@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>index</title>
+    
+	<script src="js/jquery.js?_auto_version_"></script> 
+    <script src="js/common.js?_auto_version_"></script>
+    <link rel="stylesheet" href="style/css/style.css?_auto_version_">
+
+    
+</head>
+
+<body>
+<div class="wrapper countWrapper">
+	<div class="header">
+    	<div class="headHd">
+            <a class="back" href="javascript:history.go(-1);">返回</a>
+            <h1>莞城校区</h1>
+        </div>
+    </div>
+    
+	<div class="countWap allCountWap">
+    	<div class="countNav">
+        	<ul class="cl">
+            	<li class="on"><a href="index.html">总览</a></li>
+                <li><a href="cash.html">现金流</a></li>
+                <li><a href="revenue.html">营收</a></li>
+                <li><a href="market.html">市场</a></li>
+			</ul>
+        </div>
+        <div class="countToList">
+        	<ul>
+            	<li><span><i>现金流</i><b>2135943.0</b></span></li>
+                <li><span><i>营收</i><b>2130000.0</b></span></li>
+            </ul>
+            <ul>
+            	<li><span><i>新生</i><b>240</b></span></li>
+                <li><span><i>合同</i><b>250</b></span></li>
+                <li><span><i>资源</i><b>120</b></span></li>
+            </ul>
+        </div>
+        <div class="countSeTime">
+        	<div class="l seDay">
+            	<div class="ui-input-date"><input type="date" value="2015-05-01" id="startDay"></div>
+                <span>~</span>
+                <div class="ui-input-date"><input type="date" value="2015-05-31" id="endDay"></div>
+            </div>
+            <div class="r seOrNav">
+                <ul>
+                    <li class="on" onClick="getDayTime('#startDay')">日</li>
+                    <li onClick="getWeekTime('#startDay')">周</li>
+                    <li onClick="getMonthTime('#startDay')">月</li>
+                    <li onClick="getYearTime('#startDay')">年</li>
+                </ul>
+            </div>
+        </div>
+        <div class="countSeRe" id="countSeRe">
+        	<div class="scrollInner">
+                <table cellpadding="0" cellspacing="0" border="0" class="coTab_1">
+                    <thead>
+                        <tr>
+                            <th class="tdR1">排名</th>
+                            <th class="tdR2">业线人员</th>
+                            <th class="tdR3">现金流</th>
+                            <th class="tdR4">营收</th>
+                            <th class="tdR5">新生</th>
+                            <th class="tdR6">合同</th>
+                            <th class="tdR7">资源</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="countSeReInner">
+                    <div class="scroll">
+                        <table cellpadding="0" cellspacing="0" border="0" class="coTab_2">
+                            <tr>
+                                <td class="tdR1">1</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                            <tr>
+                                <td class="tdR1">2</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                            <tr>
+                                <td class="tdR1">3</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                            <tr>
+                                <td class="tdR1">4</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                            <tr>
+                                <td class="tdR1">5</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                            <tr>
+                                <td class="tdR1">6</td>
+                                <td class="tdR2">陈奕迅</td>
+                                <td class="tdR3"><b>1297890.0</b></td>
+                                <td class="tdR4"><b>1297890.0</b></td>
+                                <td class="tdR5"><b>98</b></td>
+                                <td class="tdR6"><b>98</b></td>
+                                <td class="tdR7"><b>98</b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script src="js/iscroll.js?_auto_version_"></script>
+			<script>
+                $(function(){
+                    var myscroll,myscrollIn;
+                    function loaded(){
+                        myscroll=new iScroll("countSeRe",{hScroll:true,vScroll:false,hScrollbar:false, vScrollbar:false});
+                     }
+                    function loadedIn(){
+                        myscroll=new iScroll("countSeReInner",{vScroll:true,hScrollbar:false, vScrollbar:false});
+                     }
+					window.addEventListener("DOMContentLoaded",loaded,false);
+					window.addEventListener("DOMContentLoaded",loadedIn,false);
+				   
+				   var tabTd =  $(".tdR3").width();
+				   var tabLen =  $(".coTab_1 th").length - 1;
+				   var winW = $(window).width();
+				   $(".scrollInner").css({width: 90 * tabLen,minWidth:winW});
+				   
+				   $(".scrollInner").css({width: 90 * tabLen });
+				   if(tabLen > 4 ){
+					  $(".countSeRe").addClass("overIcon");
+					}
+                })
+            </script>
+            
+        </div>
+        
+    </div>
+<!--     
+    <div class="bottomNav">
+    	<ul>
+        	<li><a class="bN_1" href="#">校区事务</a></li>
+            <li class="on"><a class="bN_2" href="#">统计分析</a></li>
+            <li><a class="bN_3" href="#">任务沟通</a></li>
+            <li><a class="bN_4" href="#">个人中心</a></li>
+        </ul>
+    </div> -->
+</div>
+
+</body>
+</html>

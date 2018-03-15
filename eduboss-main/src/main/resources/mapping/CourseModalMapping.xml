@@ -1,0 +1,45 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.CourseModal</class-a>
+		<class-b map-null="false">com.eduboss.domainVo.CourseModalVo</class-b>
+		<field>
+			<a>productYear.id</a>
+			<b>productYearId</b>
+		</field>
+		<field>
+			<a>productYear.name</a>
+			<b>productYearName</b>
+		</field>
+
+		<field>
+			<a>productSeason.id</a>
+			<b>productSeasonId</b>
+		</field>
+		<field>
+			<a>productSeason.name</a>
+			<b>productSeasonName</b>
+		</field>
+
+		<field>
+			<a>coursePhase.id</a>
+			<b>coursePhaseId</b>
+		</field>
+		<field>
+			<a>coursePhase.name</a>
+			<b>coursePhaseName</b>
+		</field>
+
+		<field>
+			<a>branch.id</a>
+			<b>branchId</b>
+		</field>
+		<field>
+			<a>branch.name</a>
+			<b>branchName</b>
+		</field>
+
+	</mapping>
+
+</mappings>

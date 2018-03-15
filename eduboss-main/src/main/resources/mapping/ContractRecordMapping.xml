@@ -1,0 +1,63 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+	<class-a>com.eduboss.domain.ContractRecord</class-a>
+	<class-b>com.eduboss.domainVo.ContractRecordVo</class-b>
+	<field>
+		<a>contract.id</a>
+		<b>contractId</b>
+	</field>
+	
+	<field>
+		<a>student.name</a>
+		<b>studentName</b>
+	</field>
+	
+	<field>
+		<a>gradeDict.name</a>
+		<b>grade</b>
+	</field>
+	
+	
+	
+	<field>
+		<a>contractType.name</a>
+		<b>contractTypeName</b>
+	</field>
+	
+
+	<field>
+		<a>contractStatus.name</a>
+		<b>contractStatusName</b>
+	</field>
+	
+
+	<field>
+		<a>paidStatus.name</a>
+		<b>paidStatusName</b>
+	</field>
+	
+
+	<field>
+		<a>signStaff.name</a>
+		<b>signUserName</b>
+	</field>
+	
+	<field>
+		<a>createByStaff.name</a>
+		<b>createUser</b>
+	</field>
+	
+	<field>
+		<a>updateType.name</a>
+		<b>updateTypeName</b>
+	</field>
+	
+	
+	
+</mapping>
+
+
+
+</mappings>

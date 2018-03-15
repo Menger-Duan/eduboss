@@ -1,0 +1,32 @@
+CACHE MANIFEST    
+   
+# 2012-02-21 v1.0.2    
+   
+CACHE:    
+framework/css/bootstrap.min.css    
+framework/css/font-awesome.min.css
+framework/css/smartadmin-production.min.css
+framework/css/smartadmin-skins.min.css
+js/libs/ztree/zTreeStyle/zTreeStyle.css	
+css/main.css
+css/print.css
+framework/js/libs/jquery-2.0.2.min.js
+framework/js/libs/jquery-ui-1.10.3.min.js
+components/jquery-easyui-1.4.1/plugins/jquery.parser.js
+components/jquery-easyui-1.4.1/plugins/jquery.panel.js
+components/jquery-easyui-1.4.1/plugins/jquery.tabs.js
+framework/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js
+framework/js/bootstrap/bootstrap.min.js
+framework/js/notification/SmartNotification.min.js
+framework/js/smartwidgets/jarvis.widget.min.js
+framework/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js
+framework/js/plugin/sparkline/jquery.sparkline.min.js
+framework/js/plugin/jquery-validate/jquery.validate.min.js
+framework/js/plugin/masked-input/jquery.maskedinput.min.js
+framework/js/plugin/select2/select2.min.js
+framework/js/plugin/bootstrap-slider/bootstrap-slider.min.js
+framework/js/plugin/msie-fix/jquery.mb.browser.min.js
+framework/js/plugin/fastclick/fastclick.min.js
+framework/js/app.js
+framework/js/plugin/jquery-form/jquery-form.min.js
+js/jquery.PrintArea.js

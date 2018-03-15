@@ -1,0 +1,40 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+	<class-a>com.eduboss.domain.CourseHoursDistributeRecord</class-a>
+	<class-b>com.eduboss.domainVo.CourseHoursDistributeRecordVo</class-b>
+	<field>
+		<a>subject.id</a>
+		<b>subjectId</b>
+	</field>
+	<field>
+		<a>subject.name</a>
+		<b>subjectName</b>
+	</field>
+	<field>
+		<a>type.name</a>
+		<b>typeName</b>
+	</field>
+	<field>
+		<a>type.value</a>
+		<b>typeValue</b>
+	</field>
+	<field>
+		<a>createUser.userId</a>
+		<b>createUserId</b>
+	</field>
+	<field>
+		<a>createUser.name</a>
+		<b>createUserName</b>
+	</field>
+		<field>
+			<a>blCampus.id</a>
+			<b>blCampusId</b>
+		</field>
+		<field>
+			<a>blCampus.name</a>
+			<b>blCampusName</b>
+		</field>
+</mapping>
+</mappings>

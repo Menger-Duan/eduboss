@@ -1,0 +1,50 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd HH:mm:ss" map-null="false">
+		<class-a>com.eduboss.domain.IncomeDistributeStatements</class-a>
+		<class-b>com.eduboss.domainVo.IncomeDistributeStatementsVo</class-b>
+		<!--<field>
+			<a>fundsChangeHistory.id</a>
+			<b>fundsChangeHistoryId</b>
+		</field>-->
+		<field>
+			<a>bonusType.name</a>
+			<b>bonusType</b>
+		</field>
+		<field>
+			<a>baseBonusDistributeType.name</a>
+			<b>baseBonusDistributeType</b>
+		</field>
+		<field>
+			<a>subBonusDistributeType.name</a>
+			<b>subBonusDistributeType</b>
+		</field>
+		<field>
+			<a>bonusStaff.name</a>
+			<b>bonusBelong</b>
+		</field>
+
+		<field>
+			<a>bonusOrg.name</a>
+			<b>bonusBelong</b>
+		</field>
+
+		<field>
+			<a>productType.name</a>
+			<b>productType</b>
+		</field>
+
+		<field>
+			<a>operation.name</a>
+			<b>operation</b>
+		</field>
+		
+		<field>
+			<a>createUser.name</a>
+			<b>createUserName</b>
+		</field>
+
+
+	</mapping>
+</mappings>

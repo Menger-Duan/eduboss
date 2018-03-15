@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security" xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.4.xsd">
+  <!--   <b:bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <b:property  name="locations">  
+            <b:list>  
+                <b:value>classpath*:systemconfig.properties</b:value>  
+            </b:list>  
+        </b:property>  
+    </b:bean> -->
+	<http auto-config="true" entry-point-ref="loginUrlAuthenticationEntryPoint" access-decision-manager-ref="accessManager">
+		<intercept-url pattern="${loginPage}" filters="none"/>
+		<intercept-url pattern="/imHome.html" filters="none"/>
+		<intercept-url pattern="/monitor.jsp" filters="none"/>
+		<intercept-url pattern="/login.html" filters="none"/>
+		<intercept-url pattern="/autologin.html" filters="none"/>
+		<intercept-url pattern="/components/**" filters="none"/>
+		<intercept-url pattern="/SmsController/onReceiveSms.do" filters="none"/><!-- 短信接口回调接口 -->
+		<intercept-url pattern="/logs/**" filters="none"/>
+		<intercept-url pattern="/logout.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/images/**" filters="none"/>
+		<intercept-url pattern="/img/**" filters="none"/>
+		<intercept-url pattern="/assets/**" filters="none"/>
+		<intercept-url pattern="/function/im/**" filters="none"/>
+		<intercept-url pattern="/js/**" filters="none"/>
+		<intercept-url pattern="/framework/**" filters="none"/>
+		<intercept-url pattern="/dialogs/**" filters="none"/>		
+		<intercept-url pattern="/css/**" filters="none"/>
+		<intercept-url pattern="/sound/**" filters="none"/>
+		<intercept-url pattern="/app/**" filters="none"/>
+		<intercept-url pattern="/failure.json" filters="none"/>
+		<intercept-url pattern="/403.jsp" filters="none"/>
+		<intercept-url pattern="/MobileInterface/**" filters="none"/><!-- 终端接口暂时不作控制，先用token作接入控制 -->
+		<intercept-url pattern="/function/notify/**" filters="none"/><!-- 消息通知不用做权限 -->
+		<intercept-url pattern="/phoneCustomer.html" filters="none"/>
+		<intercept-url pattern="/monitoring" filters="none"/>
+		<intercept-url pattern="/uploadfile/**" filters="none"/><!--下载上传文件处理结果  -->
+		<intercept-url pattern="/SystemAction/getSystemConfigList.do" filters="none"/>
+        <intercept-url pattern="/ContractAction/payResultNotify.do" filters="none"/><!--支付完成调用接口，  -->
+        <intercept-url pattern="/ContractAction/getPayInfo.do" filters="none"/><!--支付调用接口，获取支付信息  -->
+        <intercept-url pattern="/IntenetPayController/noticePayStatus.do" filters="none"/><!--支付调用接口，获取支付信息  -->
+		<intercept-url pattern="/IntenetPayController/sendPayInfoForOtherPlat.do" filters="none"/><!--支付调用接口，获取支付地址  -->
+		<intercept-url pattern="/IntenetPayController/getPayStatusByTrxid.do" filters="none"/><!--获取支付状态  -->
+		<intercept-url pattern="/UserController/loginCallBack.do" filters="none"/><!--晓教育登陆跳转  -->
+		<intercept-url pattern="/UserController/loginCallBackNew.do" filters="none"/><!--晓教育登陆跳转  -->
+        <intercept-url pattern="/UserController/toSparkLogin.do" filters="none"/><!--跳转到晓教育登录  -->
+        <intercept-url pattern="/UserController/updateUserBySpark.do" filters="none"/><!--更新接口  -->
+		<intercept-url pattern="/BatchSchedulingController/callBatchScheduling.do" filters="none"/><!--更新接口  -->
+		<intercept-url pattern="/UserController/loginOut.do" filters="none"/><!--更新接口  -->
+		<intercept-url pattern="/BillPayController/**" filters="none"/><!--快钱支付  -->
+		<intercept-url pattern="/DataTransaferController/**" filters="none"/><!--直播接口同步  -->
+		<intercept-url pattern="/OrderController/**" filters="none"/><!-- 在线报读接口同步  -->
+		<intercept-url pattern="/ExceptionController/**" filters="none"/><!--异常返回  -->
+		<intercept-url pattern="/ipad/**" filters="none"/><!--ipa端接口  -->
+
+        <intercept-url pattern="/c/w/b.do" filters="none"/><!--微信扫一扫课程详情  -->
+
+		<intercept-url pattern="/EduPlatform/**" filters="none"/><!-- boss给教学平台开放的接口 -->
+
+		<intercept-url pattern="/openapi/**" filters="none"/>
+
+        <intercept-url pattern="AllowAction" filters="none"/>
+        <intercept-url pattern="/LeaveAction" filters="none"/>
+        <intercept-url pattern="/leave.jsp" filters="none"/>
+		<intercept-url pattern="/allow.jsp" filters="none"/>
+		<intercept-url pattern="/MessageReceiveController/**" filters="none"/><!--baseAuth 鉴权-->
+
+        <intercept-url pattern="/DataTransaferController/saveLiveFinanceDetail.do" filters="none"/><!--直播支付回调接口，获取支付信息  -->
+        <intercept-url pattern="/DataTransaferController/handlePayStatus.do" filters="none"/><!--消息中心，队列回查通联支付信息  -->
+       <!--  <intercept-url pattern="/components/ueditors/**" filters="none"/>UEditor访问资源路径  -->
+		<!-- <intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/> -->
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>
+		<form-login login-processing-url="/j_spring_security_check"  login-page="${loginPage}" authentication-failure-url="${loginPage}?error=true"
+			default-target-url="/index.html" always-use-default-target='true'
+			authentication-success-handler-ref="myAuthenticationSuccessHandler"/>
+		<logout logout-success-url="${loginOut}"/>
+		<access-denied-handler ref="accessDeniedHandler"/>
+	</http>
+	<b:bean id="myAuthenticationSuccessHandler"  
+        class="com.eduboss.security.MySimpleUrlAuthenticationSuccessHandler" /> 
+    <b:bean id="loginUrlAuthenticationEntryPoint" class="com.eduboss.security.MyLoginUrlAuthenticationEntryPoint">
+        <b:property name="useForward" value="true" />
+        <b:property name="loginFormUrl" value="${loginPage}" />
+    </b:bean>
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="authenticationProvider"/>
+	</authentication-manager>
+	<b:bean id="md5" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+	<b:bean id="pt" class="org.springframework.security.authentication.encoding.PlaintextPasswordEncoder"/>
+	<b:bean id="userDetailsService" class="com.eduboss.service.impl.UserDetailsServiceImpl"/>
+	<b:bean id="authenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<b:property name="userDetailsService" ref="userDetailsService"/>
+		<b:property name="hideUserNotFoundExceptions" value="false"/>
+		<b:property name="passwordEncoder" ref="pt"/>
+	</b:bean>
+	<b:bean id="accessManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<b:property name="decisionVoters">
+			<b:list>
+				<b:bean class="com.eduboss.security.AccessValueVoter"/>
+			</b:list>
+		</b:property>
+	</b:bean>
+
+	<b:bean id="accessDeniedHandler" class="com.eduboss.security.AccessExceptionHandler">
+		<b:property name="errorPage" value="/ExceptionController/returnErrInfo.do?errCode=403"/>
+		<b:property name="ajaxError" value="/failure.json"/>
+	</b:bean>
+
+</b:beans>

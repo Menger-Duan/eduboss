@@ -1,0 +1,45 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.StudentScore</class-a>
+		<class-b>com.eduboss.domainVo.StudentScoreVo</class-b>
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>grade.name</a>
+			<b>studentGrade</b>
+		</field>
+		<field>
+			<a>grade.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>subject.id</a>
+			<b>subjectId</b>
+		</field>
+		<field>
+			<a>subject.name</a>
+			<b>subjectName</b>
+		</field>
+		<field>
+			<a>typeExam.id</a>
+			<b>typeExamId</b>
+		</field>
+		<field>
+			<a>typeExam.name</a>
+			<b>typeExamName</b>
+		</field>
+		<field>
+			<a>student.school.name</a>
+			<b>studentSchool</b>
+		</field>
+		<field>
+			<a>student.studyManeger.name</a>
+			<b>studentStudyManeger</b>
+		</field>
+	</mapping>
+	
+</mappings>

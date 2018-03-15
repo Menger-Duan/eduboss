@@ -1,0 +1,32 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.MyCollection</class-a>
+		<class-b>com.eduboss.domainVo.MyCollectionVo</class-b>
+		<field>
+			<a>user.userId</a>
+			<b>userId</b>
+		</field>
+		<field>
+			<a>resource.id</a>
+			<b>resId</b>
+		</field>
+		<field>
+			<a>resource.rname</a>
+			<b>resName</b>
+		</field>
+		<field>
+			<a>resource.parentId</a>
+			<b>resParentId</b>
+		</field>
+		<field>
+			<a>resource.rurl</a>
+			<b>resUrl</b>
+		</field>
+		<field>
+			<a>resource.rorder</a>
+			<b>resOrder</b>
+		</field>
+	</mapping>
+</mappings>

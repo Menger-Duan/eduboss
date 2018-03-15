@@ -1,0 +1,36 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false">
+		<class-a>com.eduboss.domain.SalaryDetail</class-a>
+		<class-b>com.eduboss.domainVo.SalaryDetailVo</class-b>
+		<field>
+			<a>staff.userId</a>
+			<b>staffId</b>
+		</field>
+		<field>
+			<a>staff.name</a>
+			<b>staffName</b>
+		</field>
+		<field>
+			<a>organization.id</a>
+			<b>organizationId</b>
+		</field>
+		<field>
+			<a>organization.name</a>
+			<b>organizationName</b>
+		</field>
+		<field>
+			<a>modifier.userId</a>
+			<b>modifierId</b>
+		</field>
+		<field>
+			<a>modifier.name</a>
+			<b>modifierName</b>
+		</field>
+		<field>
+			<a>completeFile</a>
+			<b>completeFile</b>
+		</field>
+	</mapping>
+</mappings>

@@ -1,0 +1,25 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false" >
+		<class-a>com.eduboss.domain.RefundAuditDynamic</class-a>
+		<class-b>com.eduboss.domainVo.RefundAuditDynamicVo</class-b>
+		<field>
+			<a>operator.userId</a>
+			<b>operatorId</b>
+		</field>
+		<field>
+			<a>operator.name</a>
+			<b>operatorName</b>
+		</field>
+		<field>
+			<a>refundWorkflow.id</a>
+			<b>refundWorkflowId</b>
+		</field>
+		<field type="one-way">
+			<a>operation.name</a>
+			<b>operationName</b>
+		</field>
+	</mapping>
+	
+</mappings>

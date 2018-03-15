@@ -1,0 +1,33 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.CustomerDynamicStatus</class-a>
+		<class-b>com.eduboss.domainVo.CustomerDynamicStatusVo</class-b>
+		<field>
+			<a>referuser.name</a>
+			<b>referuserName</b>
+		</field>
+		<field>
+			<a>referuser.userId</a>
+			<b>referuserId</b>
+		</field>
+		<field>
+			<a>customer.name</a>
+			<b>customerName</b>
+		</field>
+		<field>
+			<a>customer.id</a>
+			<b>customerId</b>
+		</field>
+		<field>
+			<a>resEntrance.id</a>
+			<b>resEntranceId</b>
+		</field>
+		<field>
+			<a>resEntrance.name</a>
+			<b>resEntranceName</b>
+		</field>
+	</mapping>
+	
+</mappings>

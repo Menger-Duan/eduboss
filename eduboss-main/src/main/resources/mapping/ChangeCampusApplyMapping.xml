@@ -1,0 +1,17 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false" >
+		<class-a map-null="false"  map-empty-string="false">com.eduboss.domain.ChangeCampusApply</class-a>
+		<class-b>com.eduboss.domainVo.ChangeCampusApplyVo</class-b>
+		<field>
+			<a>resEntrance.id</a>
+			<b>resEntranceId</b>
+		</field>
+		<field>
+			<a>resEntrance.name</a>
+			<b>resEntranceName</b>
+		</field>
+ 
+	</mapping>
+</mappings>

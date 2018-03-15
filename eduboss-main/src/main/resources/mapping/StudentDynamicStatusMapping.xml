@@ -1,0 +1,29 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd">
+		<class-a>com.eduboss.domain.StudentDynamicStatus</class-a>
+		<class-b>com.eduboss.domainVo.StudentDynamicStatusVo</class-b>
+		<field>
+			<a>referuser.userId</a>
+			<b>referuserId</b>
+		</field>
+		<field>
+			<a>referuser.name</a>
+			<b>referuserName</b>
+		</field>
+		<field>
+			<a>student.name</a>
+			<b>studentName</b>
+		</field>
+		<field>
+			<a>student.id</a>
+			<b>studentId</b>
+		</field>
+		<field>
+			<a>dynamicStatusType.name</a>
+			<b>dynamicStatusTypeName</b>
+		</field>
+	</mapping>
+	
+</mappings>

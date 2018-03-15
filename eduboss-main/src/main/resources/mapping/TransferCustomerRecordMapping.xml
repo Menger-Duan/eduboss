@@ -1,0 +1,90 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd" map-null="false" map-empty-string="false" >
+		<class-a map-null="false"  map-empty-string="false">com.eduboss.domain.TransferCustomerRecord</class-a>
+		<class-b>com.eduboss.domainVo.TransferCustomerRecordVo</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>customerId</a>
+			<b>customerId</b>
+		</field>
+		<field>
+			<a>customerName</a>
+			<b>customerName</b>
+		</field>
+		<field>
+			<a>contact</a>
+			<b>contact</b>
+		</field>
+		
+		<field>
+			<a>introducer</a>
+			<b>introducer</b>
+		</field>
+		
+		<field>
+			<a>cusOrg.id</a>
+			<b>cusOrg</b>
+		</field>
+		
+		<field>
+			<a>createTime</a>
+			<b>createTime</b>
+		</field>
+		<field>
+			<a>createUserId</a>
+			<b>createUserId</b>
+		</field>
+		<field>
+			<a>modifyTime</a>
+			<b>modifyTime</b>
+		</field>
+		<field>
+			<a>modifyUserId</a>
+			<b>modifyUserId</b>
+		</field>
+		<field>
+			<a>remark</a>
+			<b>remark</b>
+		</field>
+		<field>
+			<a>auditStatus</a>
+			<b>auditStatus</b>
+		</field>   
+		<field>
+			<a>customerStatus</a>
+			<b>customerStatus</b>
+		</field> 
+		<field>
+			<a>resEntrance.id</a>
+			<b>resEntranceId</b>
+		</field>
+		<field>
+			<a>resEntrance.name</a>
+			<b>resEntranceName</b>
+		</field>
+		<field>
+			<a>preEntrance.id</a>
+			<b>preEntranceId</b>
+		</field>
+		<field>
+			<a>preEntrance.name</a>
+			<b>preEntranceName</b>
+		</field> 
+		
+		<field>
+			<a>intentionCampus.id</a>
+			<b>intentionCampusId</b>
+		</field>
+		<field>
+			<a>intentionCampus.name</a>
+			<b>intentionCampusName</b>
+		</field>
+		
+		 
+	</mapping>
+</mappings>

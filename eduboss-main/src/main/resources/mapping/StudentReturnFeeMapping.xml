@@ -1,0 +1,84 @@
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <mapping date-format="yyyy-MM-dd"  map-null="false">
+	<class-a>com.eduboss.domain.StudentReturnFee</class-a>
+	<class-b>com.eduboss.domainVo.StudentReturnFeeVo</class-b>
+	
+	<field>
+		<a>student.id</a>
+		<b>studentId</b>
+	</field>
+	<field>
+		<a>student.name</a>
+		<b>studentName</b>
+	</field>
+
+		<field>
+			<a>student.gradeDict.id</a>
+			<b>gradeId</b>
+		</field>
+		<field>
+			<a>student.gradeDict.name</a>
+			<b>gradeName</b>
+		</field>
+	<field>
+		<a>contract.id</a>
+		<b>contractId</b>
+	</field>
+	<field>
+		<a>contractProduct.id</a>
+		<b>contractProductId</b>
+	</field>
+	<field>
+		<a>contractProduct.product.name</a>
+		<b>contractProductName</b>
+	</field>
+	<field>
+		<a>returnType.value</a>
+		<b>returnTypeId</b>
+	</field>
+	<field>
+		<a>returnType.name</a>
+		<b>returnType</b>
+	</field>
+	<field>
+		<a>createUser.name</a>
+		<b>createUser</b>
+	</field>
+	<field>
+		<a>createUser.userId</a>
+		<b>createUserId</b>
+	</field>
+	<field>
+		<a>modifyUser.name</a>
+		<b>modifyUser</b>
+	</field>
+	<field>
+		<a>modifyUser.userId</a>
+		<b>modifyUserId</b>
+	</field>
+	<field>
+		<a>campus.name</a>
+		<b>campus</b>
+	</field>
+	<field>
+		<a>campus.id</a>
+		<b>campusId</b>
+	</field>
+	<field>
+			<a>fundsChangeHistory.id</a>
+			<b>fundsChangeHistoryId</b>
+	</field>
+	<field>
+			<a>fundsChangeHistory.certificateImage</a>
+			<b>fundsChangeHistoryImage</b>
+	</field>
+
+	<field>
+		<a>contractProduct.product.category.value</a>
+		<b>productType</b>
+	</field>
+
+	</mapping>
+</mappings>

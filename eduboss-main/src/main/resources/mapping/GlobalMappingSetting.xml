@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd"> 
+    <configuration>
+       <stop-on-errors>true</stop-on-errors>
+       <date-format>yyyy-MM-dd</date-format>
+       <wildcard>true</wildcard>
+    </configuration>
+    <!-- <mapping date-format="yyyy-MM-dd">
+       <class-a>com.robin.testdomain.Topic</class-a>
+       <class-b>com.robin.testdomain.TopicVO</class-b>
+       <field>
+           <a>id</a>
+           <b>id</b>
+       </field>
+        <field>
+           <a>title</a>
+           <b>titleVO</b>
+       </field>
+       <field>
+           <a>category.name</a>
+           <b>cName</b>
+       </field>
+    </mapping> -->
+</mappings>
